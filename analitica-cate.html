@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analítica Causal (Uplift CATE) • M.O.V.I.</title>
+  <meta name="description" content="Motion graphic para ilustrar el análisis causal y la decisión omnicanal.">
+  <link rel="stylesheet" href="./src/styles/analitica-cate.css">
+</head>
+<body>
+
+  <!-- Fullscreen Canvas -->
+  <main class="cate-canvas" id="cateCanvas">
+    
+    <!-- Animatable Container -->
+    <div class="cate-container">
+      
+      <!-- Paso 1: Símbolo de Aleta / Oportunidad (Verde) -->
+      <div class="cate-step step-1" id="step1">
+        <div class="alert-icon-wrap">
+          <i data-lucide="target" class="alert-icon"></i>
+        </div>
+        <div class="radar-ring ring-1"></div>
+        <div class="radar-ring ring-2"></div>
+      </div>
+
+      <!-- Paso 2: Identificación del Cliente Persuadible -->
+      <div class="cate-step step-2" id="step2">
+        <div class="client-card">
+          <div class="client-avatar">
+            <i data-lucide="user"></i>
+          </div>
+          <div class="client-info">
+            <h2 class="client-name">Miguel Mendoza</h2>
+            <span class="client-tag">
+              <i data-lucide="zap" style="width: 12px;"></i>
+              CLIENTE PERSUADIBLE (Uplift CATE)
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3: Probabilidad por Canal -->
+      <div class="cate-step step-3" id="step3">
+        <h3 class="channels-title">Probabilidad de Éxito x Canal</h3>
+        <div class="channels-grid">
+          
+          <!-- Canal: WhatsApp -->
+          <div class="channel-card highlight">
+            <div class="channel-icon" style="color: #25D366; background: rgba(37, 211, 102, 0.1);">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <div class="channel-details">
+              <span class="channel-name">WhatsApp</span>
+              <span class="channel-score">80%</span>
+            </div>
+          </div>
+
+          <!-- Canal: Agente AURA -->
+          <div class="channel-card">
+            <div class="channel-icon" style="color: #019DF4; background: rgba(1, 157, 244, 0.1);">
+              <i data-lucide="bot"></i>
+            </div>
+            <div class="channel-details">
+              <span class="channel-name">Agente AURA</span>
+              <span class="channel-score">70%</span>
+            </div>
+          </div>
+
+          <!-- Canal: Llamada -->
+          <div class="channel-card">
+            <div class="channel-icon" style="color: #FACC15; background: rgba(250, 204, 21, 0.1);">
+              <i data-lucide="phone-call"></i>
+            </div>
+            <div class="channel-details">
+              <span class="channel-name">Llamada</span>
+              <span class="channel-score">90%</span>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="decision-output">
+          <p>Decisión IA: <strong style="color: #25D366;">WhatsApp vía Aura</strong> (Balance óptimo Éxito/Costo)</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Play Button for Pitch Control -->
+    <button class="trigger-btn" id="btnTriggerAnim">
+      <i data-lucide="play"></i> Iniciar Animación (Espacio)
+    </button>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const btnTrigger = document.getElementById('btnTriggerAnim');
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step3 = document.getElementById('step3');
+      const channelCards = document.querySelectorAll('.channel-card');
+      const decisionOutput = document.querySelector('.decision-output');
+      
+      let isPlaying = false;
+
+      function playAnimation() {
+        if (isPlaying) return;
+        isPlaying = true;
+        btnTrigger.style.opacity = '0';
+        btnTrigger.style.pointerEvents = 'none';
+
+        // Reset
+        step1.classList.remove('active');
+        step2.classList.remove('active');
+        step3.classList.remove('active');
+        channelCards.forEach(c => c.classList.remove('active'));
+        decisionOutput.classList.remove('active');
+
+        // Sequence
+        // 1. Radar Alert
+        setTimeout(() => {
+          step1.classList.add('active');
+        }, 300);
+
+        // 2. Identify Client
+        setTimeout(() => {
+          step2.classList.add('active');
+        }, 1800);
+
+        // 3. Channels and Probabilities
+        setTimeout(() => {
+          step3.classList.add('active');
+          
+          // Pop channels one by one
+          channelCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('active');
+            }, index * 400);
+          });
+
+          // Show Decision Output
+          setTimeout(() => {
+            decisionOutput.classList.add('active');
+          }, channelCards.length * 400 + 600);
+
+        }, 3500);
+      }
+
+      btnTrigger.addEventListener('click', playAnimation);
+      document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' || e.key === ' ') {
+          playAnimation();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

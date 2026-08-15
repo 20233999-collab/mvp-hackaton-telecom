@@ -18,7 +18,8 @@ export default defineConfig({
         operaciones: resolve(__dirname, 'operaciones.html'),
         atencion: resolve(__dirname, 'atencion.html'),
         sinmegas: resolve(__dirname, 'mockup-sin-megas.html'),
-        wsspmegas: resolve(__dirname, 'mockup-whatsapp-sin-megas.html')
+        wsspmegas: resolve(__dirname, 'mockup-whatsapp-sin-megas.html'),
+        analiticaCate: resolve(__dirname, 'analitica-cate.html')
       }
     }
   }

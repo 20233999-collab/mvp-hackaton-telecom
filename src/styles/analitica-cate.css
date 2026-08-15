@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0B2739; /* Azul marino corporativo */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cate-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle at center, #11364f 0%, #0B2739 100%);
+}
+
+.cate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+}
+
+/* ================= STEP 1: ALERT ================= */
+.cate-step {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cate-step.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-1 {
+  position: relative;
+}
+
+.alert-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.15); /* Verde WhatsApp / Success */
+  border: 2px solid #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
+}
+
+.alert-icon {
+  width: 40px;
+  height: 40px;
+  color: #25D366;
+}
+
+.radar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid #25D366;
+  opacity: 0;
+}
+
+.step-1.active .ring-1 {
+  width: 80px;
+  height: 80px;
+  animation: radarPulse 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.step-1.active .ring-2 {
+  width: 80px;
+  height: 80px;
+  animation: radarPulse 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 0.6s;
+}
+
+@keyframes radarPulse {
+  0% { width: 80px; height: 80px; opacity: 1; }
+  100% { width: 300px; height: 300px; opacity: 0; }
+}
+
+
+/* ================= STEP 2: CLIENT ================= */
+.client-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.client-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #019DF4, #00548F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-avatar i {
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.client-name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.client-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  letter-spacing: 0.05em;
+}
+
+
+/* ================= STEP 3: CHANNELS ================= */
+.channels-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8BA8B8;
+  margin-bottom: 24px;
+}
+
+.channels-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.channel-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 140px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.channel-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.channel-card.highlight {
+  background: rgba(37, 211, 102, 0.08);
+  border-color: rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.15);
+}
+
+.channel-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-icon i {
+  width: 24px;
+  height: 24px;
+}
+
+.channel-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.channel-name {
+  font-size: 13px;
+  color: #A0BBD0;
+  font-weight: 600;
+}
+
+.channel-score {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.channel-card.highlight .channel-score {
+  color: #25D366;
+}
+
+.decision-output {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #8BA8B8;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+
+.decision-output.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================= TRIGGER BTN ================= */
+.trigger-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.trigger-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

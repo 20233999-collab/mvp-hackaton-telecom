@@ -950,7 +950,7 @@ html, body {
 
 @media (max-width: 768px) {
   .pv-director-bar {
-    display: none !important;
+    /* display: none !important; Removed so user can manually collapse it */
   }
 }
 

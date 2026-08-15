@@ -535,7 +535,7 @@ body {
   }
 
   .mimovistar-director-bar {
-    display: none !important;
+    /* display: none !important; Removed so user can manually collapse it */
   }
 }
 

@@ -490,7 +490,7 @@ html, body {
 
 @media (max-width: 768px) {
   .miguel-director-bar {
-    display: none !important;
+    /* display: none !important; Removed so user can manually collapse it */
   }
 
   .wa-chat-body {

@@ -530,6 +530,20 @@ html, body {
   border-color: var(--movistar-blue);
 }
 
+@media (max-width: 768px) {
+  .client-director-bar {
+    display: none !important;
+  }
+
+  .phone-viewport-stage {
+    padding-bottom: 20px;
+  }
+
+  .client-screen-view {
+    padding-bottom: 24px;
+  }
+}
+
 @keyframes screenFadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }

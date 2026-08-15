@@ -488,9 +488,14 @@ html, body {
   transition: all var(--transition-fast);
 }
 
-.valeria-director-bar button.active {
-  background: var(--movistar-blue);
-  border-color: var(--movistar-blue);
+@media (max-width: 768px) {
+  .valeria-director-bar {
+    display: none !important;
+  }
+
+  .wa-chat-body {
+    padding-bottom: 20px;
+  }
 }
 
 @keyframes msgSlideIn {

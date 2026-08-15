@@ -982,10 +982,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .sfdc-workflow-bottom-bar {
-    width: 95%;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 6px 10px;
+  .sfdc-workflow-bottom-bar,
+  .operator-director-bar {
+    display: none !important;
   }
 }

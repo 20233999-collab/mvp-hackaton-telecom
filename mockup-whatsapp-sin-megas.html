@@ -42,8 +42,46 @@
     <!-- WhatsApp Chat Messages Canvas -->
     <section class="wa-messages-canvas" id="waMessagesCanvas">
       
-      <!-- Old Message (Yesterday) -->
+      <!-- Old History -->
       <div class="wa-date-pill-wrap" style="margin-top: 10px;">
+        <span class="wa-date-pill">12 DE JULIO</span>
+      </div>
+      <div class="wa-msg-bubble incoming">
+        <div class="wa-bubble-card-content" style="border-left: 3.5px solid #008738; padding: 8px 12px;">
+          <p class="wa-msg-body">
+            Hola Miguel, recuerda que puedes pagar tu recibo desde la app Mi Movistar sin comisiones. 📱
+          </p>
+          <div class="wa-meta-row">
+            <span class="wa-msg-time">09:15</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wa-date-pill-wrap" style="margin-top: 16px;">
+        <span class="wa-date-pill">18 DE JULIO</span>
+      </div>
+      <div class="wa-msg-bubble incoming">
+        <div class="wa-bubble-card-content" style="border-left: 3.5px solid #008738; padding: 8px 12px;">
+          <p class="wa-msg-body">
+            ¡Buenas noticias! Hemos mejorado la cobertura en tu zona para que navegues más rápido. 🚀
+          </p>
+          <div class="wa-meta-row">
+            <span class="wa-msg-time">11:20</span>
+          </div>
+        </div>
+      </div>
+      <div class="wa-msg-bubble outgoing" style="align-self: flex-end; max-width: 85%; margin-top: 4px;">
+        <div class="wa-bubble-card-outgoing" style="background: #D9FDD3; border-radius: 14px; padding: 8px 12px;">
+          <p style="font-size: 13.5px;">¡Excelente! Gracias.</p>
+          <div class="wa-meta-row-outgoing" style="display: flex; justify-content: flex-end; align-items: center; gap: 4px;">
+            <span class="wa-msg-time" style="font-size: 10.5px; color: #667781;">11:25</span>
+            <span class="wa-check-blue" style="color: #53BDEB; font-size: 12px; font-weight: 900;">✓✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Old Message (Yesterday) -->
+      <div class="wa-date-pill-wrap" style="margin-top: 16px;">
         <span class="wa-date-pill">AYER</span>
       </div>
       <div class="wa-msg-bubble incoming">
@@ -66,6 +104,14 @@
       <div class="wa-encryption-notice" style="margin-bottom: 12px;">
         <i data-lucide="lock" style="width: 11px;"></i>
         <span>Los mensajes están cifrados de extremo a extremo. Nadie fuera de este chat puede leerlos.</span>
+      </div>
+
+      <!-- Tap Trigger Prompt -->
+      <div class="wa-tap-trigger-prompt" id="waTapPrompt">
+        <div class="tap-pill-anim">
+          <i data-lucide="hand" style="width: 14px;"></i>
+          <span>Toca para recibir mensaje</span>
+        </div>
       </div>
 
       <!-- Official Movistar Message Bubble (Hidden until tap) -->

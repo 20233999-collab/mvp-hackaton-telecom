@@ -67,14 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setTimeout(() => {
-          chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
-        }, 50); // slight delay to ensure DOM is painted
+          if (chatCanvas) chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 150);
       }, 1500);
     }, 1000);
   }
 
-  // Trigger automatically when the mockup loads
-  autoReceiveMessage();
+  // No se dispara automáticamente al cargar, espera el tap manual
+  // autoReceiveMessage();
+
+  const shell = document.getElementById('waShell');
+  if (shell) {
+    shell.addEventListener('click', (e) => {
+      // Ignorar si el clic fue en un botón
+      if (e.target.closest('button') || e.target.closest('a')) return;
+      if (!hasReceived) autoReceiveMessage();
+    });
+  }
 
   // 2. DISPARAR RESPUESTA Y ACTIVACIÓN
   function triggerActivation() {
@@ -98,8 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
     dynamicContainer.appendChild(userMsg);
     
     setTimeout(() => {
-      chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
-    }, 50);
+      if (chatCanvas) chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 150);
 
     if (inputText) inputText.value = '';
 
@@ -136,6 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(painOverlay);
       }
       createIcons({ icons });
+
+      setTimeout(() => {
+        if (chatCanvas) chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }, 150);
 
     }, 650);
   }

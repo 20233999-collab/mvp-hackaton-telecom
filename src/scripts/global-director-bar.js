@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Find any element whose class ends with "-director-bar"
-  const bars = document.querySelectorAll('[class$="-director-bar"]');
+  // Find any element whose class ends with "-director-bar" OR is the sfdc-workflow-bottom-bar
+  const bars = document.querySelectorAll('[class$="-director-bar"], .sfdc-workflow-bottom-bar');
   
   bars.forEach(bar => {
     // Create the toggle button inside the bar

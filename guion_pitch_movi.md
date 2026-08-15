@@ -50,9 +50,9 @@ Durante estos primeros 30 segundos, el video debe mostrar la consola de control 
 
 #### 🎙️ El Guion Hablado (Speech — 45 segundos)
 
-> *"A la izquierda, tenemos a **Miguel Mendoza**, diseñadora que viaja constantemente a Arequipa y gasta **S/ 179.80 al mes** comprando gigas extras. A la derecha, a **Carlos**, asesor de telemarketing en Atento. En el centro: **M.O.V.I.**
+> *"A la izquierda, tenemos a **Miguel Mendoza**, diseñador que viaja constantemente a Arequipa y gasta **S/ 179.80 al mes** comprando gigas extras. A la derecha, a **Carlos**, asesor de telemarketing en Atento. En el centro: **M.O.V.I.**
 >
-> Mediante analítica causal (*Uplift CATE*), **M.O.V.I.** identifica a Miguel como clienta persuadible y le envía una propuesta por WhatsApp a través de **Aura**: unificar su fibra y móvil en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos cada mes**.
+> Mediante analítica causal (*Uplift CATE*), **M.O.V.I.** identifica a Miguel como cliente persuadible y le envía una propuesta por WhatsApp a través de **Aura**: unificar su fibra y móvil en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos cada mes**.
 >
 > Cuando Miguel duda sobre cobros futuros, Aura activa un *Warm Hand-off* vía API **TMF683** hacia Carlos. **M.O.V.I.** le susurra al oído el speech de rebate exacto y proyecta un gráfico interactivo de prorrateo en el celular de Miguel. 
 >
@@ -92,11 +92,11 @@ El video del pitch mostrará la interacción sincronizada y en tiempo real entre
 
 > *"En el back-office, **SON-IA** automatiza el ciclo de ingresos. Primero, su motor neuro-simbólico ejecuta la auditoría tarifaria \(P \times Q\), validando el contrato frente a la red física para garantizar cero errores en la factura.
 >
-> A la izquierda, **Juan Carlos**, cliente con 42 días de mora. En vez de cortarle el servicio, la IA activa el **Modo Mantenimiento** para no afectar su trabajo y le ofrece fraccionar su deuda en 3 cuotas sin intereses por WhatsApp.
+> A la izquierda, **Miguel**, cliente con 42 días de mora. En vez de cortarle el servicio, la IA activa el **Modo Mantenimiento** para no afectar su trabajo y le ofrece fraccionar su deuda en 3 cuotas sin intereses por WhatsApp.
 >
 > A la derecha, **Ana**, analista contable, ya no cruza excels manuales: valida excepciones con **un solo clic**. 
 >
-> Juan Carlos paga su cuota en su banca móvil. La API bancaria notifica a **M.O.V.I.**, conciliando el abono al instante. Vía API **TMF622**, su fibra óptica se restablece en menos de 5 minutos, reduciendo el periodo de cobro de 45 a 30 días."*
+> Miguel paga su cuota en su banca móvil. La API bancaria notifica a **M.O.V.I.**, conciliando el abono al instante. Vía API **TMF622**, su fibra óptica se restablece en menos de 5 minutos, reduciendo el periodo de cobro de 45 a 30 días."*
 
 ---
 
@@ -107,7 +107,7 @@ El video del pitch mostrará la sincronización en tiempo real de tres paneles:
 ```
 ┌───────────────────────────┬───────────────────────────┬───────────────────────────┐
 │   PANEL 1: CLIENTE (CX)   │  PANEL 2: BACK-OFFICE (EX)│   PANEL 3: RED FÍSICA     │
-│   (WhatsApp Juan Carlos)  │   (Dashboard de Ana)      │   (Amdocs OSS / Central)  │
+│   (WhatsApp de Miguel)    │   (Dashboard de Ana)      │   (Amdocs OSS / Central)  │
 ├───────────────────────────┼───────────────────────────┼───────────────────────────┤
 │ • Modo Mantenimiento (15M)│ • Cero hojas de Excel     │ • Webhook BCP recibido    │
 │ • Fraccionamiento 3 cuotas│ • Alerta P×Q validada     │ • Comando TMF622 enviado  │
@@ -116,7 +116,7 @@ El video del pitch mostrará la sincronización en tiempo real de tres paneles:
 └───────────────────────────┴───────────────────────────┴───────────────────────────┘
 ```
 
-1. **Celular de Juan Carlos (Lado Izquierdo - CX):** Mensaje interactivo de WhatsApp con Aura (badge: `[Modo Mantenimiento: 15 Mbps activos]`). Botón directo: `[Pagar Cuota 1: S/ 99.33 con Yape / BCP]`.
+1. **Celular de Miguel (Lado Izquierdo - CX):** Mensaje interactivo de WhatsApp con Aura (badge: `[Modo Mantenimiento: 15 Mbps activos]`). Botón directo: `[Pagar Cuota 1: S/ 99.33 con Yape / BCP]`.
 2. **Consola Contable de Ana (Centro - EX):** Dashboard *Light Tech* libre de planillas Excel. Muestra la métrica: `DSO: 31 días (Objetivo <30)` y la auditoría tarifaria: `[Auditoría P×Q: 100% consistencia | Alucinación prevenida: 0%]`. Botón de decisión rápida: `[Ajustar y Reconectar]`.
 3. **Monitor de Red BSS/OSS Link (Lado Derecho - Red):** Log de terminal en milisegundos que muestra la reconexión de fibra óptica en la central OLT:
    ```bash

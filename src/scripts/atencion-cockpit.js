@@ -217,7 +217,7 @@ class PostVentaDualEngine {
     this.setTraceLog(`
       <div>[14:05:30] Webhook Yape: Abono S/ 154.90 recibido y conciliado.</div>
       <div>[14:05:31] Tasa de Silencio: 100% Satisfacción sin derivación humana al 104.</div>
-      <div style="color: #4ADE80;">[14:05:32] Orquestador M.O.V.I.: Bucle cerrado ➔ Valerio apta para ofertas Fase 1.</div>
+      <div style="color: #4ADE80;">[14:05:32] Orquestador M.O.V.I.: Bucle cerrado ➔ Miguel apta para ofertas Fase 1.</div>
     `);
 
     // Confetti celebration

@@ -54,7 +54,7 @@ B. Cuellos de Botella Reales y Oportunidades de Mejora
 
 C. Situaciones Específicas de Negocio
 
-- **Caso de Uso - Valerio Mendoza (El hito de consumo):** Valerio es una diseñadora que viaja constantemente por trabajo entre Lima, Arequipa y Trujillo. Cuenta con un plan móvil con un tope de 20 GB de datos. El subproceso de comportamiento detecta que, de manera recurrente, Valerio agota sus gigas el día 18 del mes y gasta soles adicionales adquiriendo paquetes de datos individuales para compartir internet (hotspot) a su laptop.
+- **Caso de Uso - Miguel Mendoza (El hito de consumo):** Miguel es una diseñadora que viaja constantemente por trabajo entre Lima, Arequipa y Trujillo. Cuenta con un plan móvil con un tope de 20 GB de datos. El subproceso de comportamiento detecta que, de manera recurrente, Miguel agota sus gigas el día 18 del mes y gasta soles adicionales adquiriendo paquetes de datos individuales para compartir internet (hotspot) a su laptop.
 
 - *El problema real:* Ofertarle por llamada fría al azar un plan masivo no funciona.
 

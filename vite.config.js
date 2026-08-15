@@ -11,7 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        valerio: resolve(__dirname, 'valerio.html'),
+        miguel: resolve(__dirname, 'miguel.html'),
         mimovistar: resolve(__dirname, 'mi-movistar.html'),
         operador: resolve(__dirname, 'operador.html'),
         cliente: resolve(__dirname, 'cliente.html'),

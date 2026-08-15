@@ -50,13 +50,13 @@ Durante estos primeros 30 segundos, el video debe mostrar la consola de control 
 
 #### 🎙️ El Guion Hablado (Speech — 45 segundos)
 
-> *"A la izquierda, tenemos a **Valerio Mendoza**, diseñadora que viaja constantemente a Arequipa y gasta **S/ 179.80 al mes** comprando gigas extras. A la derecha, a **Carlos**, asesor de telemarketing en Atento. En el centro: **M.O.V.I.**
+> *"A la izquierda, tenemos a **Miguel Mendoza**, diseñadora que viaja constantemente a Arequipa y gasta **S/ 179.80 al mes** comprando gigas extras. A la derecha, a **Carlos**, asesor de telemarketing en Atento. En el centro: **M.O.V.I.**
 >
-> Mediante analítica causal (*Uplift CATE*), **M.O.V.I.** identifica a Valerio como clienta persuadible y le envía una propuesta por WhatsApp a través de **Aura**: unificar su fibra y móvil en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos cada mes**.
+> Mediante analítica causal (*Uplift CATE*), **M.O.V.I.** identifica a Miguel como clienta persuadible y le envía una propuesta por WhatsApp a través de **Aura**: unificar su fibra y móvil en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos cada mes**.
 >
-> Cuando Valerio duda sobre cobros futuros, Aura activa un *Warm Hand-off* vía API **TMF683** hacia Carlos. **M.O.V.I.** le susurra al oído el speech de rebate exacto y proyecta un gráfico interactivo de prorrateo en el celular de Valerio. 
+> Cuando Miguel duda sobre cobros futuros, Aura activa un *Warm Hand-off* vía API **TMF683** hacia Carlos. **M.O.V.I.** le susurra al oído el speech de rebate exacto y proyecta un gráfico interactivo de prorrateo en el celular de Miguel. 
 >
-> Carlos no digita nada: la IA autocompleta la orden desde la voz de la llamada. Valerio acepta, Carlos confirma con un solo clic, y la orden **TMF622** viaja en tiempo real al back-office."*
+> Carlos no digita nada: la IA autocompleta la orden desde la voz de la llamada. Miguel acepta, Carlos confirma con un solo clic, y la orden **TMF622** viaja en tiempo real al back-office."*
 
 ---
 
@@ -71,7 +71,7 @@ El video del pitch mostrará la interacción sincronizada y en tiempo real entre
 ├───────────────────────────────────────┼───────────────────────────────────────┤
 │ 🟢 [PING] Orbe de Aura: Alerta Roaming│ ⚪ Ficha Customer 360 en espera       │
 │    "Ahorra S/ 40 con Movistar Total"  │                                       │
-│ ⚪ Valerio pregunta: "¿Y prorrateo?"   │ 🟢 [PONG] Live Whisper: Speech 12 seg │
+│ ⚪ Miguel pregunta: "¿Y prorrateo?"   │ 🟢 [PONG] Live Whisper: Speech 12 seg │
 │ 🟢 [PING] Aura proyecta gráfico didáct│ 🟢 [PONG] Form-Fill Activo desde voz  │
 │ 🟢 [PING] Clic: [Aceptar 1-Touch]     │ 🟢 [PONG] Clic: [Emitir Orden TMF622] │
 └───────────────────────────────────────┴───────────────────────────────────────┘
@@ -82,7 +82,7 @@ El video del pitch mostrará la interacción sincronizada y en tiempo real entre
 3. **Live Whisper & Gráfico de Prorrateo Sincronizado:** 
    * A la derecha, un cuadro flotante azul Movistar le proyecta a Carlos el speech: *"Dile que su primer recibo solo incluirá S/ 15.00 de transición y luego su tarifa plana neta"*.
    * A la izquierda, Aura dibuja un gráfico táctil de 3 barras que disipa el miedo al prorrateo en 5 segundos.
-4. **Form-Fill Activo y Emisión TMF622:** A medida que Carlos y Valerio conversan, los campos del contrato en la consola se iluminan con un borde azul cian y se autocompletan desde el audio. Carlos presiona **[Confirmar Orden Convergente (TMF622)]**, encendiendo el nodo de la Fase 1 en el *Rappi-Track*.
+4. **Form-Fill Activo y Emisión TMF622:** A medida que Carlos y Miguel conversan, los campos del contrato en la consola se iluminan con un borde azul cian y se autocompletan desde el audio. Carlos presiona **[Confirmar Orden Convergente (TMF622)]**, encendiendo el nodo de la Fase 1 en el *Rappi-Track*.
 
 ---
 
@@ -132,13 +132,13 @@ El video del pitch mostrará la sincronización en tiempo real de tres paneles:
 
 #### 🎙️ El Guion Hablado (Speech — 45 segundos)
 
-> *"A fin de mes, **Valerio** ve que su recibo llegó por **S/ 154.90** en lugar de S/ 139.90. Siente el clásico **Bill Shock**.
+> *"A fin de mes, **Miguel** ve que su recibo llegó por **S/ 154.90** en lugar de S/ 139.90. Siente el clásico **Bill Shock**.
 >
 > Antes de que llame furiosa al 104, **Aura** detecta la variación proactivamente. Mediante arquitectura **CSR-RAG con 0% de alucinaciones**, desglosa el prorrateo en un gráfico táctil de 3 barras: S/ 15 de transición y su tarifa plana. 
 >
-> Si Valerio requiere atención humana, el asesor del 104, **Jorge**, recibe el caso con contexto completo (*Warm Hand-off*), reduciendo el TMO en 70%.
+> Si Miguel requiere atención humana, el asesor del 104, **Jorge**, recibe el caso con contexto completo (*Warm Hand-off*), reduciendo el TMO en 70%.
 >
-> Valerio paga con Yape en la app, alcanza la **Tasa de Silencio** perfecta y el orquestador desbloquea el cross-selling seguro, cerrando el ciclo infinito."*
+> Miguel paga con Yape en la app, alcanza la **Tasa de Silencio** perfecta y el orquestador desbloquea el cross-selling seguro, cerrando el ciclo infinito."*
 
 ---
 
@@ -159,12 +159,12 @@ El video del pitch mostrará la contención proactiva y la resolución en segund
 └───────────────────────────────────────┴───────────────────────────────────────┘
 ```
 
-1. **App Mi Movistar & WhatsApp de Valerio (Lado Izquierdo - CX):** 
+1. **App Mi Movistar & WhatsApp de Miguel (Lado Izquierdo - CX):** 
    * Tarjeta proactiva de Aura: `[Variación de S/ 15.00 detectada]`.
    * Gráfico de Divulgación Progresiva (*Progressive Disclosure*) de 3 barras comparativas: `[Plan Anterior Proporcional: S/ 5.00]` + `[Movistar Total: S/ 139.90]` = `S/ 154.90`.
    * Botón directo: `[Pagar con Yape / Plin]`. Al confirmar el pago, Aura celebra con animación de confeti digital.
 2. **Cockpit de Atención 104 de Jorge (Lado Derecho - EX):**
-   * Panel unificado con semáforo NLP en verde y widget de *Warm Hand-off*: `"[Contexto: Valerio Mendoza - Prorrateo explicado y liquidado con Yape]"`.
+   * Panel unificado con semáforo NLP en verde y widget de *Warm Hand-off*: `"[Contexto: Miguel Mendoza - Prorrateo explicado y liquidado con Yape]"`.
    * Métrica de eficiencia: `[Llamadas evitadas al 104: -15% | TMO Reducido: 70%]`.
    * Registro de la **Tasa de Silencio (72h sin reclamos)** que desbloquea automáticamente el flag verde de **Cross-Selling Restrictivo** hacia la Fase 1.
 

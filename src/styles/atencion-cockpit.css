@@ -297,7 +297,7 @@ html, body {
 }
 
 /* ==========================================================================
-   CX INTERACTIVE STAGE (VALERIO)
+   CX INTERACTIVE STAGE (MIGUEL)
    ========================================================================== */
 .cx-interactive-stage {
   flex: 1;
@@ -390,7 +390,7 @@ html, body {
   color: var(--text-muted);
 }
 
-.valerio-emotion-bubble {
+.miguel-emotion-bubble {
   background: #FFFBEB;
   border-left: 3.5px solid #F59E0B;
   border-radius: 10px;

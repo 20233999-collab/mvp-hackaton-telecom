@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PERSPECTIVA DEL CLIENTE (VALERIO MENDOZA) - 100% FULLSCREEN & RESPONSIVE
+   PERSPECTIVA DEL CLIENTE (MIGUEL MENDOZA) - 100% FULLSCREEN & RESPONSIVE
    Directivas: DESIGN.md • Strict Light Tech • Zero Mockups • Fullscreen Native
    ========================================================================== */
 
@@ -437,7 +437,7 @@ html, body {
   transform: scale(0.92);
 }
 
-/* LIVE IN-CALL DIALOGUE & VALERIO THOUGHT BOX */
+/* LIVE IN-CALL DIALOGUE & MIGUEL THOUGHT BOX */
 .live-call-dialogue-box {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
@@ -456,7 +456,7 @@ html, body {
   color: #F1F5F9;
 }
 
-.valerio-thought-bubble {
+.miguel-thought-bubble {
   background: rgba(0, 212, 255, 0.12);
   border-left: 3px solid var(--aura-cyan);
   border-radius: 10px;

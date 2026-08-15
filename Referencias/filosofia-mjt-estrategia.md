@@ -42,7 +42,7 @@ La meta-filosofía de nuestra propuesta establece que:
 *   **La Aplicación en el Proyecto:** 
     *   Implementación del **"Movistar Journey Tracker" (MJT)**, el "Rappi-Track de las Telecomunicaciones". 
     *   Cada vez que el cliente inicia un proceso (ej. un cambio de plan a mitad de mes), el sistema genera un **Key de Seguimiento Único** basado en la API estándar global **TMF622 (Product Ordering)**.
-    *   Este Key es visible para todos los puntos de contacto de la compañía (CRM, pasarela de cobros, asistentes conversacionales, asesor humano). Si Valerio Mendoza tiene una duda sobre su prorrateo, el sistema ya sabe con precisión matemática de dónde proviene el cargo, evitando que el usuario deba repetir su historia o saltar entre pantallas del CRM.
+    *   Este Key es visible para todos los puntos de contacto de la compañía (CRM, pasarela de cobros, asistentes conversacionales, asesor humano). Si Miguel Mendoza tiene una duda sobre su prorrateo, el sistema ya sabe con precisión matemática de dónde proviene el cargo, evitando que el usuario deba repetir su historia o saltar entre pantallas del CRM.
 
 ### Estrategia II: La Confianza Neuro-Simbólica (*Empatía con Exactitud*)
 *   **La Filosofía:** *"La empatía sin rigor matemático es humo; la precisión sin empatía es fría e incomprensible".*

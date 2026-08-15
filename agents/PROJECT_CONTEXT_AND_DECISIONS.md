@@ -37,7 +37,7 @@ El ecosistema conecta tres capas tecnológicas:
 
 ## 👥 2. Roles, Personas y Flujos Mapeados
 
-1. **Valerio Mendoza (Cliente Residencial - CX):**
+1. **Miguel Mendoza (Cliente Residencial - CX):**
    - Residente en Arequipa, cliente de fibra 100 Mbps con gasto extra recurrente de $S/\ 40.00$ en paquetes de datos por saturación de red.
    - En Fase 1 recibe llamada consultiva de Carlos basada en sus datos reales (Zero Spam).
    - En Fase 3 experimenta Bill Shock de $S/\ 154.90$ en su primer recibo y lo resuelve en 45 segundos con el gráfico didáctico de 3 barras de Aura, pagando con Yape.
@@ -52,7 +52,7 @@ El ecosistema conecta tres capas tecnológicas:
 
 4. **Jorge Ramos (Asesor de Soporte Nivel 2 en Atento Perú - EX):**
    - Opera en la terminal 104 bajo presión de TMO (<180 segundos).
-   - El sistema le asigna en standby el caso de Valerio. La explicación automática de Aura CSR-RAG resuelve la duda de prorrateo, ahorrándole 360 segundos (6 minutos) de llamada de reclamo y evitando quejas ante OSIPTEL.
+   - El sistema le asigna en standby el caso de Miguel. La explicación automática de Aura CSR-RAG resuelve la duda de prorrateo, ahorrándole 360 segundos (6 minutos) de llamada de reclamo y evitando quejas ante OSIPTEL.
 
 ---
 

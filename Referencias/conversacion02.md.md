@@ -128,7 +128,7 @@ Para ayudarte a tener una visión precisa de los problemas, la guía maestro ana
 
 Para plasmar de manera práctica la integración de datos, la guía maestra describe en detalle situaciones de negocio de la operación real peruana, usando escenarios específicos:
 
-- **El caso de consumo de Valerio Mendoza**25**:** El sistema detecta que gasta S/ 179.80 al mes comprando datos adicionales porque agota sus gigas el día 182526, lo cual gatilla de inmediato una oferta dinámica de **Movistar Total** con ahorro matemático directo2627.
+- **El caso de consumo de Miguel Mendoza**25**:** El sistema detecta que gasta S/ 179.80 al mes comprando datos adicionales porque agota sus gigas el día 182526, lo cual gatilla de inmediato una oferta dinámica de **Movistar Total** con ahorro matemático directo2627.
 
 - **La cobranza preventiva de Juan Carlos Quispe**28**:** Diseñador independiente con 42 días de mora (Tramo 2) y deuda de S/ 298.002829. En vez de un corte drástico, la IA le ofrece de forma omnicanal un fraccionamiento en 3 cuotas sin intereses de S/ 99.33 y le reduce la velocidad a "Modo Mantenimiento" para que no deje de trabajar y evite ser reportado a INFOCORP28.
 
@@ -232,29 +232,29 @@ Thoughts
 
 ¡Me parece excelente! Para ganar esos 3 minutos frente al jurado, necesitas que el proceso se sienta tan real que casi puedan escuchar las llamadas y ver las pantallas de los empleados.
 
-Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaje completo de extremo a extremo a través de la historia de dos clientes reales de Movistar Perú: **Valerio Mendoza** y **Juan Carlos Quispe**, junto con los empleados que los atienden.
+Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaje completo de extremo a extremo a través de la historia de dos clientes reales de Movistar Perú: **Miguel Mendoza** y **Juan Carlos Quispe**, junto con los empleados que los atienden.
 
 ---
 
 ### Acto 1: La Venta Inteligente y Proactiva (Reto 2 - CVM)
 
-- **La cliente:Valerio Mendoza**. Ella tiene contratado un plan móvil de S/ 39.90 (20 GB) y fibra hogar de S/ 79.90 (S/ 119.80 en total)1.
+- **La cliente:Miguel Mendoza**. Ella tiene contratado un plan móvil de S/ 39.90 (20 GB) y fibra hogar de S/ 79.90 (S/ 119.80 en total)1.
 
-- **El problema real "en la cancha":** Valerio viaja constantemente a Arequipa y Trujillo por su trabajo de diseñadora1. Constantemente agota sus 20 GB móviles el día 18 del mes y se ve obligada a comprar, con frustración, 4 paquetes "Giga Pass" adicionales (S/ 60.00 extras al mes)12. Su gasto real promedio mensual se dispara a **S/ 179.80**3.
+- **El problema real "en la cancha":** Miguel viaja constantemente a Arequipa y Trujillo por su trabajo de diseñadora1. Constantemente agota sus 20 GB móviles el día 18 del mes y se ve obligada a comprar, con frustración, 4 paquetes "Giga Pass" adicionales (S/ 60.00 extras al mes)12. Su gasto real promedio mensual se dispara a **S/ 179.80**3.
 
-- **El proceso tradicional (Silos):** Movistar le enviaría un SMS genérico o la llamaría un asesor de ventas de manera fría diciendo: *"Hola, tengo un plan más caro de S/ 150 para ofrecerte"*. Valerio, ocupada en su viaje, colgaría de inmediato.
+- **El proceso tradicional (Silos):** Movistar le enviaría un SMS genérico o la llamaría un asesor de ventas de manera fría diciendo: *"Hola, tengo un plan más caro de S/ 150 para ofrecerte"*. Miguel, ocupada en su viaje, colgaría de inmediato.
 
 - **El viaje bajo el Orquestador:**
 
-- El Orquestador analiza la telemetría de consumo de red de Valerio (ingesta sus patrones de recarga extras y comportamiento)4.
+- El Orquestador analiza la telemetría de consumo de red de Miguel (ingesta sus patrones de recarga extras y comportamiento)4.
 
-- El sistema calcula que Valerio califica perfectamente para un plan **Movistar Total** (que unifica su fibra y su móvil en un solo recibo, dándole gigas ilimitados y ahorrándole dinero)56.
+- El sistema calcula que Miguel califica perfectamente para un plan **Movistar Total** (que unifica su fibra y su móvil en un solo recibo, dándole gigas ilimitados y ahorrándole dinero)56.
 
-- **Carlos** (un asesor de telemarketing de 22 años de Atento Perú)78 recibe la llamada de Valerio asignada por su marcador automático8. En su pantalla única, no tiene un PDF estático; el Orquestador le muestra exactamente: *"Ofrece Movistar Total. Motivo: Se queda sin gigas en el día 18. Beneficio: Gigas ilimitados, mantiene su fibra y pasará a gastar S/ 139.90 en vez de S/ 179.80 (ahorro real de S/ 40.00 al mes)"*1.
+- **Carlos** (un asesor de telemarketing de 22 años de Atento Perú)78 recibe la llamada de Miguel asignada por su marcador automático8. En su pantalla única, no tiene un PDF estático; el Orquestador le muestra exactamente: *"Ofrece Movistar Total. Motivo: Se queda sin gigas en el día 18. Beneficio: Gigas ilimitados, mantiene su fibra y pasará a gastar S/ 139.90 en vez de S/ 179.80 (ahorro real de S/ 40.00 al mes)"*1.
 
-- Carlos lee un pitch sugerido de solo 12 segundos diseñado por el motor de lenguaje: *"Hola Valerio, gracias por tu fidelidad. Veo que viajas mucho y compras gigas extras. ¿Qué te parece si unificamos tu fibra y tu móvil en Movistar Total? Tendrás gigas ilimitados para tus viajes y ahorrarás S/ 40.00 exactos cada mes"*59.
+- Carlos lee un pitch sugerido de solo 12 segundos diseñado por el motor de lenguaje: *"Hola Miguel, gracias por tu fidelidad. Veo que viajas mucho y compras gigas extras. ¿Qué te parece si unificamos tu fibra y tu móvil en Movistar Total? Tendrás gigas ilimitados para tus viajes y ahorrarás S/ 40.00 exactos cada mes"*59.
 
-- Valerio dice: *"¡Me interesa!"* y acepta el cambio en vivo5.
+- Miguel dice: *"¡Me interesa!"* y acepta el cambio en vivo5.
 
 ---
 
@@ -264,9 +264,9 @@ Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaj
 
 - **El problema real "en la cancha":**
 
-- En el Movistar de hoy, tras cerrar la venta, Carlos tiene que registrar la transacción en el CRM Salesforce (comercial) y luego transcribir manualmente la orden técnica en el sistema de red Amdocs (OSS) para que se active la orden811. Si digita mal un número por la prisa, la orden se cae y Valerio nunca recibe su plan8.
+- En el Movistar de hoy, tras cerrar la venta, Carlos tiene que registrar la transacción en el CRM Salesforce (comercial) y luego transcribir manualmente la orden técnica en el sistema de red Amdocs (OSS) para que se active la orden811. Si digita mal un número por la prisa, la orden se cae y Miguel nunca recibe su plan8.
 
-- Paralelamente, como Valerio cambió de plan a mitad de mes, el sistema contable (SGA) tiene que facturar un **prorrateo** (cobrar los días proporcionales del plan viejo y el plan nuevo)1213.
+- Paralelamente, como Miguel cambió de plan a mitad de mes, el sistema contable (SGA) tiene que facturar un **prorrateo** (cobrar los días proporcionales del plan viejo y el plan nuevo)1213.
 
 - Por otro lado, tenemos a **Juan Carlos Quispe**, cliente de fibra con 42 días de mora (deuda de S/ 298.00) que necesita el internet para trabajar como diseñador independiente y tiene su línea suspendida parcialmente1415. Tras recibir una propuesta de fraccionamiento empática por WhatsApp1617, realiza el pago de su primera cuota de S/ 99.33 a través de su App BCP10.
 
@@ -276,7 +276,7 @@ Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaj
 
 - El Orquestador automatiza el flujo técnico. Al recibir el "Sí" en el CRM, el sistema conecta las APIs abiertas (TMF622 de órdenes) y actualiza el aprovisionamiento de red en el OSS de manera transparente20. Carlos no duplica registros; el sistema lo hace por él8.
 
-- El módulo de facturación de SON-IA procesa el cálculo exacto (P×Q) del prorrateo de Valerio para evitar cobros indebidos en su próximo recibo1319.
+- El módulo de facturación de SON-IA procesa el cálculo exacto (P×Q) del prorrateo de Miguel para evitar cobros indebidos en su próximo recibo1319.
 
 - En el caso de Juan Carlos Quispe, en lugar de esperar a que la analista contable Ana descargue manualmente el Excel del banco al día siguiente10, el Orquestador está conectado por APIs en tiempo real con el portal de recaudación bancaria (como BCP o BBVA)1021.
 
@@ -286,31 +286,31 @@ Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaj
 
 ### Acto 3: La Llegada del Recibo y la Explicación del Bill Shock (Reto 1 - Post-Venta)
 
-- **La cliente:Valerio Mendoza**.
+- **La cliente:Miguel Mendoza**.
 
-- **El problema real "en la cancha":** A fin de mes, Valerio abre su recibo digital y ve que el monto no es el plan plano de siempre, sino que vino con cargos diferentes debido a la porción de días en que se hizo el cambio a mitad de mes (prorrateo)1213. Se asusta y siente el clásico descontento por variación (*Bill Shock*)2223.
+- **El problema real "en la cancha":** A fin de mes, Miguel abre su recibo digital y ve que el monto no es el plan plano de siempre, sino que vino con cargos diferentes debido a la porción de días en que se hizo el cambio a mitad de mes (prorrateo)1213. Se asusta y siente el clásico descontento por variación (*Bill Shock*)2223.
 
-- **El proceso tradicional (Silos):** Valerio llama molesta al 10424. Le contesta **Jorge** (un asesor telefónico presionado para colgar en menos de 180 segundos por TMO)13. Jorge, apurado por su métrica, intenta explicarle el prorrateo de manera confusa y técnica13. Valerio no entiende, se frustra, siente que le están cobrando de más y abre un reclamo formal ante OSIPTEL, o inicia su portabilidad a Claro2425.
+- **El proceso tradicional (Silos):** Miguel llama molesta al 10424. Le contesta **Jorge** (un asesor telefónico presionado para colgar en menos de 180 segundos por TMO)13. Jorge, apurado por su métrica, intenta explicarle el prorrateo de manera confusa y técnica13. Miguel no entiende, se frustra, siente que le están cobrando de más y abre un reclamo formal ante OSIPTEL, o inicia su portabilidad a Claro2425.
 
 - **El viaje bajo el Orquestador:**
 
-- Valerio, en vez de llamar al 104, abre su App "Mi Movistar"2627.
+- Miguel, en vez de llamar al 104, abre su App "Mi Movistar"2627.
 
-- El Orquestador (que sabe que Valerio acaba de migrar de plan y que su recibo varió más de un 20%) activa proactivamente al asistente inteligente **BrainyBill**20.
+- El Orquestador (que sabe que Miguel acaba de migrar de plan y que su recibo varió más de un 20%) activa proactivamente al asistente inteligente **BrainyBill**20.
 
-- Valerio ve una tarjeta que dice: *"Hola Valerio, notamos que tu recibo de este mes tiene una variación debido a tu exitosa migración a Movistar Total. Aquí te lo explicamos de forma súper sencilla"*2930.
+- Miguel ve una tarjeta que dice: *"Hola Miguel, notamos que tu recibo de este mes tiene una variación debido a tu exitosa migración a Movistar Total. Aquí te lo explicamos de forma súper sencilla"*2930.
 
-- Valerio le pregunta al chat: *"¿Por qué me vino más de lo acordado?"*29. El asistente, utilizando una arquitectura CSR-RAG conectada a su base de facturación con 0% alucinaciones3132, le responde en lenguaje natural y visual: *"Tranquila, Valerio. Tu tarifa plana es de S/ 139.90. Este mes ves una diferencia de S/ 15.00 porque incluye: S/ 5.00 proporcionales por los 3 días que usaste tu plan anterior y un descuento promocional ya aplicado. Tu próximo recibo ya vendrá neto por S/ 139.90"*3032.
+- Miguel le pregunta al chat: *"¿Por qué me vino más de lo acordado?"*29. El asistente, utilizando una arquitectura CSR-RAG conectada a su base de facturación con 0% alucinaciones3132, le responde en lenguaje natural y visual: *"Tranquila, Miguel. Tu tarifa plana es de S/ 139.90. Este mes ves una diferencia de S/ 15.00 porque incluye: S/ 5.00 proporcionales por los 3 días que usaste tu plan anterior y un descuento promocional ya aplicado. Tu próximo recibo ya vendrá neto por S/ 139.90"*3032.
 
-- Valerio respira aliviada, entiende perfectamente, realiza su pago con un botón directo dentro del mismo chat y cierra la aplicación satisfecha2932.
+- Miguel respira aliviada, entiende perfectamente, realiza su pago con un botón directo dentro del mismo chat y cierra la aplicación satisfecha2932.
 
 ---
 
 ### Acto 4: El Bucle de Retroalimentación y Cross-Selling Restrictivo (Cierre del Ciclo)
 
-- **El proceso real "en la cancha":** Al cerrar Valerio la interacción con conformidad (medido por la tasa de silencio post-atención de la IA)32, el Orquestador registra este hito positivo en su perfil de CRM20.
+- **El proceso real "en la cancha":** Al cerrar Miguel la interacción con conformidad (medido por la tasa de silencio post-atención de la IA)32, el Orquestador registra este hito positivo en su perfil de CRM20.
 
-- **El resultado:** Como Valerio está contenta con su servicio y confía en la transparencia de la empresa, el sistema otorga luz verde al motor de ventas (Reto 2) para considerarla apta para futuras ofertas personalizadas (por ejemplo, el financiamiento de un nuevo equipo móvil)2029. El ciclo de vida vuelve a iniciar de manera orgánica y sin saturar de spam al cliente1933.
+- **El resultado:** Como Miguel está contenta con su servicio y confía en la transparencia de la empresa, el sistema otorga luz verde al motor de ventas (Reto 2) para considerarla apta para futuras ofertas personalizadas (por ejemplo, el financiamiento de un nuevo equipo móvil)2029. El ciclo de vida vuelve a iniciar de manera orgánica y sin saturar de spam al cliente1933.
 
 ---
 
@@ -324,7 +324,7 @@ Olvidémonos de la teoría y bajemos **"a la cancha"**. Vamos a recorrer el viaj
 
 🧩 Podríamos estructurar una pequeña diapositiva para el pitch llamada **"La Pantalla del Asesor vs. El Visor del Cliente"**, mostrando cómo el orquestador unifica todo bajo el capó para hacerle la vida fácil a ambos.
 
-**来源：** [1] Perfil_Consumo_Valerio_Mendoza.pdf [2] Casos de Ejemplos y prompts utilizados.pdf [3] Perfil_Consumo_Valerio_Mendoza.pdf [4] Casos de Uso en Telco en Perú - Deep Research.pdf [5] Casos de Ejemplos y prompts utilizados.pdf [6] Grabación - 1° Sesión Bootcamp.mp3 [7] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [8] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [9] Propulsión de Convergencia Residencial y Móvil: Diseño e Implementación de un Motor de Siguiente Mejor Oferta (NBO) para Movistar Total [10] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [11] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [12] Casos de Ejemplos y prompts utilizados.pdf [13] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [14] CRM_Cliente_Juan_Quispe.pdf [15] CRM_Cliente_Juan_Quispe.pdf [16] Casos de Ejemplos y prompts utilizados.pdf [17] Casos de Ejemplos y prompts utilizados.pdf [19] guia_maestra_procesos_movistar.md [20] guia_maestra_procesos_movistar.md [21] Casos de Uso en Telco en Perú - Deep Research.pdf [22] Casos de Uso en Telco en Perú - Deep Research.pdf [23] Diseño de Arquitectura CSR-RAG y Estrategia de CX Conversacional para la Mitigación del Bill Shock en el Sector de Telecomunicaciones [24] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [25] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [26] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [27] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [29] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [30] Casos de Ejemplos y prompts utilizados.pdf [31] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [32] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [33] conversaciòn 1.md
+**来源：** [1] Perfil_Consumo_Miguel_Mendoza.pdf [2] Casos de Ejemplos y prompts utilizados.pdf [3] Perfil_Consumo_Miguel_Mendoza.pdf [4] Casos de Uso en Telco en Perú - Deep Research.pdf [5] Casos de Ejemplos y prompts utilizados.pdf [6] Grabación - 1° Sesión Bootcamp.mp3 [7] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [8] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [9] Propulsión de Convergencia Residencial y Móvil: Diseño e Implementación de un Motor de Siguiente Mejor Oferta (NBO) para Movistar Total [10] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [11] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [12] Casos de Ejemplos y prompts utilizados.pdf [13] Diagnóstico Operativo de Canales y Experiencia del Empleado en Movistar Perú: Bases Estratégicas para un Orquestador de Procesos con IA [14] CRM_Cliente_Juan_Quispe.pdf [15] CRM_Cliente_Juan_Quispe.pdf [16] Casos de Ejemplos y prompts utilizados.pdf [17] Casos de Ejemplos y prompts utilizados.pdf [19] guia_maestra_procesos_movistar.md [20] guia_maestra_procesos_movistar.md [21] Casos de Uso en Telco en Perú - Deep Research.pdf [22] Casos de Uso en Telco en Perú - Deep Research.pdf [23] Diseño de Arquitectura CSR-RAG y Estrategia de CX Conversacional para la Mitigación del Bill Shock en el Sector de Telecomunicaciones [24] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [25] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [26] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [27] Reclamos Movistar Perú: cómo reclamar móvil, hogar y Trío (OSIPTEL) [29] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [30] Casos de Ejemplos y prompts utilizados.pdf [31] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [32] 01. Desafío atención inteligente y explicación de recibos_VF.pdf [33] conversaciòn 1.md
 
 ### 🧑 **用户**
 
@@ -358,7 +358,7 @@ Bajo el nuevo **Ecosistema con IA**, el flujo preventa se automatiza de la sigui
 
 - **No Molestar (Sleeping Dogs):** Clientes con baja satisfacción o riesgo de fuga (*churn*)6. Si los llamas para venderles algo, se acordarán de sus malas experiencias y pedirán la portabilidad a Claro o Entel36. El sistema los bloquea inmediatamente de cualquier base comercial6.
 
-- **Paso C: Determinación del NBO (Cálculo Matemático):** Si el cliente es "Persuadible" (como el caso de Valerio Mendoza, quien viaja constantemente y gasta S/ 179.80 comprando paquetes de gigas extra sobre su plan básico), el motor de recomendación calcula la mejor oferta de valor6. En este caso, identifica que lo ideal es migrarla a **Movistar Total**, unificando su fibra y móvil para darle gigas ilimitados y reducir su tarifa plana a S/ 139.90, garantizándole un ahorro real matemático89.
+- **Paso C: Determinación del NBO (Cálculo Matemático):** Si el cliente es "Persuadible" (como el caso de Miguel Mendoza, quien viaja constantemente y gasta S/ 179.80 comprando paquetes de gigas extra sobre su plan básico), el motor de recomendación calcula la mejor oferta de valor6. En este caso, identifica que lo ideal es migrarla a **Movistar Total**, unificando su fibra y móvil para darle gigas ilimitados y reducir su tarifa plana a S/ 139.90, garantizándole un ahorro real matemático89.
 
 ---
 
@@ -372,17 +372,17 @@ Tradicionalmente, un asesor de Atento Perú como **Carlos** (22 años, sueldo b�
 
 - **Herramienta unificada de interacción:** El Orquestador consolida los sistemas CRM y OSS en una **sola interfaz simplificada para el asesor**1314.
 
-- **Pantalla de Control del Asesor:** En cuanto ingresa la llamada de Valerio, la pantalla del asesor se ilumina con tres datos clave diseñados por IA1315:
+- **Pantalla de Control del Asesor:** En cuanto ingresa la llamada de Miguel, la pantalla del asesor se ilumina con tres datos clave diseñados por IA1315:
 
-- *Perfil del Cliente y su Dolor:* "Valerio Mendoza. Diseñadora. Gasta S/ 179.80 al mes comprando gigas adicionales el día 18"79.
+- *Perfil del Cliente y su Dolor:* "Miguel Mendoza. Diseñadora. Gasta S/ 179.80 al mes comprando gigas adicionales el día 18"79.
 
 - *Oferta NBO Recomendada:* "Migración a Movistar Total (Ahorro de S/ 40.00 al mes con gigas ilimitados)"89.
 
 - *Explicación SHAP (El Porqué):* El sistema traduce las variables complejas en argumentos directos: "Recomendado por consumo excesivo de datos móviles en viajes de trabajo compartiendo internet a laptop"716.
 
-- **Speech Generativo en Tiempo Real:** La IA Generativa le redacta a Carlos un pitch de ventas personalizado de **máximo 12 segundos** (ideal para llamadas rápidas), directo y adaptado al español local: *"Hola Valerio, gracias por tu antigüedad con nosotros. Veo que viajas mucho y terminas gastando de más en datos. ¿Qué te parece si unimos tu fibra y tu móvil en Movistar Total? Tendrás gigas ilimitados y ahorrarás S/ 40.00 exactos en tu tarifa mensual"*16.
+- **Speech Generativo en Tiempo Real:** La IA Generativa le redacta a Carlos un pitch de ventas personalizado de **máximo 12 segundos** (ideal para llamadas rápidas), directo y adaptado al español local: *"Hola Miguel, gracias por tu antigüedad con nosotros. Veo que viajas mucho y terminas gastando de más en datos. ¿Qué te parece si unimos tu fibra y tu móvil en Movistar Total? Tendrás gigas ilimitados y ahorrarás S/ 40.00 exactos en tu tarifa mensual"*16.
 
-- **Módulo de Manejo de Objeciones (Rebate Speech):** Si Valerio dice *"No sé, he escuchado que los prorrateos el primer mes vienen caros"*, el sistema de escucha activa detecta la objeción en tiempo real y despliega un speech de rebate instantáneo: *"No te preocupes Valerio, con nuestro sistema tu primer recibo vendrá exactamente con el cálculo prorrateado del mes y el descuento de combo de Movistar Total ya aplicado como línea negativa desde el primer día"*5.
+- **Módulo de Manejo de Objeciones (Rebate Speech):** Si Miguel dice *"No sé, he escuchado que los prorrateos el primer mes vienen caros"*, el sistema de escucha activa detecta la objeción en tiempo real y despliega un speech de rebate instantáneo: *"No te preocupes Miguel, con nuestro sistema tu primer recibo vendrá exactamente con el cálculo prorrateado del mes y el descuento de combo de Movistar Total ya aplicado como línea negativa desde el primer día"*5.
 
 ---
 
@@ -390,9 +390,9 @@ Tradicionalmente, un asesor de Atento Perú como **Carlos** (22 años, sueldo b�
 
 Para el cliente, la experiencia es fluida y transparente, sin importar el canal por el que interactúe19.
 
-- **Recursos del Cliente:** Si el motor decide que Valerio no prefiere llamadas telefónicas, activa canales digitales como la **App Mi Movistar**, notificaciones push o la asistente virtual **Bot Lucía** en WhatsApp2.
+- **Recursos del Cliente:** Si el motor decide que Miguel no prefiere llamadas telefónicas, activa canales digitales como la **App Mi Movistar**, notificaciones push o la asistente virtual **Bot Lucía** en WhatsApp2.
 
-- **La experiencia digital:** Valerio recibe una notificación push en su celular que dice: *"Valerio, tu consumo de gigas creció un 40% este mes. Mira cómo puedes ahorrar dinero unificando tus servicios en un combo"*2223. Al abrir la aplicación, en vez de un banner publicitario frío, ve una gráfica interactiva de su consumo mensual y un botón directo que dice **"Quiero adquirirlo con Movistar Total"**24.
+- **La experiencia digital:** Miguel recibe una notificación push en su celular que dice: *"Miguel, tu consumo de gigas creció un 40% este mes. Mira cómo puedes ahorrar dinero unificando tus servicios en un combo"*2223. Al abrir la aplicación, en vez de un banner publicitario frío, ve una gráfica interactiva de su consumo mensual y un botón directo que dice **"Quiero adquirirlo con Movistar Total"**24.
 
 - **La contratación segura:** El flujo le permite aceptar términos y condiciones, verificar los detalles de su cobertura en distritos como Miraflores o San Isidro y firmar su nuevo contrato de manera digital, autorizando el **débito automático** para evitar suspensiones24.
 
@@ -462,7 +462,7 @@ El documento desglosa minuciosamente los siguientes frentes clave:
 
 - *Seguimiento del Funnel E2E:* Registro automatizado de la trazabilidad comercial en plataformas core como **DITO** (ventas) y **Visor** (postventa/cross-selling)1.
 
-- **El Journey E2E de Tres Frentes ("En la Cancha"):** Un mapa secuencial estructurado paso a paso que compara simultáneamente qué experimenta **el cliente (Valerio Mendoza)**, qué hace **el asesor comercial (Carlos)** en su interfaz y qué procesa **la corporación / el orquestador** por detrás en cada fase de la preventa, el contacto, la llamada, la negociación con discursos de rebate automatizados para objeciones, y el cierre digital seguro5.
+- **El Journey E2E de Tres Frentes ("En la Cancha"):** Un mapa secuencial estructurado paso a paso que compara simultáneamente qué experimenta **el cliente (Miguel Mendoza)**, qué hace **el asesor comercial (Carlos)** en su interfaz y qué procesa **la corporación / el orquestador** por detrás en cada fase de la preventa, el contacto, la llamada, la negociación con discursos de rebate automatizados para objeciones, y el cierre digital seguro5.
 
 - **Cuellos de Botella Reales:** Identificación de las fricciones actuales, como los **silos de información** que obligan al vendedor a buscar en múltiples pantallas12, el **spam de ofertas irrelevantes** por campañas masivas (*batch campaigns*) con baja conversión (de entre 5% y 8%)910, y la **falta de trazabilidad** en el discurso del asesor11.
 
@@ -548,7 +548,7 @@ La guía desglosa detalladamente los siguientes pilares de experiencia del clien
 
 - *Derivación Inteligente (Hand-off con contexto) y Bucle de Retroalimentación:* Transferencia automática de todo el historial de chat al asesor del call center si el cliente requiere asistencia humana, y registro de satisfacción (tasa de silencio) para activar el *cross-selling restrictivo* del Reto 21.
 
-- **El Journey E2E de Valerio Mendoza en la Cancha:** Describe el paso a paso sincronizado del viaje digital de Valerio (cliente), Jorge (asesor del call center presionado por el TMO de 180 segundos) y el Orquestador corporativo durante una explicación interactiva de prorrateo por su migración a Movistar Total1.
+- **El Journey E2E de Miguel Mendoza en la Cancha:** Describe el paso a paso sincronizado del viaje digital de Miguel (cliente), Jorge (asesor del call center presionado por el TMO de 180 segundos) y el Orquestador corporativo durante una explicación interactiva de prorrateo por su migración a Movistar Total1.
 
 - **Cuellos de Botella Reales:** El análisis de fricciones críticas como la pasividad de los PDFs estáticos actuales y el estrés de los asesores humanos tratando de calcular prorrateos manualmente en llamadas cronometradas1.
 
@@ -620,11 +620,11 @@ El cliente nunca vuelve a recibir spam o llamadas frías. En su lugar, interact�
 
 - **Cómo interactúa el cliente (La Maqueta):**
 
-- **Paso 1 (Proactividad):** El asistente detecta por telemetría que Valerio consume gigas adicionales constantemente8. Le envía un WhatsApp amigable: *"Hola Valerio, veo que te estás quedando sin gigas a mitad de mes al viajar a Arequipa. Tengo un beneficio para ti: unificando tu fibra y tu móvil en Movistar Total, tendrás gigas ilimitados y ahorrarás S/ 40.00 al mes"*.
+- **Paso 1 (Proactividad):** El asistente detecta por telemetría que Miguel consume gigas adicionales constantemente8. Le envía un WhatsApp amigable: *"Hola Miguel, veo que te estás quedando sin gigas a mitad de mes al viajar a Arequipa. Tengo un beneficio para ti: unificando tu fibra y tu móvil en Movistar Total, tendrás gigas ilimitados y ahorrarás S/ 40.00 al mes"*.
 
-- **Paso 2 (Decisión asistida):** Valerio pregunta: *"¿Pero cuánto pagaré exactamente el primer mes con el prorrateo?"*. El asistente le responde con un cuadro dinámico y simplificado calculando la tarifa exacta de su transición, ganando su confianza.
+- **Paso 2 (Decisión asistida):** Miguel pregunta: *"¿Pero cuánto pagaré exactamente el primer mes con el prorrateo?"*. El asistente le responde con un cuadro dinámico y simplificado calculando la tarifa exacta de su transición, ganando su confianza.
 
-- **Paso 3 (Cierre seguro):** Valerio acepta con un solo clic. El asistente pre-completa el contrato y lo procesa internamente. **La intervención humana del asesor comercial es del 0% en flujos estándar**, reservando a los humanos solo para casos de negociación compleja o excepciones.
+- **Paso 3 (Cierre seguro):** Miguel acepta con un solo clic. El asistente pre-completa el contrato y lo procesa internamente. **La intervención humana del asesor comercial es del 0% en flujos estándar**, reservando a los humanos solo para casos de negociación compleja o excepciones.
 
 ---
 
@@ -646,15 +646,15 @@ Cuando el cliente requiere hablar con un humano o la venta se asigna al canal te
 
 - **Ficha Inteligente Única del Cliente:** En lugar de abrir tres pantallas (Salesforce CRM, Amdocs Billing y sistemas de red OSS)1617, Carlos ve una **pantalla consolidada** que muestra:
 
-- El perfil de Valerio con su consumo unificado8.
+- El perfil de Miguel con su consumo unificado8.
 
 - El historial de chats de WhatsApp con el Concierge digital, correos electrónicos y su actividad reciente en la App (unificado bajo el estándar **TMF683 de Gestión de Interacciones**)4.
 
 - **Asistente en Tiempo Real (Copiloto de Voz - Streaming Inference):** El sistema "escucha" la llamada activa del asesor mediante tecnología de transcripción continua de baja latencia (<300ms)1819.
 
-- **Manejo de Objeciones en Vivo:** Si Valerio dice en la llamada *"Me da miedo que la fibra falle en mi zona"*, el copiloto detecta el dolor y despliega un **"Whisper Prompt" (sugerencia en pantalla)**: *"Carlos, coméntale a Valerio que en Miraflores la fibra tiene un 99.9% de estabilidad y que ya validamos la cobertura técnica de su domicilio"*2021.
+- **Manejo de Objeciones en Vivo:** Si Miguel dice en la llamada *"Me da miedo que la fibra falle en mi zona"*, el copiloto detecta el dolor y despliega un **"Whisper Prompt" (sugerencia en pantalla)**: *"Carlos, coméntale a Miguel que en Miraflores la fibra tiene un 99.9% de estabilidad y que ya validamos la cobertura técnica de su domicilio"*2021.
 
-- **Automatización y Form-Fill (Adiós a la digitación repetitiva):** Mientras conversa, el copiloto recopila los datos que Valerio menciona (ej. *"Sí, quiero el plan de S/ 139.90 y que me lo carguen a mi tarjeta BCP"*). El copiloto autocompleta los campos del CRM de manera inteligente22. Al terminar la llamada, Carlos solo presiona un botón para confirmar, y el sistema inyecta la orden directamente mediante la API **TMF622 (Product Ordering)**421.
+- **Automatización y Form-Fill (Adiós a la digitación repetitiva):** Mientras conversa, el copiloto recopila los datos que Miguel menciona (ej. *"Sí, quiero el plan de S/ 139.90 y que me lo carguen a mi tarjeta BCP"*). El copiloto autocompleta los campos del CRM de manera inteligente22. Al terminar la llamada, Carlos solo presiona un botón para confirmar, y el sistema inyecta la orden directamente mediante la API **TMF622 (Product Ordering)**421.
 
 ---
 
@@ -708,7 +708,7 @@ La propuesta de maqueta se centra en cómo la Inteligencia Artificial unifica lo
 
 - **¿Qué es?** Un asistente de IA 100% personalizado asignado a cada cliente en sus canales preferidos (WhatsApp, App, Web) que actúa como su "amigo dentro de la empresa".
 
-- **¿Cómo soluciona?** Identifica patrones de consumo mediante telemetría (ej. Valerio Mendoza gastando S/ 179.80 al mes por comprar gigas adicionales) y le propone proactivamente migrar a **Movistar Total** para ahorrar dinero (S/ 139.90). Si el cliente duda por temor a cobros adicionales, el asistente le calcula y explica de forma visual su **prorrateo de transición**, cerrando la venta con un solo clic de forma autónoma.
+- **¿Cómo soluciona?** Identifica patrones de consumo mediante telemetría (ej. Miguel Mendoza gastando S/ 179.80 al mes por comprar gigas adicionales) y le propone proactivamente migrar a **Movistar Total** para ahorrar dinero (S/ 139.90). Si el cliente duda por temor a cobros adicionales, el asistente le calcula y explica de forma visual su **prorrateo de transición**, cerrando la venta con un solo clic de forma autónoma.
 
 - **Frente Asesor: "Movistar Copilot"**
 
@@ -772,9 +772,9 @@ A continuación, analizo tu propuesta para la Fase 2, le añado mejoras clave pa
 
 ### 🔗 1. La Conexión del Proceso: Del "Rappi-Track" de Fase 1 a la Fase 3
 
-Para que el jurado entienda la continuidad, expliquemos cómo viaja el "pedido" (la venta de Valerio Mendoza en Fase 1) a través del ecosistema centralizado:
+Para que el jurado entienda la continuidad, expliquemos cómo viaja el "pedido" (la venta de Miguel Mendoza en Fase 1) a través del ecosistema centralizado:
 
-- **Entrada desde Fase 1 (Trigger):** Cuando Valerio acepta el plan *Movistar Total* en Fase 1, el sistema genera de forma automática un **Key de Seguimiento Único (ID de Orden TMF622)** 108.
+- **Entrada desde Fase 1 (Trigger):** Cuando Miguel acepta el plan *Movistar Total* en Fase 1, el sistema genera de forma automática un **Key de Seguimiento Único (ID de Orden TMF622)** 108.
 
 - **Recepción en Fase 2:** La orden no se queda en el limbo de ventas. Aparece instantáneamente en la **Estación de Trabajo Virtual de Ana** (Analista contable de back-office) con el estado: `[Fase 1: Completada] ➡️ [Fase 2: Pendiente de Auditoría Tarifaria]`.
 
@@ -802,13 +802,13 @@ Para cumplir con la rúbrica del Reto 3, que exige auditar que lo contratado sea
 
 - **¿Cómo funciona?** El agente tiene permisos (RBAC) para consultar de forma autónoma dos bases de datos tradicionalmente separadas (silos BSS y OSS) 108:
 
-- **BSS (Contrato):** Lee el documento digitalizado en PDF o el registro del CRM que dice que Valerio Mendoza contrató Movistar Total por S/ 139.90 108.
+- **BSS (Contrato):** Lee el documento digitalizado en PDF o el registro del CRM que dice que Miguel Mendoza contrató Movistar Total por S/ 139.90 108.
 
 - **OSS (Red):** Consulta el sistema de red (Amdocs/STC) para verificar qué servicios tiene físicamente activados en su casa y su celular 108.
 
 - **La Auditoría** P×Q **(Precio por Cantidad):** El agente calcula matemáticamente si la tarifa pactada coincide con los servicios de red 108.
 
-- **El Reporte Detallado (HITL):** Si hay una discrepancia (ej. a Valerio se le activó un paquete premium de TV por error que elevaría su recibo a S/ 159.90), el agente **frena la emisión del recibo** y le envía una tarjeta de alerta a Ana en su estación de trabajo: *"Alerta de desvío de S/ 20.00 detectado en la orden de Valerio Mendoza. El sistema OSS tiene activo el canal HBO Premium sin registro en el contrato del CRM. Sugiero dar de baja el canal de red de forma automática antes de emitir la factura. ¿Proceder?"*. Ana aprueba con un botón. ¡Evitamos un reclamo antes de que ocurra!
+- **El Reporte Detallado (HITL):** Si hay una discrepancia (ej. a Miguel se le activó un paquete premium de TV por error que elevaría su recibo a S/ 159.90), el agente **frena la emisión del recibo** y le envía una tarjeta de alerta a Ana en su estación de trabajo: *"Alerta de desvío de S/ 20.00 detectado en la orden de Miguel Mendoza. El sistema OSS tiene activo el canal HBO Premium sin registro en el contrato del CRM. Sugiero dar de baja el canal de red de forma automática antes de emitir la factura. ¿Proceder?"*. Ana aprueba con un botón. ¡Evitamos un reclamo antes de que ocurra!
 
 ---
 
@@ -906,7 +906,7 @@ El manual se enfoca en resolver el **Reto 1 (Atención Inteligente / Mitigación
 
 - **¿Qué hace?** Es el rostro y alma de la atención. Adapta su diseño visual y su microcopiado al perfil del cliente.
 
-- **Interfaz Emocional Dinámica (Sentiment-Driven UI):** Aura lee la telemetría de red y el comportamiento del cliente. Si detecta un recibo con una variación de costo importante (como el prorrateo de Valerio tras migrar a Movistar Total), Aura asume una expresión de **atención, empatía y calma** en la pantalla: *"Hola Valerio, notamos un cambio en tu tarifa de este mes, pero no te preocupes, lo analizamos juntos"*. Al resolverse la duda, su expresión cambia a **alegre y celebratoria**, lanzando confeti digital cuando el pago de la factura es conciliado por el banco.
+- **Interfaz Emocional Dinámica (Sentiment-Driven UI):** Aura lee la telemetría de red y el comportamiento del cliente. Si detecta un recibo con una variación de costo importante (como el prorrateo de Miguel tras migrar a Movistar Total), Aura asume una expresión de **atención, empatía y calma** en la pantalla: *"Hola Miguel, notamos un cambio en tu tarifa de este mes, pero no te preocupes, lo analizamos juntos"*. Al resolverse la duda, su expresión cambia a **alegre y celebratoria**, lanzando confeti digital cuando el pago de la factura es conciliado por el banco.
 
 - **El "Rappi-Track" de la Atención (El Visor de Progreso):**
 
@@ -918,7 +918,7 @@ El manual se enfoca en resolver el **Reto 1 (Atención Inteligente / Mitigación
 
 - **¿Cómo soluciona?** El bot no cansa al cliente. El asesor de atención (**Jorge**) tiene un cockpit en su pantalla con un semáforo de riesgo (Verde, Amarillo, Rojo) basado en NLP que analiza el sentimiento del cliente en el chat.
 
-- **Hijack Conversacional y Llamada en 1-Clic:** Si Jorge ve que Valerio está muy confundida (semáforo en rojo), presiona un botón para "tomar el control" del chat de Aura de forma invisible. El copiloto de IA le redacta un **resumen de 3 líneas** de lo que ha hablado con el bot para que no tenga que leer todo el historial. Jorge puede activar una llamada saliente telefónica en un solo clic (**Click-to-Call**), llamando proactivamente a Valerio en segundos con todo el contexto en mano.
+- **Hijack Conversacional y Llamada en 1-Clic:** Si Jorge ve que Miguel está muy confundida (semáforo en rojo), presiona un botón para "tomar el control" del chat de Aura de forma invisible. El copiloto de IA le redacta un **resumen de 3 líneas** de lo que ha hablado con el bot para que no tenga que leer todo el historial. Jorge puede activar una llamada saliente telefónica en un solo clic (**Click-to-Call**), llamando proactivamente a Miguel en segundos con todo el contexto en mano.
 
 - **La Conexión de Datos Ininterrumpida (El Cierre del Círculo):**
 

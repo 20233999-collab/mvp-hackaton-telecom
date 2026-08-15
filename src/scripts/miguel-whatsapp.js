@@ -1,12 +1,12 @@
 /* ==========================================================================
-   WHATSAPP SIMULATOR ENGINE - VALERIO MENDOZA (TAP-TO-ADVANCE IMMERSIVE)
+   WHATSAPP SIMULATOR ENGINE - MIGUEL MENDOZA (TAP-TO-ADVANCE IMMERSIVE)
    ========================================================================== */
 
 import { createIcons, icons } from 'lucide';
 import confetti from 'canvas-confetti';
 import gsap from 'gsap';
 
-class WhatsAppValerioSimulator {
+class WhatsAppMiguelSimulator {
   constructor() {
     this.chatBody = document.getElementById('waChatBody');
     this.contactStatus = document.getElementById('waContactStatus');
@@ -23,7 +23,7 @@ class WhatsAppValerioSimulator {
     this.bindChatInteractions();
     this.bindTapToAdvance();
     this.renderStep1();
-    console.log('📱 WhatsApp Valerio Simulator (Tap-to-Advance) initialized.');
+    console.log('📱 WhatsApp Miguel Simulator (Tap-to-Advance) initialized.');
   }
 
   bindControls() {
@@ -153,7 +153,7 @@ class WhatsAppValerioSimulator {
 
       <!-- Mensaje 1: Detección y Propuesta NBO -->
       <div class="wa-bubble incoming">
-        <p>Hola <strong>Valerio</strong> <i data-lucide="map-pin" style="width: 13px; display: inline-block; color: #019DF4; vertical-align: -1px;"></i>. Notamos que agotaste tus 20 GB en tu viaje a Arequipa y llevas gastando <strong>S/ 179.80</strong> en paquetes adicionales este mes.</p>
+        <p>Hola <strong>Miguel</strong> <i data-lucide="map-pin" style="width: 13px; display: inline-block; color: #019DF4; vertical-align: -1px;"></i>. Notamos que agotaste tus 20 GB en tu viaje a Arequipa y llevas gastando <strong>S/ 179.80</strong> en paquetes adicionales este mes.</p>
         
         <div class="wa-offer-card">
           <div class="wa-offer-head">
@@ -192,11 +192,11 @@ class WhatsAppValerioSimulator {
     this.bindChatInteractions();
   }
 
-  /* --- PASO 2: DUDA DE VALERIO (Pregunta de Prorrateo) --- */
+  /* --- PASO 2: DUDA DE MIGUEL (Pregunta de Prorrateo) --- */
   renderStep2() {
     this.renderStep1();
     
-    // Inyectar duda de Valerio
+    // Inyectar duda de Miguel
     const userMsg = document.createElement('div');
     userMsg.className = 'wa-bubble outgoing';
     userMsg.innerHTML = `
@@ -214,7 +214,7 @@ class WhatsAppValerioSimulator {
     const botResponse = document.createElement('div');
     botResponse.className = 'wa-bubble incoming';
     botResponse.innerHTML = `
-      <p>¡Para nada Valerio! En Movistar somos 100% transparentes. Aquí tienes el desglose exacto de tu transición:</p>
+      <p>¡Para nada Miguel! En Movistar somos 100% transparentes. Aquí tienes el desglose exacto de tu transición:</p>
       
       <!-- Gráfico de 3 Barras CSR-RAG -->
       <div style="background: #F8FAFC; border-radius: 12px; padding: 10px; margin: 8px 0; border: 1px solid rgba(1,157,244,0.2);">
@@ -278,7 +278,7 @@ class WhatsAppValerioSimulator {
   renderStep4() {
     this.renderStep3();
 
-    // Confirmación de Valerio
+    // Confirmación de Miguel
     const userConfirm = document.createElement('div');
     userConfirm.className = 'wa-bubble outgoing';
     userConfirm.innerHTML = `
@@ -291,7 +291,7 @@ class WhatsAppValerioSimulator {
     const botSuccess = document.createElement('div');
     botSuccess.className = 'wa-bubble incoming';
     botSuccess.innerHTML = `
-      <p>🎉 <strong>¡Felicitaciones Valerio!</strong> Tu plan Movistar Total ya está activo en tu línea móvil y tu orden de fibra ha sido emitida al back-office.</p>
+      <p>🎉 <strong>¡Felicitaciones Miguel!</strong> Tu plan Movistar Total ya está activo en tu línea móvil y tu orden de fibra ha sido emitida al back-office.</p>
       
       <div style="background: rgba(0,200,83,0.08); border: 1px solid rgba(0,200,83,0.3); border-radius: 10px; padding: 8px 12px; margin-top: 6px; font-family: var(--font-mono); font-size: 11px;">
         <div><strong>Key de Seguimiento E2E:</strong></div>
@@ -336,7 +336,7 @@ class WhatsAppValerioSimulator {
     this.goToStep(1);
 
     setTimeout(() => {
-      this.setTyping(true, 'Valerio está escribiendo...');
+      this.setTyping(true, 'Miguel está escribiendo...');
       setTimeout(() => {
         this.goToStep(2);
         this.setTyping(true, 'Aura está procesando cálculo CSR-RAG...');
@@ -353,5 +353,5 @@ class WhatsAppValerioSimulator {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new WhatsAppValerioSimulator();
+  new WhatsAppMiguelSimulator();
 });

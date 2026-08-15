@@ -225,15 +225,15 @@ export class ViewManager {
 
   /* --- RENDERIZADO DE FASE 1: PROPULSIÓN COMERCIAL --- */
   renderPhase1() {
-    // CX Panel (Valerio)
-    this.cxBadgeTitle.innerText = 'Valerio Mendoza (Cliente)';
+    // CX Panel (Miguel)
+    this.cxBadgeTitle.innerText = 'Miguel Mendoza (Cliente)';
     this.cxBadgeSub.innerText = 'Viajando en Arequipa • App / WhatsApp';
     this.cxAvatarThumb.innerText = 'VM';
     this.cxAvatarThumb.style.background = 'linear-gradient(135deg, #019DF4, #00D4FF)';
 
     this.chatArea.innerHTML = `
       <div class="chat-bubble bot fade-in" id="msg1_bot">
-        <p>Hola <strong>Valerio</strong> <i data-lucide="map-pin" style="width: 13px; display: inline-block; color: var(--movistar-blue); vertical-align: -1px;"></i>. Notamos que agotaste tus 20 GB en tu viaje a Arequipa y llevas gastando <strong>S/ 179.80</strong> en paquetes sueltos.</p>
+        <p>Hola <strong>Miguel</strong> <i data-lucide="map-pin" style="width: 13px; display: inline-block; color: var(--movistar-blue); vertical-align: -1px;"></i>. Notamos que agotaste tus 20 GB en tu viaje a Arequipa y llevas gastando <strong>S/ 179.80</strong> en paquetes sueltos.</p>
         <div class="offer-interactive-card" id="cardMovistarTotal">
           <div class="offer-card-header">
             <div class="offer-title"><i data-lucide="sparkles" style="width: 14px;"></i> Movistar Total</div>
@@ -272,7 +272,7 @@ export class ViewManager {
     this.customerStatsGrid.innerHTML = `
       <div class="stat-item">
         <span class="stat-label">Cliente</span>
-        <span class="stat-value">Valerio Mendoza</span>
+        <span class="stat-value">Miguel Mendoza</span>
       </div>
       <div class="stat-item">
         <span class="stat-label">Gasto Mensual Disperso</span>
@@ -286,7 +286,7 @@ export class ViewManager {
 
     this.upliftMeterBox.style.display = 'block';
     this.whisperHeader.innerHTML = `<i data-lucide="headphones" style="width: 16px;"></i> M.O.V.I. Live Whisper (Speech Sugerido en Vivo)`;
-    this.whisperSpeech.innerText = `"Valerio, no te preocupes por el prorrateo: en tu primer recibo solo se incluirán S/ 15.00 correspondientes a los días de transición y luego pagarás tus S/ 139.90 fijos netos."`;
+    this.whisperSpeech.innerText = `"Miguel, no te preocupes por el prorrateo: en tu primer recibo solo se incluirán S/ 15.00 correspondientes a los días de transición y luego pagarás tus S/ 139.90 fijos netos."`;
 
     this.orderFormTitle.innerHTML = `<i data-lucide="file-text" style="width: 18px; color: var(--movistar-blue);"></i> Emisión de Orden Comercial (Form-Fill Activo)`;
     this.orderFormBadge.innerText = 'API TMF622 • Product Ordering';
@@ -413,8 +413,8 @@ export class ViewManager {
 
   /* --- RENDERIZADO DE FASE 3: POST-VENTA & BILL SHOCK --- */
   renderPhase3() {
-    // CX Panel (Valerio - Recibo Inteligente)
-    this.cxBadgeTitle.innerText = 'Valerio Mendoza (Cliente)';
+    // CX Panel (Miguel - Recibo Inteligente)
+    this.cxBadgeTitle.innerText = 'Miguel Mendoza (Cliente)';
     this.cxBadgeSub.innerText = 'Fin de mes • Recibo con Prorrateo';
     this.cxAvatarThumb.innerText = 'VM';
     this.cxAvatarThumb.style.background = 'linear-gradient(135deg, #019DF4, #00D4FF)';
@@ -426,7 +426,7 @@ export class ViewManager {
       </div>
 
       <div class="chat-bubble bot fade-in" style="margin-top: 6px;">
-        <p>¡Hola <strong>Valerio</strong>! No te preocupes, no es un cobro indebido. Tu tarifa fija es <strong>S/ 139.90</strong>. Los <strong>S/ 15.00</strong> son únicamente los días proporcionales de transición antes de tu corte.</p>
+        <p>¡Hola <strong>Miguel</strong>! No te preocupes, no es un cobro indebido. Tu tarifa fija es <strong>S/ 139.90</strong>. Los <strong>S/ 15.00</strong> son únicamente los días proporcionales de transición antes de tu corte.</p>
         
         <!-- Gráfico CSR-RAG de 3 Barras -->
         <div style="background: #FFFFFF; border-radius: 14px; padding: 12px; margin: 10px 0; border: 1px solid rgba(1,157,244,0.2); box-shadow: var(--shadow-sm);">
@@ -506,7 +506,7 @@ export class ViewManager {
 
     this.whisperHeader.innerHTML = `<i data-lucide="info" style="width: 16px;"></i> Warm Hand-off Inteligente (Resumen en 3 Líneas)`;
     this.whisperSpeech.innerHTML = `
-      <strong>Cliente:</strong> Valerio Mendoza • <strong>Motivo:</strong> Consulta de Prorrateo (+S/15.00).<br>
+      <strong>Cliente:</strong> Miguel Mendoza • <strong>Motivo:</strong> Consulta de Prorrateo (+S/15.00).<br>
       <strong>Estado:</strong> Desglose CSR-RAG proyectado y aceptado en WhatsApp.<br>
       <strong>Acción recomendada:</strong> Validar conformidad y confirmar pago con Yape.
     `;

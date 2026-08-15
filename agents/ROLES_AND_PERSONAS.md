@@ -3,7 +3,7 @@
 
 ---
 
-### 1. 👤 Valerio Mendoza (El Cliente - CX)
+### 1. 👤 Miguel Mendoza (El Cliente - CX)
 * **Perfil:** Diseñadora gráfica / Profesional independiente, 29 años, reside en Lima (Miraflores).
 * **Comportamiento & Dolor:**
   * Tiene servicio de Fibra Movistar en su hogar ($S/\ 79.90$).

@@ -16,11 +16,11 @@ En las soluciones tradicionales de telecomunicaciones, la venta (BSS) y la activ
 
 ### El Viaje Transaccional de la Factura:
 
-- **Entrada (Trigger desde Fase 1):** En cuanto el cliente Valerio Mendoza acepta la oferta dinámica de *Movistar Total* en la Fase 1, el sistema comercial no se limita a guardar la orden. Registra un **Key de Seguimiento Único (ID de Orden TMF622)**. El estado en el **Movistar Journey Tracker (MJT)** se actualiza instantáneamente: `[Fase 1: Completada] ➡️ [Fase 2: Pendiente de Auditoría Tarifaria]`.
+- **Entrada (Trigger desde Fase 1):** En cuanto el cliente Miguel Mendoza acepta la oferta dinámica de *Movistar Total* en la Fase 1, el sistema comercial no se limita a guardar la orden. Registra un **Key de Seguimiento Único (ID de Orden TMF622)**. El estado en el **Movistar Journey Tracker (MJT)** se actualiza instantáneamente: `[Fase 1: Completada] ➡️ [Fase 2: Pendiente de Auditoría Tarifaria]`.
 
 - **Procesamiento (Fase 2):** El sistema contable calcula el prorrateo exacto del ciclo, el agente de IA realiza la auditoría de tarifas frente a la provisión técnica, concilia los pagos con el banco en tiempo real y, de ser necesario por mora, activa el motor de cobros preventivos.
 
-- **Salida (Puerta Abierta hacia Fase 3):** Al cerrarse la transacción y emitirse la factura de forma correcta, la Fase 2 genera un **Extracto de Explicabilidad de Facturación (JSON de Metadatos)**. Este paquete de datos estructurados viaja directamente al repositorio del cliente. Cuando Valerio consulte su recibo a fin de mes y experimente desconcierto (*Bill Shock*), el asistente virtual de la Fase 3 (**BrainyBill**) utilizará este JSON para explicarle de forma visual, empática y matemáticamente exacta cada centavo del prorrateo, impidiendo que llame molesta al call center 104 o inicie un reclamo ante OSIPTEL.
+- **Salida (Puerta Abierta hacia Fase 3):** Al cerrarse la transacción y emitirse la factura de forma correcta, la Fase 2 genera un **Extracto de Explicabilidad de Facturación (JSON de Metadatos)**. Este paquete de datos estructurados viaja directamente al repositorio del cliente. Cuando Miguel consulte su recibo a fin de mes y experimente desconcierto (*Bill Shock*), el asistente virtual de la Fase 3 (**BrainyBill**) utilizará este JSON para explicarle de forma visual, empática y matemáticamente exacta cada centavo del prorrateo, impidiendo que llame molesta al call center 104 o inicie un reclamo ante OSIPTEL.
 
 ---
 
@@ -76,19 +76,19 @@ Implementar un **Agente de IA de Auditoría Tarifaria** con permisos unificados 
 
 - **Inspección de bases de datos cruzadas:** El Agente de Auditoría de IA tiene acceso seguro de lectura (RBAC) tanto a la base de datos comercial (BSS - CRM) como a la base de datos de aprovisionamiento físico de red (OSS - Central de conmutación de red fija y móvil).
 
-- **La validación en vivo:** El agente audita la orden de **Valerio Mendoza** antes de que el motor de facturación (SGA) imprima su recibo digital.
+- **La validación en vivo:** El agente audita la orden de **Miguel Mendoza** antes de que el motor de facturación (SGA) imprima su recibo digital.
 
-- Lee el contrato en el CRM: *"Valerio contrató el combo Movistar Total por S/ 139.90 fijos (**P**)"*.
+- Lee el contrato en el CRM: *"Miguel contrató el combo Movistar Total por S/ 139.90 fijos (**P**)"*.
 
-- Consulta la red física (OSS): *"La línea fija de Valerio tiene configurado un paquete adicional técnico de televisión HBO Premium activo (**Q**), cuyo costo comercial es de S/ 20.00 adicionales"*.
+- Consulta la red física (OSS): *"La línea fija de Miguel tiene configurado un paquete adicional técnico de televisión HBO Premium activo (**Q**), cuyo costo comercial es de S/ 20.00 adicionales"*.
 
 - **Detección de la discrepancia:** El agente calcula la fórmula P \times Q. Detecta que la factura se generaría por S/ 159.90, lo cual viola el acuerdo contractual de la Fase 1.
 
-- **Frenado Preventivo y Reporte Ejecutivo:** El agente de IA **pausa la emisión del recibo** para evitar que a Valerio le llegue un monto cobrado de más (impidiendo un futuro reclamo por facturación) y le envía una tarjeta de reporte detallado a Ana en su Estación de Trabajo:
+- **Frenado Preventivo y Reporte Ejecutivo:** El agente de IA **pausa la emisión del recibo** para evitar que a Miguel le llegue un monto cobrado de más (impidiendo un futuro reclamo por facturación) y le envía una tarjeta de reporte detallado a Ana en su Estación de Trabajo:
 
 ⚠️ **Reporte de Auditoría de Factura - ID 89271**
 
-- **Cliente:** Valerio Mendoza (Movistar Total)
+- **Cliente:** Miguel Mendoza (Movistar Total)
 
 - **Desvío detectado:** +S/ 20.00 (Monto Proyectado: S/ 159.90 | Monto Pactado: S/ 139.90)
 
@@ -98,7 +98,7 @@ Implementar un **Agente de IA de Auditoría Tarifaria** con permisos unificados 
 
 - **[Botón: Aprobar Ajuste Automático] [Botón: Omitir y Facturar]**
 
-- **Aprobación en un clic:** Ana selecciona "Aprobar Ajuste". El sistema corrige la red y emite el recibo de Valerio de forma impecable.
+- **Aprobación en un clic:** Ana selecciona "Aprobar Ajuste". El sistema corrige la red y emite el recibo de Miguel de forma impecable.
 
 ---
 

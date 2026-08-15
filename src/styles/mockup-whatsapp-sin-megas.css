@@ -149,6 +149,7 @@ html, body {
   flex-direction: column;
   gap: 14px;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 /* Date Pill */

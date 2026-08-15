@@ -1,0 +1,383 @@
+/* ==========================================================================
+   RAPPI-TRACK (MOVISTAR JOURNEY TRACKER) MOCKUP
+   Directivas: DESIGN.md • War Room Dashboard Style
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0B2739; /* Dark Movistar Blue */
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: rgba(6, 24, 38, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-btn {
+  color: #53BDEB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: rgba(83, 189, 235, 0.1);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(83, 189, 235, 0.2);
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-text h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.brand-text span {
+  font-size: 12px;
+  color: #8696A0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 4px 4px 4px 16px;
+  width: 500px;
+}
+
+.search-icon {
+  color: #8696A0;
+  width: 18px;
+}
+
+#searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.btn-simulate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #019DF4;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-simulate:hover {
+  background: #007CC0;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #53BDEB;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #53BDEB;
+}
+
+.status-dot.pulsing {
+  box-shadow: 0 0 0 0 rgba(83, 189, 235, 0.7);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(83, 189, 235, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(83, 189, 235, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(83, 189, 235, 0); }
+}
+
+/* Layout */
+.track-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.timeline-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Customer Card */
+.customer-card {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.customer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #E6007E;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.customer-details h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.customer-details p {
+  font-size: 13px;
+  color: #8696A0;
+}
+
+.customer-details strong {
+  color: #53BDEB;
+}
+
+.order-badge {
+  background: rgba(83, 189, 235, 0.15);
+  color: #53BDEB;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+/* Stepper Component */
+.stepper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 140px;
+  text-align: center;
+}
+
+.step-node:hover {
+  transform: translateY(-5px);
+}
+
+.node-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8696A0;
+  transition: all 0.3s;
+}
+
+.node-circle i {
+  width: 24px;
+  height: 24px;
+}
+
+.node-label h3 {
+  font-size: 14px;
+  color: #8696A0;
+  margin-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.node-label span {
+  font-size: 11px;
+  color: #54656F;
+  transition: color 0.3s;
+}
+
+/* Active State */
+.step-node.active .node-circle {
+  background: rgba(1, 157, 244, 0.15);
+  border-color: #019DF4;
+  color: #019DF4;
+  box-shadow: 0 0 20px rgba(1, 157, 244, 0.4);
+}
+.step-node.active .node-label h3 { color: #FFFFFF; }
+.step-node.active .node-label span { color: #53BDEB; }
+
+/* Completed State */
+.step-node.completed .node-circle {
+  background: #019DF4;
+  border-color: #019DF4;
+  color: #FFFFFF;
+}
+.step-node.completed .node-label h3 { color: #FFFFFF; }
+.step-node.completed .node-label span { color: #8696A0; }
+
+/* Processing (Pulsing) State */
+.step-node.processing .node-circle {
+  background: rgba(230, 0, 126, 0.15);
+  border-color: #E6007E;
+  color: #E6007E;
+  box-shadow: 0 0 0 0 rgba(230, 0, 126, 0.7);
+  animation: pulsePink 1.5s infinite;
+}
+.step-node.processing .node-label h3 { color: #FFFFFF; }
+.step-node.processing .node-label span { color: #E6007E; }
+
+@keyframes pulsePink {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 0, 126, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(230, 0, 126, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 0, 126, 0); }
+}
+
+/* Connectors */
+.step-connector {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: -50px 10px 0 10px; /* Offset for labels */
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.connector-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #019DF4;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar Metadata */
+.metadata-panel {
+  width: 400px;
+  background: #061826;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #53BDEB;
+}
+
+.badge {
+  background: rgba(0, 135, 56, 0.2);
+  color: #008738;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 135, 56, 0.4);
+}
+
+.panel-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #A0B0BA;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

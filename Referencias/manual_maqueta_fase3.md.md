@@ -18,11 +18,11 @@ Aura no es un chatbot estático con respuestas preprogramadas; es un personaje d
 
 ### ¿Cómo se diseña la personalización en la Maqueta?
 
-- **Adaptación de Identidad Visual:** Aura cambia su apariencia para adaptarse a la tipología del cliente. Para un cliente corporativo o profesional, Aura viste un estilo business-casual moderno. Para un cliente joven o residencial (como Valeria Mendoza), Aura se presenta con un diseño más fresco, tecnológico y amigable.
+- **Adaptación de Identidad Visual:** Aura cambia su apariencia para adaptarse a la tipología del cliente. Para un cliente corporativo o profesional, Aura viste un estilo business-casual moderno. Para un cliente joven o residencial (como Valerio Mendoza), Aura se presenta con un diseño más fresco, tecnológico y amigable.
 
 - **Interfaz Emocional Dinámica (Sentiment-Driven UI):**
 
-- *Si el recibo tiene un incremento >20%:* Cuando el cliente abre la sección de facturación, Aura aparece con una expresión de **atención y empatía** (un rostro amable y manos abiertas que denotan "estoy aquí para ayudarte a entender esto"). El microcopiado inicial dice: *"Hola Valeria, notamos un cambio en tu monto de este mes. No te preocupes, lo analizamos juntos para que todo quede súper claro"*.
+- *Si el recibo tiene un incremento >20%:* Cuando el cliente abre la sección de facturación, Aura aparece con una expresión de **atención y empatía** (un rostro amable y manos abiertas que denotan "estoy aquí para ayudarte a entender esto"). El microcopiado inicial dice: *"Hola Valerio, notamos un cambio en tu monto de este mes. No te preocupes, lo analizamos juntos para que todo quede súper claro"*.
 
 - *Si la explicación es aceptada:* Aura sonríe con alivio y felicidad, mostrando un botón directo para pagar con tarjeta o autorizar el débito automático.
 
@@ -68,13 +68,13 @@ Jorge trabaja con un panel de control avanzado que le muestra todas las conversa
 
 B. Intervención Humana por Demanda (Hijack Conversacional)
 
-- **El botón "Tomar el Control":** En cualquier momento, si Jorge ve un chat en amarillo o rojo, puede hacer clic en un botón para **"secuestrar" (hijack) la conversación de forma transparente**. Aura se despide amigablemente en el chat: *"Valeria, para darte un trato aún más especializado, te conecto en este segundo con mi compañero Jorge, quien ya tiene todo el detalle de tu caso en su pantalla. ¡Un gusto ayudarte!"*.
+- **El botón "Tomar el Control":** En cualquier momento, si Jorge ve un chat en amarillo o rojo, puede hacer clic en un botón para **"secuestrar" (hijack) la conversación de forma transparente**. Aura se despide amigablemente en el chat: *"Valerio, para darte un trato aún más especializado, te conecto en este segundo con mi compañero Jorge, quien ya tiene todo el detalle de tu caso en su pantalla. ¡Un gusto ayudarte!"*.
 
 - **Resumen Automático del Copiloto:** Al asumir el control, Jorge no tiene que leer todo el historial de chat anterior. El copiloto le presenta un resumen ejecutivo en 3 líneas:
 
 📝 **Resumen del Copiloto:** *El cliente está confundido por un cargo de prorrateo de S/ 15.00 tras migrar a Movistar Total el día 13. Aura explicó la proporción de días pero el cliente exige un descuento adicional por las molestias del corte de señal previo (Fase 2).*
 
-- **Llamada Saliente con Un Clic (Click-to-Call):** Si Jorge evalúa que el chat se está volviendo muy complejo, presiona el botón "Llamar por Voz". El sistema realiza una llamada saliente inmediata al celular de Valeria. Jorge abre la llamada diciendo: *"Hola Valeria, te saluda Jorge de Movistar. Veo que estás chateando con Aura por el cobro del prorrateo de tu nuevo plan Movistar Total. No te preocupes, te llamo personalmente para resolver esto en este segundo y aplicarte una nota de crédito manual por la molestia del corte anterior..."*. El cliente experimenta una atención proactiva e integrada de otro planeta.
+- **Llamada Saliente con Un Clic (Click-to-Call):** Si Jorge evalúa que el chat se está volviendo muy complejo, presiona el botón "Llamar por Voz". El sistema realiza una llamada saliente inmediata al celular de Valerio. Jorge abre la llamada diciendo: *"Hola Valerio, te saluda Jorge de Movistar. Veo que estás chateando con Aura por el cobro del prorrateo de tu nuevo plan Movistar Total. No te preocupes, te llamo personalmente para resolver esto en este segundo y aplicarte una nota de crédito manual por la molestia del corte anterior..."*. El cliente experimenta una atención proactiva e integrada de otro planeta.
 
 ---
 
@@ -82,13 +82,13 @@ B. Intervención Humana por Demanda (Hijack Conversacional)
 
 Para demostrarle al jurado que tu solución es un engranaje perfecto, el manual mapea la interacción de datos entre las tres fases en tiempo real:
 
-- **Paso de Fase 1 a Fase 2:** El Concierge Digital cierra la venta de **Movistar Total** a Valeria Mendoza en Fase 1, generando un ID de orden técnico.
+- **Paso de Fase 1 a Fase 2:** El Concierge Digital cierra la venta de **Movistar Total** a Valerio Mendoza en Fase 1, generando un ID de orden técnico.
 
 - **Procesamiento en Fase 2:** El motor de auditoría de SON-IA calcula la porción de prorrateo exacta (S/ 15.00 por los días de transición) y la concilia contablemente tras confirmarse el pago por el banco. Al emitirse la pre-factura, el sistema contable exporta un **JSON de Metadatos de Facturación (Explainability Extract)** con el desglose exacto de los cobros en lenguaje lógico.
 
-- **Inyección en Fase 3:** Aura intercepta este JSON de metadatos antes de que Valeria reciba su recibo físico. Cuando Valeria abre su App, Aura utiliza estos datos estructurados para construir una explicación matemática 100% exacta sin alucinaciones (Arquitectura **Neuro-Simbólica CSR-RAG**).
+- **Inyección en Fase 3:** Aura intercepta este JSON de metadatos antes de que Valerio reciba su recibo físico. Cuando Valerio abre su App, Aura utiliza estos datos estructurados para construir una explicación matemática 100% exacta sin alucinaciones (Arquitectura **Neuro-Simbólica CSR-RAG**).
 
-- **Cierre y Retroalimentación (Fase 3 a Fase 1):** Una vez que Valeria marca su conformidad en el chat, el Orquestador registra este estado de alta satisfacción en el CRM de ventas. El sistema otorga la **"Luz Verde de Cross-Selling Restrictivo"**, permitiendo que el motor de la Fase 1 considere nuevamente a Valeria apta para recibir ofertas comerciales exclusivas (como la renovación de un equipo móvil financiado) solo cuando su experiencia previa esté completamente resuelta y sin disputas activas.
+- **Cierre y Retroalimentación (Fase 3 a Fase 1):** Una vez que Valerio marca su conformidad en el chat, el Orquestador registra este estado de alta satisfacción en el CRM de ventas. El sistema otorga la **"Luz Verde de Cross-Selling Restrictivo"**, permitiendo que el motor de la Fase 1 considere nuevamente a Valerio apta para recibir ofertas comerciales exclusivas (como la renovación de un equipo móvil financiado) solo cuando su experiencia previa esté completamente resuelta y sin disputas activas.
 
 ---
 

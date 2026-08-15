@@ -88,7 +88,7 @@ Los 20 equipos clasificados deberán enviar a `concursos-cis@ulima.edu.pe` antes
 | **2. Innovación de la propuesta** | **0 a 4 pts** | Nivel de disrupción y creatividad de la arquitectura. | El **Mega-Orquestador E2E** y el concepto del *"Rappi-Track de las Telcos"* supera a los modelos de machine learning aislados. |
 | **3. Viabilidad** | **0 a 4 pts** | Realismo operativo, escalabilidad técnica, seguridad de datos y adopción en sistemas legacy. | Arquitectura basada en APIs abiertas de telecomunicaciones (**TM Forum ODA**) y desacoplamiento por eventos con Human-in-the-Loop. |
 | **4. Potencial de impacto** | **0 a 4 pts** | Capacidad de mover la aguja en KPIs de negocio: ARPU, Churn, Cost-to-Serve y quejas. | Métricas concretas: -15% llamadas al 104, +10% adopción Movistar Total, y liquidación de deudas en <5 min. |
-| **5. Calidad del pitch** | **0 a 4 pts** | Capacidad de síntesis, estructura narrativa, dinamismo y persuasión en los 3 minutos. | Storytelling humano centrado en los casos reales de **Valeria Mendoza** y **Juan Carlos Quispe**. |
+| **5. Calidad del pitch** | **0 a 4 pts** | Capacidad de síntesis, estructura narrativa, dinamismo y persuasión en los 3 minutos. | Storytelling humano centrado en los casos reales de **Valerio Mendoza** y **Juan Carlos Quispe**. |
 | **PUNTAJE TOTAL** | **20 pts** | *Se seleccionan los 20 mejores puntajes a nivel nacional.* | |
 
 ---

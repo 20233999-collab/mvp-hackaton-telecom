@@ -29,43 +29,52 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${hrs}:${mins}`;
   }
 
-  // 1. DISPARAR LLEGADA DEL MENSAJE (TAP-TO-RECEIVE)
-  function receiveIncomingMessage() {
+  // 1. DISPARAR LLEGADA DEL MENSAJE (AUTO-RECEIVE SIMULANDO ENTRADA AL CHAT)
+  function autoReceiveMessage() {
     if (hasReceived) return;
     hasReceived = true;
 
     if (tapPrompt) tapPrompt.style.display = 'none';
 
-    // Status: escribiendo...
-    if (contactStatus) {
-      contactStatus.innerText = 'escribiendo...';
-      contactStatus.style.color = '#00A884';
-      contactStatus.style.fontWeight = '600';
-    }
-
+    // Wait 1 second before Movistar starts typing (realistic push delay)
     setTimeout(() => {
+      // Status: escribiendo...
       if (contactStatus) {
-        contactStatus.innerText = 'en línea';
-        contactStatus.style.color = '#667781';
-        contactStatus.style.fontWeight = '400';
+        contactStatus.innerText = 'escribiendo...';
+        contactStatus.style.color = '#00A884';
+        contactStatus.style.fontWeight = '600';
       }
 
-      if (msgTime1) {
-        msgTime1.innerText = getCurrentTimeStr();
-      }
+      // Typing duration: 1.5 seconds
+      setTimeout(() => {
+        if (contactStatus) {
+          contactStatus.innerText = 'en línea';
+          contactStatus.style.color = '#667781';
+          contactStatus.style.fontWeight = '400';
+        }
 
-      if (officialBubble) {
-        officialBubble.style.display = 'flex';
-        officialBubble.classList.add('pop-in');
-      }
+        if (msgTime1) {
+          msgTime1.innerText = getCurrentTimeStr();
+        }
 
-      if (inputText) {
-        inputText.value = '⚡ Activar 2 GB de Emergencia';
-      }
+        if (officialBubble) {
+          officialBubble.style.display = 'flex';
+          officialBubble.classList.add('pop-in');
+        }
 
-      chatCanvas.scrollTop = chatCanvas.scrollHeight;
-    }, 450);
+        if (inputText) {
+          inputText.value = '⚡ Activar 2 GB de Emergencia';
+        }
+
+        setTimeout(() => {
+          chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+        }, 50); // slight delay to ensure DOM is painted
+      }, 1500);
+    }, 1000);
   }
+
+  // Trigger automatically when the mockup loads
+  autoReceiveMessage();
 
   // 2. DISPARAR RESPUESTA Y ACTIVACIÓN
   function triggerActivation() {
@@ -87,7 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
     dynamicContainer.appendChild(userMsg);
-    chatCanvas.scrollTop = chatCanvas.scrollHeight;
+    
+    setTimeout(() => {
+      chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+    }, 50);
 
     if (inputText) inputText.value = '';
 
@@ -132,7 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       dynamicContainer.appendChild(movistarReply);
       createIcons({ icons });
-      chatCanvas.scrollTop = chatCanvas.scrollHeight;
+      
+      setTimeout(() => {
+        chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
+      }, 50);
 
       // Confetti burst
       confetti({
@@ -163,13 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Event Listeners
-  if (tapPrompt) tapPrompt.addEventListener('click', receiveIncomingMessage);
-  if (chatCanvas) {
-    chatCanvas.addEventListener('click', (e) => {
-      if (!hasReceived) receiveIncomingMessage();
-    });
-  }
+  // Event Listeners (Removed tap-to-receive listeners as it's now auto)
 
   if (btnActivate) btnActivate.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -178,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnSend) btnSend.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (!hasReceived) receiveIncomingMessage();
+    if (!hasReceived) autoReceiveMessage();
     else triggerActivation();
   });
 
@@ -190,9 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Atajos de teclado para video: Barra espaciadora / Tecla 1 para recibir, Tecla 2 para activar, Tecla R para reiniciar
   document.addEventListener('keydown', (e) => {
     if (e.key === ' ' || e.key === '1') {
-      if (!hasReceived) receiveIncomingMessage();
+      if (!hasReceived) autoReceiveMessage();
     } else if (e.key === '2' || e.key === 'Enter') {
-      if (!hasReceived) receiveIncomingMessage();
+      if (!hasReceived) autoReceiveMessage();
       else triggerActivation();
     } else if (e.key.toLowerCase() === 'r') {
       resetChat();

@@ -60,7 +60,7 @@ Para que el asistente digital funcione de manera impecable y con alta confiabili
 
 - **Cómo funciona:** Se programa una experiencia interactiva estructurada en 3 pasos rápidos [44]:
 
-- *Paso 1: Resumen Macro (Intro y Monto):* "Hola Valeria, notamos que tu recibo subió S/ 15.00 con respecto al mes anterior. Esto se debe principalmente a tu reciente cambio al plan Movistar Total" [44].
+- *Paso 1: Resumen Macro (Intro y Monto):* "Hola Valerio, notamos que tu recibo subió S/ 15.00 con respecto al mes anterior. Esto se debe principalmente a tu reciente cambio al plan Movistar Total" [44].
 
 - *Paso 2: Desglose Intermedio (Aritmética Sencilla):* Mostrar un comparativo gráfico simple (Plan anterior: S/ 119.80 vs. Plan nuevo proporcional: S/ 139.90, con la porción exacta de días de prorrateo explicados de forma amigable) [12, 44].
 
@@ -78,7 +78,7 @@ Para que el asistente digital funcione de manera impecable y con alta confiabili
 
 ---
 
-### 🗺️ 3. El Journey E2E en la Cancha: El Viaje de Valeria Mendoza
+### 🗺️ 3. El Journey E2E en la Cancha: El Viaje de Valerio Mendoza
 
 Para entender el impacto tangible, vivamos el viaje del usuario en un escenario crítico real: **Cambio de plan a mitad de mes que genera prorrateo en su primera factura consolidada de Movistar Total.**
 

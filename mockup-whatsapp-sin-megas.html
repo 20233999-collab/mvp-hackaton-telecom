@@ -42,23 +42,30 @@
     <!-- WhatsApp Chat Messages Canvas -->
     <section class="wa-messages-canvas" id="waMessagesCanvas">
       
+      <!-- Old Message (Yesterday) -->
+      <div class="wa-date-pill-wrap" style="margin-top: 10px;">
+        <span class="wa-date-pill">AYER</span>
+      </div>
+      <div class="wa-msg-bubble incoming">
+        <div class="wa-bubble-card-content" style="border-left: 3.5px solid #008738; padding: 8px 12px;">
+          <p class="wa-msg-body">
+            Hola Miguel, tu recibo de <strong>Julio</strong> ya fue emitido y está listo para revisar. 📄
+          </p>
+          <div class="wa-meta-row">
+            <span class="wa-msg-time">10:30</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Date Pill -->
-      <div class="wa-date-pill-wrap">
+      <div class="wa-date-pill-wrap" style="margin-top: 16px;">
         <span class="wa-date-pill">HOY</span>
       </div>
 
       <!-- Encryption Notice -->
-      <div class="wa-encryption-notice">
+      <div class="wa-encryption-notice" style="margin-bottom: 12px;">
         <i data-lucide="lock" style="width: 11px;"></i>
         <span>Los mensajes están cifrados de extremo a extremo. Nadie fuera de este chat puede leerlos.</span>
-      </div>
-
-      <!-- Tap Prompt (Visible initially, hides on tap) -->
-      <div class="wa-tap-trigger-prompt" id="waTapPrompt">
-        <div class="tap-pill-anim">
-          <i data-lucide="touchpad" style="width: 15px;"></i>
-          <span>Toca la pantalla para recibir el mensaje</span>
-        </div>
       </div>
 
       <!-- Official Movistar Message Bubble (Hidden until tap) -->

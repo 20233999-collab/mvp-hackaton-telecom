@@ -62,12 +62,12 @@ Para adaptar estos benchmarks de clase mundial en la estructura de **SON-IA**, d
 [Central OLT de Fibra / Router de Cliente]
 ```
 
-### 🧮 A. Auditoría Tarifaria $P \times Q$ de Valeria Mendoza (Inspirado en Orange Agentic ODA) [105, 294]
+### 🧮 A. Auditoría Tarifaria $P \times Q$ de Valerio Mendoza (Inspirado en Orange Agentic ODA) [105, 294]
 *   **El Proceso Tradicional:** Tras registrarse un cambio de plan en el CRM Salesforce, el proceso pasa por silos de red [83, 259]. Un error humano de digitación en el STC de telefonía celular o en el sistema Amdocs OSS de provisión provoca que el plan configurado no coincida con el contrato comercial [83, 282], gatillando fugas de ingresos (*Revenue Leakage*) o quejas del cliente [4, 282].
 *   **La Solución SON-IA:** El **Agente de Facturación** ejecuta de manera programática auditorías cruzadas en tiempo real antes del cierre de ciclo de facturación [5, 102]:
-    *   **Paso 1:** Consulta la API **TMF636 (Billing Management)** del facturador SGA para extraer el histórico financiero de Valeria [83, 91].
-    *   **Paso 2:** Consulta la API **TMF637 (Product Inventory)** para validar qué servicios tiene físicamente habilitados Valeria en su terminal de red [91, 284].
-    *   **Paso 3:** Si detecta discrepancias de valores (ej. un paquete de TV que Valeria no contrató, o una renta proporcional calculada de forma incorrecta), el sistema congela la emisión del recibo y envía una alerta a la consola de Ana (HITL) con la solución pre-redactada: *"Se detectó desvío de S/ 20.00 en Valeria Mendoza. Sugiero anular el cargo de HBO Premium para coincidir con el contrato CRM. ¿Proceder?"* [301].
+    *   **Paso 1:** Consulta la API **TMF636 (Billing Management)** del facturador SGA para extraer el histórico financiero de Valerio [83, 91].
+    *   **Paso 2:** Consulta la API **TMF637 (Product Inventory)** para validar qué servicios tiene físicamente habilitados Valerio en su terminal de red [91, 284].
+    *   **Paso 3:** Si detecta discrepancias de valores (ej. un paquete de TV que Valerio no contrató, o una renta proporcional calculada de forma incorrecta), el sistema congela la emisión del recibo y envía una alerta a la consola de Ana (HITL) con la solución pre-redactada: *"Se detectó desvío de S/ 20.00 en Valerio Mendoza. Sugiero anular el cargo de HBO Premium para coincidir con el contrato CRM. ¿Proceder?"* [301].
 
 ### 🏷️ B. Cobranza Preventiva y Negociación de Juan Carlos Quispe (Inspirado en Nubank y Lunos) [11, 105, 293]
 *   **El Proceso Tradicional:** Los clientes con deudas en mora temprana son delegados a agencias externas de telemarketing que bombardean de llamadas intrusivas que dañan la relación con la empresa [3, 261]. No existen facilidades de fraccionamiento ágiles de cara al usuario final [261].

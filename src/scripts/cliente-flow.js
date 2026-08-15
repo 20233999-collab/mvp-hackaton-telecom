@@ -1,11 +1,11 @@
 /* ==========================================================================
-   PERSPECTIVA DEL CLIENTE (VALERIA MENDOZA) - LÓGICA INTERACTIVA
+   PERSPECTIVA DEL CLIENTE (VALERIO MENDOZA) - LÓGICA INTERACTIVA
    ========================================================================== */
 
 import { createIcons, icons } from 'lucide';
 import gsap from 'gsap';
 
-class ValeriaClienteFlowApp {
+class ValerioClienteFlowApp {
   constructor() {
     this.currentScreen = 1;
     this.callActive = false;
@@ -19,7 +19,7 @@ class ValeriaClienteFlowApp {
     createIcons({ icons });
     this.bindEvents();
     this.renderScreen(1);
-    console.log('📱 Valeria Customer Journey (Mi Movistar & Call Flow) initialized.');
+    console.log('📱 Valerio Customer Journey (Mi Movistar & Call Flow) initialized.');
   }
 
   bindEvents() {
@@ -29,12 +29,12 @@ class ValeriaClienteFlowApp {
     });
 
     // Pantalla 2: Contestar Llamada
-    document.getElementById('btnAcceptCallValeria')?.addEventListener('click', () => {
+    document.getElementById('btnAcceptCallValerio')?.addEventListener('click', () => {
       this.startActiveCall();
     });
 
     // Pantalla 2: Colgar / Volver a App
-    document.getElementById('btnHangupCallValeria')?.addEventListener('click', () => {
+    document.getElementById('btnHangupCallValerio')?.addEventListener('click', () => {
       this.endActiveCall();
       this.renderScreen(1);
     });
@@ -123,5 +123,5 @@ class ValeriaClienteFlowApp {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new ValeriaClienteFlowApp();
+  new ValerioClienteFlowApp();
 });

@@ -284,7 +284,7 @@ Tarjeta comparativa en lenguaje humano:
 | Vista | Foco Principal | Elementos Visuales Destacados |
 | :--- | :--- | :--- |
 | **Desktop (Pantalla Dividida del Pitch)** | Demostración simultánea para el Jurado: **Consola del Asesor (Izquierda)** vs. **App del Cliente (Derecha)**. | Líneas conectoras de red, nodos en tiempo real, eventos cruzados instantáneos. |
-| **Mobile (Mi Movistar / Aura Web)** | Experiencia del cliente Valeria / Juan Carlos. | *Bottom sheets* translúcidos, botones flotantes de pago con Yape/Plin, visualizador de prorrateo táctil. |
+| **Mobile (Mi Movistar / Aura Web)** | Experiencia del cliente Valerio / Juan Carlos. | *Bottom sheets* translúcidos, botones flotantes de pago con Yape/Plin, visualizador de prorrateo táctil. |
 
 ---
 

@@ -179,7 +179,7 @@ class MiMovistarAuraApp {
         this.addUserMessage('¿Cómo puedo optimizar mi gasto actual de gigas en Arequipa?');
         setTimeout(() => {
           this.addBotMessage(`
-            <p>Hola <strong>Valeria</strong>. Analicé tus consumos en tiempo real: este mes has realizado 3 recargas adicionales sumando <strong>S/ 179.80</strong>.</p>
+            <p>Hola <strong>Valerio</strong>. Analicé tus consumos en tiempo real: este mes has realizado 3 recargas adicionales sumando <strong>S/ 179.80</strong>.</p>
             
             <div style="background: #FFFFFF; border: 1.5px solid #019DF4; border-radius: 16px; padding: 14px; margin: 12px 0; box-shadow: 0 4px 18px rgba(1, 157, 244, 0.12);">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
@@ -234,7 +234,7 @@ class MiMovistarAuraApp {
         this.setSpeaking(true, 'Aura: Ejecutando Motor CSR-RAG 0% Error...');
         setTimeout(() => {
           this.addBotMessage(`
-            <p>¡Tranquila Valeria! Nuestra arquitectura <strong>CSR-RAG</strong> valida matemáticamente cada céntimo. No hay cobros duplicados:</p>
+            <p>¡Tranquila Valerio! Nuestra arquitectura <strong>CSR-RAG</strong> valida matemáticamente cada céntimo. No hay cobros duplicados:</p>
             
             <div style="background: #FFFFFF; border-radius: 14px; padding: 12px; margin: 10px 0; border: 1px solid rgba(1, 157, 244, 0.25); box-shadow: 0 4px 16px rgba(1, 157, 244, 0.08);">
               <div style="font-size: 11.5px; font-weight: 700; color: #0B192C; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">

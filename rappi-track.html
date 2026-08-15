@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.O.V.I. | Movistar Journey Tracker</title>
+  <meta name="description" content="Dashboard central del ecosistema M.O.V.I. para monitoreo end-to-end.">
+  <link rel="stylesheet" href="./src/styles/rappi-track.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="track-header">
+    <div class="header-left">
+      <a href="./index.html" class="back-btn" title="Volver al Hub">
+        <i data-lucide="layout-grid"></i>
+      </a>
+      <div class="logo-box">
+        <img src="./public/assets/Movistar_isotype_2025.png" alt="Movistar" class="logo" style="width: 32px; height: 32px; object-fit: contain;">
+        <div class="brand-text">
+          <h1>M.O.V.I. Core</h1>
+          <span>Movistar Journey Tracker</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="search-bar">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Ingresa el Key de Seguimiento" value="TMF622-VAL8912" readonly>
+        <button id="btnSimulate" class="btn-simulate" title="Presiona Espacio para Avanzar">Simular Flujo <i data-lucide="play"></i></button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-indicator">
+        <span class="status-dot pulsing"></span>
+        <span>Conexión Segura (API Activa)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="track-layout">
+    
+    <!-- Central Timeline Area -->
+    <section class="timeline-container">
+      
+      <!-- Customer Info Header -->
+      <div class="customer-card">
+        <div class="customer-avatar">VM</div>
+        <div class="customer-details">
+          <h2>Valerio Mendoza</h2>
+          <p>Solicitud: <strong>Migración a Movistar Total (S/ 139.90)</strong></p>
+        </div>
+        <div class="order-badge">ID: TMF622-VAL8912</div>
+      </div>
+
+      <!-- The Rappi-Track Stepper -->
+      <div class="stepper-wrapper">
+        
+        <!-- Node 1: Fase 1 -->
+        <div class="step-node active" id="node1" data-target="json1">
+          <div class="node-circle">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+          <div class="node-label">
+            <h3>Fase 1: Venta</h3>
+            <span>Orden TMF622 Emitida</span>
+          </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="step-connector" id="conn1">
+          <div class="connector-progress"></div>
+        </div>
+
+        <!-- Node 2: Fase 2 (Auditoría) -->
+        <div class="step-node" id="node2" data-target="json2">
+          <div class="node-circle">
+            <i data-lucide="calculator"></i>
+          </div>
+          <div class="node-label">
+            <h3>Fase 2: Auditoría</h3>
+            <span>Revisión Tarifaria PxQ</span>
+          </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="step-connector" id="conn2">
+          <div class="connector-progress"></div>
+        </div>
+
+        <!-- Node 3: Fase 2 (Red) -->
+        <div class="step-node" id="node3" data-target="json3">
+          <div class="node-circle">
+            <i data-lucide="server"></i>
+          </div>
+          <div class="node-label">
+            <h3>Fase 2: Red OSS</h3>
+            <span>Aprovisionamiento Activo</span>
+          </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="step-connector" id="conn3">
+          <div class="connector-progress"></div>
+        </div>
+
+        <!-- Node 4: Fase 3 -->
+        <div class="step-node" id="node4" data-target="json4">
+          <div class="node-circle">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <div class="node-label">
+            <h3>Fase 3: Contención</h3>
+            <span>Mitigación de Bill Shock</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Sidebar: Explainability Extract (Metadata) -->
+    <aside class="metadata-panel">
+      <div class="panel-header">
+        <h3><i data-lucide="cpu"></i> Explainability Extract</h3>
+        <span class="badge">Datos Seguros (Sin PII)</span>
+      </div>
+      <div class="panel-body">
+        <pre><code id="jsonContainer" class="language-json">
+// Selecciona un nodo para ver sus metadatos
+        </code></pre>
+      </div>
+    </aside>
+
+  </main>
+
+  <script type="module" src="./src/scripts/rappi-track.js"></script>
+</body>
+</html>

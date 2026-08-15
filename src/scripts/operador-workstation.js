@@ -140,13 +140,13 @@ class MovistarCrmWorkstationApp {
       transcriptBox.innerHTML = `<strong style="color: var(--aura-cyan);">Carlos (Asesor):</strong> <span id="carlosTransStreaming">Iniciando audio...</span>`;
     }
 
-    const pitchText = `"Hola Valeria, veo que viajas seguido y terminas gastando de más comprando gigas. ¿Qué te parece si unificamos tu fibra de Lima y tu móvil en Movistar Total? Tendrás gigas ilimitados para tu laptop y ahorrarás S/ 40.00 fijos al mes."`;
+    const pitchText = `"Hola Valerio, veo que viajas seguido y terminas gastando de más comprando gigas. ¿Qué te parece si unificamos tu fibra de Lima y tu móvil en Movistar Total? Tendrás gigas ilimitados para tu laptop y ahorrarás S/ 40.00 fijos al mes."`;
 
     // Stream en el Cluely Copilot HUD
     this.streamText(pitchBox, pitchText, 20, '', () => {
       const carlosTrans = document.getElementById('carlosTransStreaming');
       if (carlosTrans) {
-        carlosTrans.innerText = `"Hola Valeria, veo que viajas seguido... [Lectura de pitch en vivo]"`;
+        carlosTrans.innerText = `"Hola Valerio, veo que viajas seguido... [Lectura de pitch en vivo]"`;
       }
     });
   }
@@ -157,10 +157,10 @@ class MovistarCrmWorkstationApp {
     const rebateBox = document.getElementById('cluelyRebateDisplayBox');
 
     if (transcriptBox) {
-      transcriptBox.innerHTML = `<strong style="color: #FFA726;">Valeria (Cliente):</strong> "Carlos, me interesa el ahorro pero tengo miedo de que me cobren doble o que el <span style="background: #FDE68A; color: #78350F; padding: 1px 6px; border-radius: 4px; font-weight: 800;">prorrateo</span> venga inflado..."`;
+      transcriptBox.innerHTML = `<strong style="color: #FFA726;">Valerio (Cliente):</strong> "Carlos, me interesa el ahorro pero tengo miedo de que me cobren doble o que el <span style="background: #FDE68A; color: #78350F; padding: 1px 6px; border-radius: 4px; font-weight: 800;">prorrateo</span> venga inflado..."`;
     }
 
-    const rebateText = `"Valeria, no te preocupes por el prorrateo: en tu primer recibo solo se incluirán S/ 15.00 correspondientes a los días proporcionales de transición. A partir del segundo mes pagarás tus S/ 139.90 netos fijos sin sorpresas."`;
+    const rebateText = `"Valerio, no te preocupes por el prorrateo: en tu primer recibo solo se incluirán S/ 15.00 correspondientes a los días proporcionales de transición. A partir del segundo mes pagarás tus S/ 139.90 netos fijos sin sorpresas."`;
 
     // Stream en el Cluely HUD con cursor ámbar
     this.streamText(rebateBox, rebateText, 20, 'orange');

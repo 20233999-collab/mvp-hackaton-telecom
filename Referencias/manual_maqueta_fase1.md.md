@@ -32,15 +32,15 @@ Inspirado en el sistema de seguimiento de pedidos de Rappi, el **Movistar Journe
 
 Eliminar las campañas masivas e intrusivas por SMS o llamadas frías. En su lugar, cada cliente de **Movistar Total** tiene asignado un asistente de IA personalizado 1-a-1. Este asistente actúa como un "amigo dentro de Movistar" que acompaña al cliente en sus canales preferidos (WhatsApp, App Mi Movistar, Portal Web).
 
-### ¿Cómo se hace en la cancha? (Caso Valeria Mendoza)
+### ¿Cómo se hace en la cancha? (Caso Valerio Mendoza)
 
-- **Gatillo Proactivo:** El sistema detecta mediante telemetría de red que Valeria agota sus 20 GB móviles antes del día 18 del mes debido a sus viajes de trabajo a provincias, gastando S/ 60.00 adicionales en paquetes de datos individuales (gasto total: S/ 179.80).
+- **Gatillo Proactivo:** El sistema detecta mediante telemetría de red que Valerio agota sus 20 GB móviles antes del día 18 del mes debido a sus viajes de trabajo a provincias, gastando S/ 60.00 adicionales en paquetes de datos individuales (gasto total: S/ 179.80).
 
 - **Contacto Empático:** En lugar de una llamada invasiva, el **Concierge Digital** le envía un mensaje interactivo de WhatsApp:
 
-- **Transparencia de Facturación (Módulo de Prorrateo Integrado):** Valeria responde con una duda común: *"Me interesa, pero ¿mi próximo recibo vendrá con cobros raros o prorrateos complejos?"*. El Concierge no responde de manera genérica; utiliza el motor de la Fase 3 (**BrainyBill**) para calcular en vivo y mostrarle un gráfico simple:
+- **Transparencia de Facturación (Módulo de Prorrateo Integrado):** Valerio responde con una duda común: *"Me interesa, pero ¿mi próximo recibo vendrá con cobros raros o prorrateos complejos?"*. El Concierge no responde de manera genérica; utiliza el motor de la Fase 3 (**BrainyBill**) para calcular en vivo y mostrarle un gráfico simple:
 
-- **Cierre Digital Seguro:** Valeria selecciona "Aceptar combo". El asistente genera automáticamente el contrato digital, lo envía por chat para firma electrónica, configura el **débito automático** para evitar suspensiones futuras y actualiza el estado del pedido en el **Movistar Journey Tracker** a: *"Orden Comercial Emitida - Pendiente Activación Técnica"*.
+- **Cierre Digital Seguro:** Valerio selecciona "Aceptar combo". El asistente genera automáticamente el contrato digital, lo envía por chat para firma electrónica, configura el **débito automático** para evitar suspensiones futuras y actualiza el estado del pedido en el **Movistar Journey Tracker** a: *"Orden Comercial Emitida - Pendiente Activación Técnica"*.
 
 ---
 
@@ -56,19 +56,19 @@ A. Ficha Inteligente Única del Cliente
 
 En su pantalla, Carlos ve una única interfaz consolidada (estándar de interacción **TMF683**). No tiene que saltar entre el CRM de Salesforce, el facturador Amdocs y el sistema de red OSS. La ficha le muestra:
 
-- **Identidad y Dolor:** *"Valeria Mendoza. Diseñadora. Gasta S/ 179.80 en total. Agota gigas móviles el día 18 en Arequipa"*.
+- **Identidad y Dolor:** *"Valerio Mendoza. Diseñadora. Gasta S/ 179.80 en total. Agota gigas móviles el día 18 en Arequipa"*.
 
 - **Oferta Ganadora (NBO):** *"Movistar Total S/ 139.90 (Ahorro del cliente: S/ 40.00)"*.
 
-- **Historial Omnicanal:** Línea de tiempo unificada que muestra los mensajes de WhatsApp que Valeria intercambió con el Concierge, sus clics en la App Mi Movistar y sus correos electrónicos anteriores.
+- **Historial Omnicanal:** Línea de tiempo unificada que muestra los mensajes de WhatsApp que Valerio intercambió con el Concierge, sus clics en la App Mi Movistar y sus correos electrónicos anteriores.
 
 B. Copiloto de Escucha Activa en Tiempo Real
 
 El copiloto procesa el audio de la llamada en tiempo real (mediante streaming de transcripción de baja latencia).
 
-- **Manejo Inteligente de Objeciones (Live Whisper):** Si Valeria le dice a Carlos: *"Me parece bien, pero he escuchado que Claro da más velocidad en Arequipa"*, el copiloto detecta la objeción en milisegundos y despliega una sugerencia en la pantalla de Carlos:
+- **Manejo Inteligente de Objeciones (Live Whisper):** Si Valerio le dice a Carlos: *"Me parece bien, pero he escuchado que Claro da más velocidad en Arequipa"*, el copiloto detecta la objeción en milisegundos y despliega una sugerencia en la pantalla de Carlos:
 
-- **Automatización de Formularios (Form-Fill Activo):** A medida que Valeria acepta las condiciones del contrato en la llamada (*"Sí, estoy de acuerdo con la velocidad de 400 Megas fijos y mi número móvil es el 999..."*), el copiloto de IA extrae estas variables del audio de voz y autocompleta los campos técnicos de la orden comercial. Carlos ya no digita datos bajo presión; solo valida la información y hace clic en "Confirmar Venta".
+- **Automatización de Formularios (Form-Fill Activo):** A medida que Valerio acepta las condiciones del contrato en la llamada (*"Sí, estoy de acuerdo con la velocidad de 400 Megas fijos y mi número móvil es el 999..."*), el copiloto de IA extrae estas variables del audio de voz y autocompleta los campos técnicos de la orden comercial. Carlos ya no digita datos bajo presión; solo valida la información y hace clic en "Confirmar Venta".
 
 ---
 

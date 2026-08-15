@@ -1,5 +1,5 @@
 /* ==========================================================================
-   WHATSAPP VALERIA MENDOZA - 100% RESPONSIVE & FULLSCREEN OPTIMIZATION
+   WHATSAPP VALERIO MENDOZA - 100% RESPONSIVE & FULLSCREEN OPTIMIZATION
    Directivas: DESIGN.md • Strict Light Tech • Zero Mockups • WhatsApp Web/Native
    ========================================================================== */
 
@@ -454,7 +454,7 @@ html, body {
 }
 
 /* Floating Director Controller */
-.valeria-director-bar {
+.valerio-director-bar {
   position: fixed;
   bottom: 16px;
   left: 50%;
@@ -471,8 +471,8 @@ html, body {
   z-index: 1000;
 }
 
-.valeria-director-bar a,
-.valeria-director-bar button {
+.valerio-director-bar a,
+.valerio-director-bar button {
   background: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -489,7 +489,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .valeria-director-bar {
+  .valerio-director-bar {
     display: none !important;
   }
 

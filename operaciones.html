@@ -3,27 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Consola Tablet SON-IA • Eficiencia Operativa y Recaudación (Fase 2) — M.O.V.I.</title>
-  <meta name="description" content="Estación de trabajo táctil para Tablet de la Fase 2: Eficiencia Operativa, Recaudación BCP y Conciliación en Tiempo Real SON-IA.">
+  <title>Consola Tablet SON-IA • Conciliación 1-Clic — M.O.V.I.</title>
+  <meta name="description" content="Dashboard de Analista (Ana) con conciliación a 1 clic, webhook bancario y reconexión TMF622.">
   <link rel="stylesheet" href="./src/styles/operaciones-sonia.css">
 </head>
 <body class="tablet-mode">
 
-  <!-- ========================================================================
-       MASTER TABLET VIEWPORT CONTAINER (100% PANTALLA COMPLETA)
-       ======================================================================== -->
   <main class="tablet-app-stage" id="tabletAppStage">
 
-    <!-- Top Tablet Status Bar (Stories Progress + System Indicators) -->
     <header class="tablet-system-header">
-      <div class="tablet-story-progress-bar">
-        <div class="story-seg active" id="storySeg0"></div>
-        <div class="story-seg" id="storySeg1"></div>
-        <div class="story-seg" id="storySeg2"></div>
-        <div class="story-seg" id="storySeg3"></div>
-        <div class="story-seg" id="storySeg4"></div>
-      </div>
-
       <div class="tablet-header-info-row">
         <div class="tablet-header-left">
           <a href="./index.html" class="tablet-back-btn" title="Volver al Cockpit">
@@ -32,8 +20,8 @@
           <div class="tablet-badge-app">
             <span class="tablet-logo-m">M</span>
             <div>
-              <h2>Consola SON-IA Tablet</h2>
-              <span class="tablet-sub-title" id="tabletScreenSubTitle">Acceso Biométrico • Estación de Trabajo Ana</span>
+              <h2>Centro de Mando SON-IA</h2>
+              <span class="tablet-sub-title">Estación de Trabajo: Ana Morales (Analista)</span>
             </div>
           </div>
         </div>
@@ -41,23 +29,16 @@
         <div class="tablet-header-right">
           <div class="tablet-pill-latency">
             <span class="pulse-dot"></span>
-            <span>Event Stream: <strong>38ms</strong></span>
+            <span>API Stream: <strong>12ms</strong></span>
           </div>
-          <button class="tablet-mode-toggle-btn" id="btnToggleMatrixMode" title="Alternar Vista Matriz / Tablet">
-            <i data-lucide="layout-grid" style="width: 15px;"></i>
-            <span id="toggleModeText">Ver Matriz</span>
-          </button>
         </div>
       </div>
     </header>
 
-    <!-- ========================================================================
-         PANTALLAS DEL FLUJO TABLET (PANTALLA POR PANTALLA)
-         ======================================================================== -->
     <div class="tablet-screens-canvas" id="tabletScreensCanvas">
 
       <!-- ====================================================================
-           PANTALLA 0: LOGIN / ACCESO BIOMÉTRICO TABLET
+           PANTALLA 0: LOGIN BIOMÉTRICO
            ==================================================================== -->
       <section class="tablet-screen-view active-view" id="screen0Login">
         <div class="login-tablet-card">
@@ -66,8 +47,8 @@
               <div class="login-avatar-img">AM</div>
             </div>
             <h3>Ana Morales</h3>
-            <span class="login-role-tag">Analista Senior de Facturación &amp; Recaudación</span>
-            <span class="login-id-tag">Credencial ID: MOV-OPS-7729</span>
+            <span class="login-role-tag">Analista Contable • Conciliación Automática</span>
+            <span class="login-id-tag">Credencial ID: MOV-FIN-7729</span>
           </div>
 
           <div class="login-biometric-stage" id="biometricTouchBtn">
@@ -76,346 +57,110 @@
               <div class="biometric-scanning-laser"></div>
             </div>
             <div class="biometric-prompt-text">
-              <strong>Toca para Autenticar con Touch ID / Face ID</strong>
-              <span>Acceso seguro a base de datos de recaudación y central OLT</span>
+              <strong>Toca para Autenticar (Touch ID)</strong>
+              <span>Acceso seguro a Motor Neural P×Q y Red GPON</span>
             </div>
           </div>
-
-          <button class="btn-tablet-primary-action" id="btnEnterConsole">
-            <i data-lucide="log-in" style="width: 18px;"></i> Ingresar a la Consola SON-IA
-          </button>
         </div>
       </section>
 
       <!-- ====================================================================
-           PANTALLA 1: SCORING CVM & MODO MANTENIMIENTO (15 Mbps)
+           PANTALLA 1: DASHBOARD CONCILIACIÓN 1-CLIC Y TMF622
            ==================================================================== -->
-      <section class="tablet-screen-view" id="screen1Scoring">
-        <div class="tablet-focus-card">
-          <div class="focus-card-header">
-            <div class="focus-title-group">
-              <span class="step-badge-pill">Paso 1 de 4 • Frente Cliente</span>
-              <h3>Clasificación CVM &amp; Modo Mantenimiento</h3>
+      <section class="tablet-screen-view" id="screen1Dashboard">
+        <div class="dashboard-header">
+          <div>
+            <h3>Panel de Excepciones Inteligentes (HITL)</h3>
+            <span class="dash-sub">Cliente en foco: <strong>Miguel Mendoza</strong> • 42 Días Mora</span>
+          </div>
+          <div class="tmf-badge" id="badgeTMF">
+            <i data-lucide="cpu" style="width: 14px;"></i> <span>API TMF622: EN ESPERA</span>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          
+          <!-- PANEL IZQUIERDO: Motor de Conciliación -->
+          <div class="dash-panel conciliation-panel">
+            <div class="panel-title">Auditoría Financiera P × Q</div>
+            
+            <div class="reconciliation-stage">
+              
+              <div class="recon-card bank-card">
+                <div class="recon-icon-badge" style="background: rgba(116, 52, 235, 0.1); color: #7434eb;">
+                  <i data-lucide="smartphone-charging"></i>
+                </div>
+                <div class="recon-info">
+                  <span class="recon-label">API Bancaria (Yape/BCP)</span>
+                  <strong class="recon-value">S/ 99.33</strong>
+                  <span class="recon-status">Recibido (Abono)</span>
+                </div>
+              </div>
+
+              <div class="recon-connector">
+                <div class="connector-line" id="connectorLine"></div>
+                <!-- El Botón Mágico 1-Clic -->
+                <button class="btn-magic-1click" id="btnApproveRecon">
+                  <span class="btn-confidence">SON-IA MATCH 99.8%</span>
+                  <div class="btn-main-action">
+                    <i data-lucide="check-circle" style="width: 18px;"></i>
+                    <span>Aprobar con 1 Clic</span>
+                  </div>
+                </button>
+                <div class="success-check-mark" id="successCheckMark" style="display: none;">
+                  <i data-lucide="check-circle-2"></i>
+                </div>
+              </div>
+
+              <div class="recon-card sga-card">
+                <div class="recon-icon-badge" style="background: rgba(1, 157, 244, 0.1); color: #019DF4;">
+                  <i data-lucide="database"></i>
+                </div>
+                <div class="recon-info">
+                  <span class="recon-label">Sistema SGA M.O.V.I.</span>
+                  <strong class="recon-value">S/ 99.33</strong>
+                  <span class="recon-status">Cuota 1 Esperada</span>
+                </div>
+              </div>
+
             </div>
-            <span class="status-pill warning">Soft-Lock 15 Mbps</span>
           </div>
 
-          <div class="tablet-2col-layout">
-            <!-- Ficha de Juan Carlos -->
-            <div class="client-dossier-tablet">
-              <div class="dossier-header-row">
-                <div>
-                  <h4>Juan Carlos Quispe</h4>
-                  <p>Diseñador Gráfico Freelance • Arequipa</p>
-                </div>
-                <span class="cvm-risk-badge">Bajo Riesgo • Tramo 2 (42 días)</span>
-              </div>
-
-              <div class="debt-box-tablet">
-                <span class="debt-lbl">Deuda Vencida: <strong>S/ 298.00</strong></span>
-                <span class="debt-plan-sub">Estructuración inteligente generada por IA:</span>
-                
-                <div class="installments-tablet-grid">
-                  <div class="inst-tablet-item active" id="instTab1">
-                    <span class="inst-tab-num">Cuota 1/3</span>
-                    <strong>S/ 99.33</strong>
-                    <span class="inst-tab-tag">Pagar Hoy</span>
-                  </div>
-                  <div class="inst-tablet-item" id="instTab2">
-                    <span class="inst-tab-num">Cuota 2/3</span>
-                    <strong>S/ 99.33</strong>
-                    <span class="inst-tab-tag">En 30 Días</span>
-                  </div>
-                  <div class="inst-tablet-item" id="instTab3">
-                    <span class="inst-tab-num">Cuota 3/3</span>
-                    <strong>S/ 99.34</strong>
-                    <span class="inst-tab-tag">En 60 Días</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tacómetro SVG de Ancho de Banda -->
-            <div class="speed-tachometer-tablet">
-              <div class="tach-header-row">
-                <span>Velocidad de Fibra en Router:</span>
-                <strong id="tachSpeedDisplay1" style="color: #EAB308;">15 Mbps</strong>
-              </div>
-
+          <!-- PANEL DERECHO: Red Física GPON -->
+          <div class="dash-panel network-panel">
+            <div class="panel-title">Estado de Red Física (GPON)</div>
+            
+            <div class="tachometer-container">
               <div class="tach-svg-box">
                 <svg class="tachometer-svg" viewBox="0 0 200 110">
                   <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round"/>
-                  <path d="M 20 100 A 80 80 0 0 1 65 38" fill="none" stroke="#EAB308" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 3"/>
-                  <path d="M 65 38 A 80 80 0 0 1 180 100" fill="none" stroke="#00D4FF" stroke-width="14" stroke-linecap="round" opacity="0.2"/>
-                  <line id="tachNeedle1" x1="100" y1="100" x2="45" y2="55" stroke="#EAB308" stroke-width="4" stroke-linecap="round"/>
+                  <path id="tachArcYellow" d="M 20 100 A 80 80 0 0 1 65 38" fill="none" stroke="#EAB308" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 3"/>
+                  <path id="tachArcBlue" d="M 65 38 A 80 80 0 0 1 180 100" fill="none" stroke="#00D4FF" stroke-width="14" stroke-linecap="round" opacity="0.2"/>
+                  <line id="tachNeedle" x1="100" y1="100" x2="45" y2="55" stroke="#EAB308" stroke-width="4" stroke-linecap="round"/>
                   <circle cx="100" cy="100" r="8" fill="#0B192C"/>
-                  <circle cx="100" cy="100" r="4" fill="#EAB308"/>
+                  <circle cx="100" cy="100" r="4" fill="#EAB308" id="tachCenterPin"/>
                 </svg>
-                <div class="tach-legend-row">
-                  <span>0M (Corte)</span>
-                  <span style="color: #EAB308; font-weight: 700;">15M (Modo Mant.)</span>
-                  <span style="color: #019DF4; font-weight: 700;">300M (Full GPON)</span>
+                <div class="tach-reading">
+                  <strong id="tachSpeedText" style="color: #EAB308;">15 Mbps</strong>
+                  <span>En Router</span>
                 </div>
               </div>
 
-              <div class="tach-note-tablet">
-                <i data-lucide="shield-check" style="width: 16px; color: #EAB308; flex-shrink: 0;"></i>
-                <span><strong>Cero Corte Drástico:</strong> Juan Carlos puede entregar sus diseños freelance y pagar su cuota sin abandonar Movistar (Anti-Churn).</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="focus-card-footer">
-            <button class="btn-tablet-next-action" id="btnGoToStep2">
-              <span>Sincronizar Código con Banca BCP (Paso 2)</span>
-              <i data-lucide="arrow-right" style="width: 18px;"></i>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           PANTALLA 2: DISPERSIÓN API BCP & PAGO EN TIEMPO REAL
-           ==================================================================== -->
-      <section class="tablet-screen-view" id="screen2Bcp">
-        <div class="tablet-focus-card">
-          <div class="focus-card-header">
-            <div class="focus-title-group">
-              <span class="step-badge-pill">Paso 2 de 4 • Pasarela Bancaria</span>
-              <h3>Dispersión de Código de Recaudación en Banca BCP</h3>
-            </div>
-            <span class="status-pill bcp">API BCP Sincronizada</span>
-          </div>
-
-          <div class="bcp-full-tablet-container">
-            <!-- Terminal BCP -->
-            <div class="bcp-gateway-box">
-              <div class="bcp-top-bar">
-                <div class="bcp-logo-badge-lg">
-                  <span style="font-weight: 900; font-size: 18px; color: #002A8F; letter-spacing: -0.5px;">BCP</span>
-                  <span style="font-size: 11px; color: #FF7800; font-weight: 800;">Portal de Recaudo Webhook</span>
-                </div>
-                <div class="bcp-code-chip">
-                  <span>Código de Pago:</span>
-                  <strong>MOV-FIBRA-883921</strong>
-                </div>
-              </div>
-
-              <div class="bcp-amount-banner">
+              <div class="network-status-box" id="networkStatusBox">
+                <i data-lucide="shield-alert" style="color: #EAB308;"></i>
                 <div>
-                  <span class="bcp-banner-lbl">Monto de la Primera Cuota Estructurada</span>
-                  <div class="bcp-banner-val">S/ 99.33</div>
-                </div>
-                <button class="btn-simulate-bcp-touch" id="btnTouchBcpPay">
-                  <i data-lucide="smartphone-charging" style="width: 20px;"></i>
-                  <span>Simular Pago en Banca BCP / Yape</span>
-                </button>
-              </div>
-
-              <div class="bcp-event-feed-tablet" id="bcpEventFeedTablet">
-                <div class="feed-row">
-                  <span class="feed-time">[14:20:05]</span>
-                  <span class="feed-txt">API TM Forum TMF666 ➔ Código de recaudo inyectado en servidores BCP en 38ms.</span>
-                </div>
-                <div class="feed-row">
-                  <span class="feed-time">[14:20:06]</span>
-                  <span class="feed-txt">Esperando que Juan Carlos confirme el pago desde su app bancaria...</span>
+                  <strong>Modo Mantenimiento Activo</strong>
+                  <span>Servicio reducido para evitar corte por mora.</span>
                 </div>
               </div>
             </div>
+            
           </div>
 
-          <div class="focus-card-footer">
-            <button class="btn-tablet-next-action" id="btnGoToStep3">
-              <span>Interceptar Transacción y Conciliar en SGA (Paso 3)</span>
-              <i data-lucide="arrow-right" style="width: 18px;"></i>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           PANTALLA 3: AUDITORÍA CONTABLE SGA (P x Q) & CONCILIACIÓN HITL
-           ==================================================================== -->
-      <section class="tablet-screen-view" id="screen3Sga">
-        <div class="tablet-focus-card">
-          <div class="focus-card-header">
-            <div class="focus-title-group">
-              <span class="step-badge-pill">Paso 3 de 4 • Back-Office &amp; Finanzas</span>
-              <h3>Conciliación SGA en Tiempo Real &amp; Auditoría P × Q</h3>
-            </div>
-            <span class="status-pill sonia">100% Conciliado</span>
-          </div>
-
-          <div class="tablet-2col-layout">
-            <!-- Balanza Contable SGA -->
-            <div class="sga-audit-tablet-box">
-              <h4>
-                <i data-lucide="scale" style="width: 18px; color: var(--movistar-blue);"></i> Balanza Contable SGA
-              </h4>
-
-              <div class="sga-debt-evolution">
-                <div class="evo-row">
-                  <span>Deuda Inicial Total:</span>
-                  <strong>S/ 298.00</strong>
-                </div>
-                <div class="evo-row" style="color: #00C853;">
-                  <span>Abono Recibido BCP (Cuota 1):</span>
-                  <strong>- S/ 99.33</strong>
-                </div>
-                <div class="evo-divider"></div>
-                <div class="evo-row total">
-                  <span>Saldo Restante en Facturación:</span>
-                  <strong id="tabletDebtRemain">S/ 198.67</strong>
-                </div>
-              </div>
-
-              <div class="sga-checks-cluster">
-                <div class="sga-check-pill">
-                  <i data-lucide="check-circle-2" style="width: 15px; color: #00C853;"></i>
-                  <span>Cero Error de Redondeo (Tolerancia ±S/ 0.00)</span>
-                </div>
-                <div class="sga-check-pill">
-                  <i data-lucide="check-circle-2" style="width: 15px; color: #00C853;"></i>
-                  <span>Asiento Contable SGA Automático #774921</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- HITL Ana Morales Approval Box -->
-            <div class="ana-approval-tablet-card">
-              <div class="ana-card-head">
-                <div class="ana-avatar-circle">AM</div>
-                <div>
-                  <strong>Ana Morales • Decisión HITL</strong>
-                  <span>Human-in-the-Loop: Validación con 1 Toque</span>
-                </div>
-              </div>
-
-              <p class="ana-explanation-text">
-                El motor de IA verificó la transacción bancaria frente al contrato sin abrir archivos de Excel. Todo está listo para restablecer el servicio.
-              </p>
-
-              <button class="btn-hitl-giant-approve" id="btnHitlGiantApprove">
-                <i data-lucide="check-circle" style="width: 22px;"></i>
-                <span>Aprobar Conciliación y Disparar SON-IA</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="focus-card-footer">
-            <button class="btn-tablet-next-action" id="btnGoToStep4">
-              <span>Ver Reconexión en Central GPON OLT (Paso 4)</span>
-              <i data-lucide="arrow-right" style="width: 18px;"></i>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           PANTALLA 4: DESPACHO SON-IA & RESTAURACIÓN OLT (4.2 SEGUNDOS)
-           ==================================================================== -->
-      <section class="tablet-screen-view" id="screen4Olt">
-        <div class="tablet-focus-card">
-          <div class="focus-card-header">
-            <div class="focus-title-group">
-              <span class="step-badge-pill">Paso 4 de 4 • Red Física &amp; ROI</span>
-              <h3>Despacho SON-IA &amp; Reconexión GPON OLT</h3>
-            </div>
-            <span class="status-pill sonia">Fibra 100% Activa</span>
-          </div>
-
-          <div class="tablet-2col-layout">
-            <!-- Central GPON Rack Hardware -->
-            <div class="gpon-rack-tablet-box">
-              <div class="gpon-rack-head">
-                <span>Central Miraflores :: OLT-GPON-04</span>
-                <span class="port-chip">Puerto: GPON 0/2/14:32</span>
-              </div>
-
-              <!-- Ports visual -->
-              <div class="ports-strip-tablet">
-                <div class="p-led online"></div>
-                <div class="p-led online"></div>
-                <div class="p-led online"></div>
-                <div class="p-led restored-burst" id="portJuanTablet" title="Puerto de Juan Carlos Restaurado"></div>
-                <div class="p-led online"></div>
-                <div class="p-led online"></div>
-              </div>
-
-              <div class="olt-terminal-tablet" id="oltTerminalTablet">
-                <div>[14:20:12] SON-IA Event: Conciliación confirmada (TMF666).</div>
-                <div>[14:20:13] EXEC: RESTORE_QOS_PROFILE(300M_SYMMETRIC) ➔ OLT GPON 0/2/14:32.</div>
-                <div style="color: #4ADE80;">[14:20:14] OLT STATUS: PORT ONLINE. 300 Mbps Restablecidos en 4.2 seg.</div>
-              </div>
-            </div>
-
-            <!-- Tachometer + Timer Results -->
-            <div class="speed-tachometer-tablet success-theme">
-              <div class="tach-header-row">
-                <span>Velocidad de Fibra Restaurada:</span>
-                <strong id="tachSpeedDisplay4" style="color: #00D4FF;">300 Mbps Simétricos</strong>
-              </div>
-
-              <!-- Live Timer -->
-              <div class="timer-giant-badge">
-                <span class="timer-title-sub">Tiempo de Reconexión de Red:</span>
-                <div class="timer-big-num" id="timerBigNum">⏱️ 00:04.2</div>
-                <div class="timer-bench-compare">
-                  <span>Antes (Lotes Batch): <strong style="color: #EF4444; text-decoration: line-through;">18 Horas</strong></span>
-                  <span style="color: #00C853; font-weight: 800;">SON-IA: 4.2 Segundos (↓ 99.6%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Financial Impact KPIs Quad -->
-          <div class="kpis-banner-tablet">
-            <div class="kpi-card-tab">
-              <span>DSO (Periodo de Cobro)</span>
-              <strong>45d ➔ 30d <span class="kpi-up">↓33%</span></strong>
-            </div>
-            <div class="kpi-card-tab">
-              <span>Auto-Conciliación</span>
-              <strong>99.2% <span class="kpi-up">↑34%</span></strong>
-            </div>
-            <div class="kpi-card-tab">
-              <span>Tiempo de Reconexión</span>
-              <strong>4.2 seg <span class="kpi-up">↓99.6%</span></strong>
-            </div>
-            <div class="kpi-card-tab">
-              <span>Revenue Leakage</span>
-              <strong>0.0% <span class="kpi-up">Auditado</span></strong>
-            </div>
-          </div>
-
-          <div class="focus-card-footer split">
-            <button class="btn-tablet-secondary-action" id="btnRestartFlow">
-              <i data-lucide="rotate-ccw" style="width: 16px;"></i> Reiniciar Simulación
-            </button>
-            <a href="./index.html" class="btn-tablet-next-action">
-              <span>Volver al Cockpit Principal</span>
-              <i data-lucide="layout-grid" style="width: 18px;"></i>
-            </a>
-          </div>
         </div>
       </section>
 
     </div>
-
-    <!-- ========================================================================
-         BOTTOM TABLET THUMB CONTROLLER (ERgonómico para Pulgares)
-         ======================================================================== -->
-    <footer class="tablet-bottom-thumb-bar">
-      <button class="thumb-step-btn active" id="btnThumb0" title="Acceso">0. Acceso</button>
-      <button class="thumb-step-btn" id="btnThumb1" title="Scoring">1. Soft-Lock</button>
-      <button class="thumb-step-btn" id="btnThumb2" title="API BCP">2. API BCP</button>
-      <button class="thumb-step-btn" id="btnThumb3" title="Conciliación">3. Conciliación</button>
-      <button class="thumb-step-btn" id="btnThumb4" title="Reconexión">4. OLT 4.2s</button>
-      <button class="thumb-auto-btn" id="btnAutoPlayTablet">
-        <i data-lucide="play" style="width: 14px;"></i> Auto Pitch
-      </button>
-    </footer>
 
   </main>
 

@@ -1,256 +1,159 @@
-/* ==========================================================================
-   CONSOLA TABLET SON-IA • ENGINE FASE 2 (INTERACTIVIDAD TÁCTIL PANTALLA POR PANTALLA)
-   Directivas: DESIGN.md • GSAP Animations • Confetti • Tablet Step Flow
-   ========================================================================== */
-
 import { createIcons, icons } from 'lucide';
-import confetti from 'canvas-confetti';
 import gsap from 'gsap';
-
-class SoniaTabletOperationsEngine {
-  constructor() {
-    this.currentStep = 0; // 0: Login, 1: Scoring, 2: BCP, 3: SGA, 4: OLT
-    this.isAutoPlaying = false;
-    this.autoPlayInterval = null;
-
-    // DOM Elements
-    this.tabletScreenSubTitle = document.getElementById('tabletScreenSubTitle');
-    this.bcpEventFeedTablet = document.getElementById('bcpEventFeedTablet');
-    this.oltTerminalTablet = document.getElementById('oltTerminalTablet');
-    this.portJuanTablet = document.getElementById('portJuanTablet');
-
-    this.init();
-  }
-
-  init() {
-    createIcons({ icons });
-    this.bindEvents();
-    this.goToStep(0);
-    console.log('📱 Tablet SON-IA Operations Engine (Phase 2) initialized.');
-  }
-
-  bindEvents() {
-    // Screen 0: Biometric Login Actions
-    document.getElementById('biometricTouchBtn')?.addEventListener('click', () => {
-      this.triggerBiometricLogin();
-    });
-
-    document.getElementById('btnEnterConsole')?.addEventListener('click', () => {
-      this.triggerBiometricLogin();
-    });
-
-    // Step Transition Next Action Buttons
-    document.getElementById('btnGoToStep2')?.addEventListener('click', () => this.goToStep(2));
-    document.getElementById('btnGoToStep3')?.addEventListener('click', () => this.goToStep(3));
-    document.getElementById('btnGoToStep4')?.addEventListener('click', () => this.goToStep(4));
-    document.getElementById('btnRestartFlow')?.addEventListener('click', () => this.goToStep(0));
-
-    // Interactive In-Screen Buttons
-    document.getElementById('btnTouchBcpPay')?.addEventListener('click', () => {
-      this.triggerBcpPayInScreen();
-    });
-
-    document.getElementById('btnHitlGiantApprove')?.addEventListener('click', () => {
-      this.triggerHitlApprovalInScreen();
-    });
-
-    // Bottom Thumb Bar Buttons
-    document.getElementById('btnThumb0')?.addEventListener('click', () => this.goToStep(0));
-    document.getElementById('btnThumb1')?.addEventListener('click', () => this.goToStep(1));
-    document.getElementById('btnThumb2')?.addEventListener('click', () => this.goToStep(2));
-    document.getElementById('btnThumb3')?.addEventListener('click', () => this.goToStep(3));
-    document.getElementById('btnThumb4')?.addEventListener('click', () => this.goToStep(4));
-    document.getElementById('btnAutoPlayTablet')?.addEventListener('click', () => this.toggleAutoPlay());
-
-    // Keyboard Shortcuts (0, 1, 2, 3, 4, Space, Arrow keys)
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '0') this.goToStep(0);
-      if (e.key === '1') this.goToStep(1);
-      if (e.key === '2') this.goToStep(2);
-      if (e.key === '3') this.goToStep(3);
-      if (e.key === '4') this.goToStep(4);
-      if (e.key === ' ' || e.key === 'ArrowRight') {
-        if (this.currentStep < 4) this.goToStep(this.currentStep + 1);
-        else this.goToStep(0);
-      }
-      if (e.key === 'ArrowLeft') {
-        if (this.currentStep > 0) this.goToStep(this.currentStep - 1);
-      }
-    });
-  }
-
-  goToStep(stepNum) {
-    this.currentStep = stepNum;
-    this.updateActiveStepUI(stepNum);
-
-    // Hide all screens
-    const screens = ['screen0Login', 'screen1Scoring', 'screen2Bcp', 'screen3Sga', 'screen4Olt'];
-    screens.forEach((id, idx) => {
-      const el = document.getElementById(id);
-      if (el) {
-        if (idx === stepNum) el.classList.add('active-view');
-        else el.classList.remove('active-view');
-      }
-    });
-
-    if (stepNum === 0) this.renderScreen0();
-    if (stepNum === 1) this.renderScreen1();
-    if (stepNum === 2) this.renderScreen2();
-    if (stepNum === 3) this.renderScreen3();
-    if (stepNum === 4) this.renderScreen4();
-
-    createIcons({ icons });
-  }
-
-  updateActiveStepUI(stepNum) {
-    // Update Stories progress segments (0 to 4)
-    for (let i = 0; i <= 4; i++) {
-      const seg = document.getElementById(`storySeg${i}`);
-      const btnThumb = document.getElementById(`btnThumb${i}`);
-
-      if (seg) {
-        seg.classList.remove('active', 'completed');
-        if (i < stepNum) seg.classList.add('completed');
-        else if (i === stepNum) seg.classList.add('active');
-      }
-
-      if (btnThumb) {
-        if (i === stepNum) btnThumb.classList.add('active');
-        else btnThumb.classList.remove('active');
-      }
-    }
-  }
-
-  /* --- PANTALLA 0: LOGIN --- */
-  renderScreen0() {
-    if (this.tabletScreenSubTitle) {
-      this.tabletScreenSubTitle.innerText = 'Acceso Biométrico • Estación de Trabajo Ana';
-    }
-  }
-
-  triggerBiometricLogin() {
-    const laser = document.querySelector('.biometric-scanning-laser');
-    if (laser) {
-      gsap.to(laser, { backgroundColor: '#00C853', boxShadow: '0 0 14px #00C853', duration: 0.3 });
-    }
-    setTimeout(() => {
-      this.goToStep(1);
-    }, 450);
-  }
-
-  /* --- PANTALLA 1: SCORING & SOFT-LOCK --- */
-  renderScreen1() {
-    if (this.tabletScreenSubTitle) {
-      this.tabletScreenSubTitle.innerText = 'Paso 1: Clasificación de Deuda & Modo Mantenimiento';
-    }
-
-    const needle = document.getElementById('tachNeedle1');
-    if (needle) {
-      gsap.fromTo(needle, 
-        { attr: { x2: 100, y2: 20 } },
-        { attr: { x2: 45, y2: 55 }, duration: 0.8, ease: 'power2.out' }
-      );
-    }
-  }
-
-  /* --- PANTALLA 2: DISPERSIÓN BCP --- */
-  renderScreen2() {
-    if (this.tabletScreenSubTitle) {
-      this.tabletScreenSubTitle.innerText = 'Paso 2: Sincronización con Portal de Recaudo BCP';
-    }
-  }
-
-  triggerBcpPayInScreen() {
-    const btn = document.getElementById('btnTouchBcpPay');
-    if (btn) {
-      btn.innerHTML = '<i data-lucide="check-circle-2" style="width: 20px;"></i> <span>¡Abono Procesado con Éxito!</span>';
-      btn.style.background = '#00C853';
-    }
-    if (this.bcpEventFeedTablet) {
-      this.bcpEventFeedTablet.innerHTML = `
-        <div class="feed-row" style="color: #4ADE80;">
-          <span class="feed-time">[14:20:10]</span>
-          <span class="feed-txt">HTTP 200 OK: Abono de S/ 99.33 recibido del BCP. Notificando a M.O.V.I...</span>
-        </div>
-      `;
-    }
-    createIcons({ icons });
-
-    setTimeout(() => {
-      this.goToStep(3);
-    }, 900);
-  }
-
-  /* --- PANTALLA 3: AUDITORÍA SGA & HITL --- */
-  renderScreen3() {
-    if (this.tabletScreenSubTitle) {
-      this.tabletScreenSubTitle.innerText = 'Paso 3: Conciliación SGA y Validación Humana (HITL)';
-    }
-  }
-
-  triggerHitlApprovalInScreen() {
-    const btn = document.getElementById('btnHitlGiantApprove');
-    if (btn) {
-      btn.innerHTML = '<i data-lucide="check" style="width: 22px;"></i> <span>¡Conciliación Aprobada por Ana!</span>';
-      btn.style.background = '#047857';
-    }
-    createIcons({ icons });
-
-    setTimeout(() => {
-      this.goToStep(4);
-    }, 700);
-  }
-
-  /* --- PANTALLA 4: OLT GPON & RESULTADOS --- */
-  renderScreen4() {
-    if (this.tabletScreenSubTitle) {
-      this.tabletScreenSubTitle.innerText = 'Paso 4: Despacho SON-IA & Reconexión GPON en 4.2 Segundos';
-    }
-
-    if (this.portJuanTablet) {
-      gsap.fromTo(this.portJuanTablet, { scale: 0.8 }, { scale: 1.25, yoyo: true, repeat: 3, duration: 0.2 });
-    }
-
-    const timer = document.getElementById('timerBigNum');
-    if (timer) {
-      gsap.fromTo(timer, { scale: 0.8 }, { scale: 1.05, duration: 0.5, ease: 'back.out(2)' });
-    }
-
-    confetti({
-      particleCount: 60,
-      spread: 80,
-      origin: { y: 0.6 },
-      colors: ['#019DF4', '#00D4FF', '#00C853']
-    });
-  }
-
-  /* --- AUTO PLAY TABLET PITCH (45 SEGUNDOS) --- */
-  toggleAutoPlay() {
-    if (this.isAutoPlaying) {
-      clearInterval(this.autoPlayInterval);
-      this.isAutoPlaying = false;
-      document.getElementById('btnAutoPlayTablet').innerHTML = '<i data-lucide="play" style="width: 14px;"></i> Auto Pitch';
-    } else {
-      this.isAutoPlaying = true;
-      document.getElementById('btnAutoPlayTablet').innerHTML = '<i data-lucide="pause" style="width: 14px;"></i> Pausar';
-      this.goToStep(0);
-
-      let step = 0;
-      this.autoPlayInterval = setInterval(() => {
-        step++;
-        if (step > 4) {
-          clearInterval(this.autoPlayInterval);
-          this.isAutoPlaying = false;
-          document.getElementById('btnAutoPlayTablet').innerHTML = '<i data-lucide="play" style="width: 14px;"></i> Auto Pitch';
-        } else {
-          this.goToStep(step);
-        }
-      }, 4000); // 4 segundos por pantalla
-    }
-    createIcons({ icons });
-  }
-}
+import confetti from 'canvas-confetti';
 
 document.addEventListener('DOMContentLoaded', () => {
-  new SoniaTabletOperationsEngine();
+  createIcons({ icons });
+
+  // Referencias a DOM
+  const screen0Login = document.getElementById('screen0Login');
+  const screen1Dashboard = document.getElementById('screen1Dashboard');
+  
+  const biometricBtn = document.getElementById('biometricTouchBtn');
+  const bankCard = document.querySelector('.bank-card');
+  const sgaCard = document.querySelector('.sga-card');
+  const btnApprove = document.getElementById('btnApproveRecon');
+  const connectorLine = document.getElementById('connectorLine');
+  const successCheckMark = document.getElementById('successCheckMark');
+  const badgeTMF = document.getElementById('badgeTMF');
+  
+  const tachNeedle = document.getElementById('tachNeedle');
+  const tachSpeedText = document.getElementById('tachSpeedText');
+  const networkStatusBox = document.getElementById('networkStatusBox');
+
+  // Estado Inicial
+  let currentPhase = 0;
+  
+  // Ocultar elementos iniciales para que entren por fase
+  gsap.set(bankCard, { opacity: 0, x: -30 });
+  gsap.set(btnApprove, { opacity: 0, scale: 0.8, pointerEvents: 'none' });
+  gsap.set(sgaCard, { opacity: 0, x: 30 });
+  
+  // =========================================================
+  // FASE 0: LOGIN BIOMÉTRICO
+  // =========================================================
+  biometricBtn.addEventListener('click', () => {
+    // Escaneo verde
+    gsap.to('.biometric-finger-icon', { color: '#00C853', duration: 0.3 });
+    gsap.to('.biometric-scanning-laser', { backgroundColor: '#00C853', boxShadow: '0 0 10px #00C853', duration: 0.3 });
+    
+    setTimeout(() => {
+      screen0Login.classList.remove('active-view');
+      screen1Dashboard.classList.add('active-view');
+      
+      // Iniciar Fase 1 automáticamente al entrar
+      setTimeout(() => advancePhase(1), 500);
+    }, 800);
+  });
+
+  // =========================================================
+  // CONTROLADOR DE FASES (Cronológico)
+  // =========================================================
+  function advancePhase(phase) {
+    if (phase === currentPhase) return;
+    currentPhase = phase;
+
+    if (currentPhase === 1) {
+      // FASE 1: Se muestra el panel SGA (M.O.V.I.) esperando el pago
+      gsap.to(sgaCard, { opacity: 1, x: 0, duration: 0.5, ease: 'back.out(1.2)' });
+    }
+    
+    else if (currentPhase === 2) {
+      // FASE 2: Llega el pago por Yape (simulando la acción de Miguel en su celular)
+      gsap.to(bankCard, { opacity: 1, x: 0, duration: 0.5, ease: 'back.out(1.2)' });
+      
+      // Activar el botón de 1 clic
+      setTimeout(() => {
+        gsap.to(btnApprove, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.4, ease: 'back.out(1.5)' });
+      }, 300);
+    }
+
+    else if (currentPhase === 3) {
+      // FASE 3: Ana da el clic, Conciliación Automática
+      // Ocultar botón, mostrar checkmark
+      gsap.to(btnApprove, { opacity: 0, scale: 0.5, duration: 0.2, onComplete: () => {
+        btnApprove.style.display = 'none';
+        successCheckMark.style.display = 'flex';
+        gsap.from(successCheckMark, { scale: 0, duration: 0.5, ease: 'back.out(2)' });
+      }});
+
+      // Conector se pone verde
+      connectorLine.classList.add('connected');
+      bankCard.classList.add('success');
+      sgaCard.classList.add('success');
+      
+      // Confetti de celebración interna
+      setTimeout(() => {
+        confetti({ particleCount: 50, spread: 60, origin: { y: 0.5 } });
+      }, 300);
+    }
+
+    else if (currentPhase === 4) {
+      // FASE 4: Activación TMF622 y Reconexión GPON
+      // 1. Badge TMF
+      badgeTMF.classList.add('active-tmf');
+      badgeTMF.innerHTML = '<i data-lucide="zap" style="width: 14px;"></i> <span>API TMF622: EJECUTADA (RESTORE GPON)</span>';
+      createIcons({ icons });
+
+      // 2. Tacómetro sube a 300M (Ángulo para 180 es 180 en el path, calcularemos aprox)
+      // Original: 15M -> aguja en x2=45, y2=55
+      // Destino: 300M -> aguja a la derecha (x2=155, y2=55) o similar
+      gsap.to(tachNeedle, {
+        attr: { x2: 155, y2: 55 },
+        stroke: '#00D4FF',
+        duration: 1.5,
+        ease: 'power3.out'
+      });
+      
+      gsap.to(tachSpeedText, { color: '#00D4FF', duration: 0.5 });
+      
+      // Animar el contador de 15 a 300
+      let dummy = { val: 15 };
+      gsap.to(dummy, {
+        val: 300,
+        duration: 1.5,
+        ease: 'power3.out',
+        onUpdate: () => {
+          tachSpeedText.innerText = Math.round(dummy.val) + ' Mbps';
+        }
+      });
+
+      // 3. Status Box a full
+      networkStatusBox.classList.add('status-full');
+      networkStatusBox.innerHTML = `
+        <i data-lucide="zap" style="color: #00D4FF;"></i>
+        <div>
+          <strong>Conexión Restablecida (300 Mbps)</strong>
+          <span>Fibra óptica operando a máxima capacidad.</span>
+        </div>
+      `;
+      createIcons({ icons });
+    }
+  }
+
+  // Interacción: Clic en el botón mágico
+  btnApprove.addEventListener('click', () => {
+    advancePhase(3);
+    // Después de conciliar, a los 1.5 segundos se dispara la reconexión de red automáticamente
+    setTimeout(() => advancePhase(4), 1500);
+  });
+
+  // Interacción global: Barra espaciadora o clic en el body avanza las fases ocultas
+  // Para que el presentador pueda controlar la llegada del pago de Yape (Fase 2)
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && currentPhase === 1) {
+      e.preventDefault();
+      advancePhase(2);
+    }
+  });
+
+  // Tap-to-advance oculto en el dashboard para móvil/tablet
+  screen1Dashboard.addEventListener('click', (e) => {
+    // Si hace clic en el botón de aprobar, no avanzar por tap global
+    if (e.target.closest('#btnApproveRecon')) return;
+    
+    if (currentPhase === 1) {
+      advancePhase(2);
+    }
+  });
 });

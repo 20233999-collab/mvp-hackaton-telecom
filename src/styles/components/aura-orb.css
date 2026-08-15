@@ -1,0 +1,99 @@
+/* ==========================================================================
+   AURA EMOTIONAL ORB - LIGHT TECH
+   ========================================================================== */
+
+.aura-orb-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.aura-orb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #00D4FF 45%, #019DF4 85%, #0B192C 100%);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.55), 0 0 35px rgba(1, 157, 244, 0.35);
+  animation: orbFloat 4s ease-in-out infinite, orbPulse 3s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-spring);
+}
+
+.aura-orb::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 212, 255, 0.2), transparent);
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.aura-orb-rings {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 212, 255, 0.4);
+  animation: orbRotate 12s linear infinite;
+}
+
+.aura-orb-core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px #FFFFFF, 0 0 18px #00D4FF;
+  z-index: 2;
+  animation: coreGlow 2s ease-in-out infinite alternate;
+}
+
+/* --- Estados Emocionales --- */
+.aura-orb.state-alert {
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #FF9100 45%, #FF3D00 85%, #0B192C 100%);
+  box-shadow: 0 0 22px rgba(255, 145, 0, 0.65), 0 0 38px rgba(255, 61, 0, 0.4);
+}
+.aura-orb.state-alert .aura-orb-rings {
+  border-color: rgba(255, 145, 0, 0.5);
+  animation-duration: 4s;
+}
+
+.aura-orb.state-success {
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #00C853 45%, #009624 85%, #0B192C 100%);
+  box-shadow: 0 0 24px rgba(0, 200, 83, 0.7), 0 0 40px rgba(0, 150, 36, 0.4);
+}
+
+.aura-orb.state-thinking {
+  animation: orbRotateFast 1.2s linear infinite, orbPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* --- Keyframes --- */
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.03); }
+}
+
+@keyframes orbPulse {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2) drop-shadow(0 0 12px rgba(0, 212, 255, 0.6)); }
+}
+
+@keyframes orbRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbRotateFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes coreGlow {
+  0% { transform: scale(0.9); opacity: 0.85; }
+  100% { transform: scale(1.15); opacity: 1; }
+}

@@ -1,0 +1,247 @@
+/* ==========================================================================
+   DIRECTOR SCENE HUB & VIEW SELECTOR MODAL
+   Referencia: DESIGN.md & M.O.V.I. Studio
+   ========================================================================== */
+
+.director-hub-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 25, 44, 0.85);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-smooth);
+}
+
+.director-hub-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hub-header {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto 28px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 18px;
+}
+
+.hub-title-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hub-icon-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 0 24px var(--aura-cyan-glow);
+}
+
+.hub-title-group h2 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.hub-title-group p {
+  font-size: 13px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.hub-btn-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.hub-btn-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Grid de Fases y Escenas --- */
+.hub-content-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hub-phase-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.phase-section-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--aura-cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.phase-time-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(0, 212, 255, 0.15);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.hub-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+/* Tarjeta Individual de Escena */
+.scene-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scene-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--aura-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--movistar-blue-glow);
+}
+
+.scene-card.featured {
+  border-color: rgba(1, 157, 244, 0.4);
+  background: linear-gradient(135deg, rgba(1, 157, 244, 0.12), rgba(0, 212, 255, 0.06));
+}
+
+.scene-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.scene-card-info h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scene-card-info p {
+  font-size: 12px;
+  color: #CBD5E1;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.role-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.role-badge.cx {
+  background: rgba(255, 107, 107, 0.2);
+  color: #FFA8A8;
+  border: 1px solid rgba(255, 107, 107, 0.4);
+}
+
+.role-badge.ex {
+  background: rgba(1, 157, 244, 0.2);
+  color: var(--aura-cyan);
+  border: 1px solid rgba(1, 157, 244, 0.4);
+}
+
+.role-badge.split {
+  background: rgba(0, 200, 83, 0.2);
+  color: #80E27E;
+  border: 1px solid rgba(0, 200, 83, 0.4);
+}
+
+.scene-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+}
+
+.scene-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #94A3B8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-launch-scene {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--aura-cyan);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

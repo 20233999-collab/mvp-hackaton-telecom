@@ -1,0 +1,324 @@
+/* ==========================================================================
+   IPHONE MOCKUP - CLIENT INTERFACE (CX) - REFINED
+   ========================================================================== */
+
+.phone-mockup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cx-badge-header {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-card);
+  backdrop-filter: var(--glass-blur);
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  box-shadow: var(--glass-inner-shadow);
+}
+
+.cx-avatar-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #019DF4, #00D4FF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px var(--movistar-blue-glow);
+}
+
+.cx-badge-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--deep-indigo);
+  letter-spacing: -0.2px;
+}
+
+.cx-badge-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --- iPhone Hardware Chassis --- */
+.iphone-device {
+  width: 375px;
+  height: 760px;
+  background: #0F172A;
+  border-radius: 52px;
+  padding: 11px;
+  box-shadow: 
+    0 0 0 2px #334155,
+    0 0 0 4px #1E293B,
+    0 25px 60px -15px rgba(11, 25, 44, 0.28),
+    0 0 40px rgba(1, 157, 244, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-spring);
+}
+
+.iphone-screen {
+  width: 100%;
+  height: 100%;
+  background: #F8FAFC;
+  border-radius: 42px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 118px;
+  height: 30px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  transition: all 0.3s var(--ease-spring);
+}
+
+.dynamic-island-sensor {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #1E293B;
+}
+
+.dynamic-island-camera {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #090D16;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* WhatsApp / App Top Header */
+.app-header {
+  padding: 48px 16px 14px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-contact-info h3 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--deep-indigo);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: -0.2px;
+}
+
+.app-contact-info span {
+  font-size: 10px;
+  color: var(--movistar-blue);
+  font-weight: 600;
+}
+
+.app-verified-badge {
+  color: var(--movistar-blue);
+  width: 14px;
+  height: 14px;
+}
+
+/* Chat Messages Container */
+.chat-scroll-area {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #F1F5F9;
+  background-image: radial-gradient(rgba(1, 157, 244, 0.06) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  max-width: 88%;
+  padding: 13px 15px;
+  border-radius: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  animation: fadeInBubble 0.3s ease-out;
+}
+
+.chat-bubble.bot {
+  background: #FFFFFF;
+  color: var(--deep-indigo);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(1, 157, 244, 0.12);
+  box-shadow: 0 2px 8px rgba(11, 25, 44, 0.04);
+}
+
+.chat-bubble.user {
+  background: #E0F2FE;
+  color: var(--deep-indigo);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  border: 1px solid rgba(1, 157, 244, 0.2);
+}
+
+.chat-time {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+/* Card Interactiva de Oferta Movistar Total */
+.offer-interactive-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid var(--border-active);
+  box-shadow: 0 6px 20px rgba(1, 157, 244, 0.10);
+  margin-top: 10px;
+}
+
+.offer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(1, 157, 244, 0.2);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.offer-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--movistar-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.offer-gap-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--accent-green-bg);
+  color: var(--accent-green);
+  padding: 3px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 200, 83, 0.25);
+}
+
+.offer-comparison-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface-ground);
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.comp-box {
+  text-align: center;
+}
+
+.comp-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.comp-price {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.comp-price.old {
+  color: var(--accent-red);
+  text-decoration: line-through;
+}
+
+.comp-price.new {
+  color: var(--movistar-blue);
+}
+
+.offer-btn-accept {
+  width: 100%;
+  background: linear-gradient(135deg, var(--movistar-blue), #0077E6);
+  color: #FFFFFF;
+  border: none;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--movistar-blue-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all var(--transition-fast);
+}
+
+.offer-btn-accept:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.offer-btn-accept:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeInBubble {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

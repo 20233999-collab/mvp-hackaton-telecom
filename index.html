@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.O.V.I. | Movistar Journey Tracker — Hackathon AI Telecom 2026</title>
+  <meta name="description" content="Mega-Orquestador E2E Unificado por Inteligencia Artificial para Movistar Perú: Propulsión Comercial, SON-IA Back-Office y BrainyBill.">
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP HEADER: RAPPI-TRACK STEPPER (ORQUESTADOR E2E)
+       ======================================================================== -->
+  <header class="rappi-track-header">
+    <div class="brand-section">
+      <div class="brand-logo-m">M</div>
+      <div class="brand-info">
+        <h1>M.O.V.I. <span class="brand-badge-agentic">Super-Agente E2E</span></h1>
+        <p>Modelo Operativo Virtual Inteligente • Movistar Perú</p>
+      </div>
+    </div>
+
+    <!-- Stepper de las 3 Fases de la Hackathon -->
+    <nav class="timeline-stepper" id="rappiTrackStepper">
+      <div class="step-node active" id="nodePhase1" data-phase="1">
+        <div class="step-circle">1</div>
+        <div>
+          <span class="step-label">Propulsión Comercial</span>
+          <span class="step-sublabel">NBO • Movistar Total</span>
+        </div>
+      </div>
+      <div class="step-divider" id="divPhase1_2"></div>
+      <div class="step-node" id="nodePhase2" data-phase="2">
+        <div class="step-circle">2</div>
+        <div>
+          <span class="step-label">SON-IA Back-Office</span>
+          <span class="step-sublabel">P×Q • Recaudo &lt;5min</span>
+        </div>
+      </div>
+      <div class="step-divider" id="divPhase2_3"></div>
+      <div class="step-node" id="nodePhase3" data-phase="3">
+        <div class="step-circle">3</div>
+        <div>
+          <span class="step-label">Escudo Bill Shock</span>
+          <span class="step-sublabel">Aura • CSR-RAG 0% Error</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Botones de Navegación Rápida y Estado -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <a href="./cliente.html" class="director-btn" style="background: rgba(0, 200, 83, 0.15); color: #008738; border: 1px solid rgba(0, 200, 83, 0.4); text-decoration: none; font-weight: 700;">
+        <i data-lucide="smartphone" style="width: 14px;"></i> Cliente Valeria (CX)
+      </a>
+      <a href="./operador.html" class="director-btn" style="background: rgba(1, 157, 244, 0.2); color: var(--movistar-blue); border: 1px solid rgba(1, 157, 244, 0.4); text-decoration: none; font-weight: 700;">
+        <i data-lucide="headphones" style="width: 14px;"></i> Asesor Carlos (EX)
+      </a>
+      <a href="./mi-movistar.html" class="director-btn" style="background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan)); color: #FFF; border: none; text-decoration: none; font-weight: 700; box-shadow: 0 2px 10px var(--aura-cyan-glow);">
+        <i data-lucide="bot" style="width: 14px;"></i> Mi Movistar (Mascota)
+      </a>
+      <a href="./valeria.html" class="director-btn" style="background: rgba(0, 200, 83, 0.1); color: var(--deep-indigo); border: 1px solid rgba(0, 200, 83, 0.3); text-decoration: none; font-weight: 700;">
+        <i data-lucide="message-circle" style="width: 14px;"></i> WhatsApp
+      </a>
+      <button class="director-btn" id="btnOpenHubTop" style="background: var(--deep-indigo); color: #FFF; border: 1px solid rgba(255,255,255,0.2); font-weight: 700;">
+        <i data-lucide="layout-grid" style="width: 14px;"></i> Escenas (H)
+      </button>
+      <div class="system-status-indicator">
+        <span class="status-dot"></span>
+        <span id="systemStatusText">ORCHESTRATOR LIVE</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APP CONTAINER: SPLIT SCREEN (CX vs. EX)
+       ======================================================================== -->
+  <main class="main-app-container">
+    <div class="cockpit-split-grid view-split" id="cockpitGrid">
+      
+      <!-- ====================================================================
+           LADO IZQUIERDO: CLIENTE (CX) - MOCKUP IPHONE 16
+           ==================================================================== -->
+      <section class="phone-mockup-wrapper" id="cxPanel">
+        <div class="cx-badge-header" id="cxBadgeHeader">
+          <div class="cx-avatar-thumb" id="cxAvatarThumb">VM</div>
+          <div>
+            <div class="cx-badge-title" id="cxBadgeTitle">Valeria Mendoza (Cliente)</div>
+            <div class="cx-badge-sub" id="cxBadgeSub">Viajando en Arequipa • App / WhatsApp</div>
+          </div>
+        </div>
+
+        <div class="iphone-device">
+          <div class="iphone-screen">
+            <!-- Dynamic Island -->
+            <div class="dynamic-island">
+              <div class="dynamic-island-sensor"></div>
+              <div class="dynamic-island-camera"></div>
+            </div>
+
+            <!-- WhatsApp Header -->
+            <div class="app-header">
+              <div class="app-header-left">
+                <!-- Aura Orb Header Avatar -->
+                <div class="aura-orb-container">
+                  <div class="aura-orb" id="auraOrbHeader">
+                    <div class="aura-orb-rings"></div>
+                    <div class="aura-orb-core"></div>
+                  </div>
+                </div>
+                <div class="app-contact-info">
+                  <h3 id="appHeaderTitle">Aura Movistar <i data-lucide="check-circle" class="app-verified-badge"></i></h3>
+                  <span id="auraTypingStatus">En línea • Concierge Digital</span>
+                </div>
+              </div>
+              <div>
+                <i data-lucide="more-vertical" style="width: 18px; color: var(--text-muted);"></i>
+              </div>
+            </div>
+
+            <!-- Chat Scroll Area -->
+            <div class="chat-scroll-area" id="chatArea">
+              <!-- Mensaje 1: Proactividad de Aura (Fase 1) -->
+              <div class="chat-bubble bot" id="msg1_bot">
+                <p>Hola <strong>Valeria</strong> <i data-lucide="map-pin" style="width: 13px; display: inline-block; color: var(--movistar-blue); vertical-align: -1px;"></i>. Notamos que agotaste tus 20 GB en tu viaje a Arequipa y llevas gastando <strong>S/ 179.80</strong> en paquetes sueltos.</p>
+                <div class="offer-interactive-card" id="cardMovistarTotal">
+                  <div class="offer-card-header">
+                    <div class="offer-title"><i data-lucide="sparkles" style="width: 14px;"></i> Movistar Total</div>
+                    <span class="offer-gap-badge">Ahorro: S/ 40.00/mes</span>
+                  </div>
+                  <div class="offer-comparison-row">
+                    <div class="comp-box">
+                      <span class="comp-label">Gasto Actual</span>
+                      <div class="comp-price old">S/ 179.80</div>
+                    </div>
+                    <i data-lucide="arrow-right" style="width: 14px; color: var(--movistar-blue);"></i>
+                    <div class="comp-box">
+                      <span class="comp-label">Tarifa Plana</span>
+                      <div class="comp-price new">S/ 139.90</div>
+                    </div>
+                  </div>
+                  <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
+                    Fibra 300 Mbps + Gigas Ilimitados en tu móvil unificados.
+                  </p>
+                  <button class="offer-btn-accept" id="btnAcceptOffer">
+                    <i data-lucide="zap" style="width: 14px;"></i> Aceptar Movistar Total (1-Touch)
+                  </button>
+                </div>
+                <div class="chat-time">14:02</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           LADO DERECHO: EMPLEADO (EX) - CONSOLA DE CARLOS (SALESFORCE / DITO)
+           ==================================================================== -->
+      <section class="console-wrapper" id="exPanel">
+        <!-- Advisor Header Card -->
+        <div class="console-header-card" id="advisorHeaderCard">
+          <div class="advisor-profile">
+            <div class="advisor-avatar" id="advisorAvatar">CA</div>
+            <div>
+              <h2 class="advisor-name" id="advisorName">Carlos Alvarado (Asesor Comercial)</h2>
+              <p class="advisor-role" id="advisorRole">Telemarketing Atento • Línea Inbound/Outbound</p>
+            </div>
+          </div>
+          <div class="crm-status-pill" id="crmStatusPill">
+            <i data-lucide="radio" style="width: 14px;"></i> Live Whisper Activo
+          </div>
+        </div>
+
+        <!-- Customer 360 & Uplift Card -->
+        <div class="customer-360-card" id="customer360Card">
+          <div class="card-title-row">
+            <h3 class="card-title" id="customer360Title"><i data-lucide="user-check" style="width: 18px; color: var(--movistar-blue);"></i> Ficha Inteligente Customer 360</h3>
+            <span class="api-badge" id="customer360Badge">API TMF683 • Interaction Management</span>
+          </div>
+
+          <div class="customer-stats-grid" id="customerStatsGrid">
+            <div class="stat-item">
+              <span class="stat-label">Cliente</span>
+              <span class="stat-value" id="statClientName">Valeria Mendoza</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Gasto Mensual Disperso</span>
+              <span class="stat-value highlight" id="statClientExpense">S/ 179.80</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Gap Radar Detectado</span>
+              <span class="stat-value" style="color: var(--accent-green);" id="statClientGap">+ S/ 40.00 Ahorro</span>
+            </div>
+          </div>
+
+          <!-- Uplift Meter -->
+          <div class="uplift-meter-box" id="upliftMeterBox">
+            <div class="uplift-header">
+              <span>Score Causal Uplift (CATE):</span>
+              <span class="uplift-badge-persuadible" id="upliftBadge">Persuadible (94% Confianza)</span>
+            </div>
+            <div class="uplift-progress-bar">
+              <div class="uplift-progress-fill" id="upliftFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Whisper Card -->
+        <div class="live-whisper-card" id="whisperCard">
+          <div class="whisper-header" id="whisperHeader">
+            <i data-lucide="headphones" style="width: 16px;"></i> M.O.V.I. Live Whisper (Speech Sugerido en Vivo)
+          </div>
+          <div class="whisper-speech-box" id="whisperSpeech">
+            "Valeria, no te preocupes por el prorrateo: en tu primer recibo solo se incluirán S/ 15.00 correspondientes a los días de transición y luego pagarás tus S/ 139.90 fijos netos."
+          </div>
+        </div>
+
+        <!-- Form-Fill Activo (DITO / Salesforce Order) -->
+        <div class="order-form-card" id="orderFormCard">
+          <div class="card-title-row">
+            <h3 class="card-title" id="orderFormTitle"><i data-lucide="file-text" style="width: 18px; color: var(--movistar-blue);"></i> Emisión de Orden Comercial (Form-Fill Activo)</h3>
+            <span class="api-badge" id="orderFormBadge">API TMF622 • Product Ordering</span>
+          </div>
+
+          <div class="form-fields-grid" id="formFieldsGrid">
+            <div class="form-group">
+              <label class="form-label" id="lblField1">Producto Convergente</label>
+              <input type="text" class="form-input-simulated" id="fieldProduct" value="Movistar Total 300M Fibra + Móvil" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label" id="lblField2">Tarifa Mensual Neta</label>
+              <input type="text" class="form-input-simulated" id="fieldPrice" value="S/ 139.90" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label" id="lblField3">Key de Seguimiento E2E</label>
+              <input type="text" class="form-input-simulated" id="fieldKey" value="TMF622-ORD-2026-8842" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label" id="lblField4">Estado de Transcripción</label>
+              <input type="text" class="form-input-simulated" id="fieldStatus" value="100% Acordado por Voz" readonly>
+            </div>
+          </div>
+
+          <button class="btn-confirm-tmf" id="btnEmitOrder">
+            <i data-lucide="check-circle-2" style="width: 18px;"></i> Emitir Orden Comercial a Back-Office (TMF622)
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       BOTTOM DIRECTOR TOOLBAR (CONTROL MAESTRO DEL PITCH)
+       ======================================================================== -->
+  <div class="director-toolbar">
+    <div class="director-label" id="btnOpenHubBottom" style="cursor: pointer;" title="Abrir selector de escenas">
+      <i data-lucide="clapperboard" style="width: 16px; color: var(--aura-cyan);"></i>
+      <span>ESCENAS</span>
+    </div>
+
+    <!-- Selector de Modo de Vista (Split, Solo CX, Solo EX) -->
+    <div class="view-mode-pill-group">
+      <button class="view-mode-btn active" id="btnViewSplit" title="Pantalla dividida">
+        <i data-lucide="columns-2" style="width: 12px;"></i> Split
+      </button>
+      <button class="view-mode-btn" id="btnViewSoloCX" title="Foco en Celular Cliente">
+        <i data-lucide="smartphone" style="width: 12px;"></i> Solo CX
+      </button>
+      <button class="view-mode-btn" id="btnViewSoloEX" title="Foco en Consola Asesor">
+        <i data-lucide="monitor" style="width: 12px;"></i> Solo EX
+      </button>
+    </div>
+
+    <div class="director-timer-badge" id="pitchTimer">0:00 / 3:00</div>
+
+    <div class="director-btn-group">
+      <button class="director-btn btn-play-all" id="btnAutoPlay">
+        <i data-lucide="play" style="width: 14px;"></i> Auto-Play (180s)
+      </button>
+      <button class="director-btn active" id="btnPhase1" data-phase="1">
+        Fase 1
+      </button>
+      <button class="director-btn" id="btnPhase2" data-phase="2">
+        Fase 2
+      </button>
+      <button class="director-btn" id="btnPhase3" data-phase="3">
+        Fase 3
+      </button>
+      <button class="director-btn" id="btnResetAll" title="Reiniciar maqueta">
+        <i data-lucide="rotate-ccw" style="width: 14px;"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DIRECTOR SCENE HUB (MODAL / OVERLAY DE SELECCIÓN DE VISTAS)
+       ======================================================================== -->
+  <div class="director-hub-overlay" id="directorHubModal">
+    <div class="hub-header">
+      <div class="hub-title-group">
+        <div class="hub-icon-box">
+          <i data-lucide="film" style="width: 24px;"></i>
+        </div>
+        <div>
+          <h2>M.O.V.I. Studio Director</h2>
+          <p>Selecciona la escena o punto de vista exacto para grabar tu video pitch</p>
+        </div>
+      </div>
+      <button class="hub-btn-close" id="btnCloseHub">
+        <i data-lucide="x" style="width: 16px;"></i> Cerrar (ESC)
+      </button>
+    </div>
+
+    <div class="hub-content-container">
+      
+      <!-- FASE 1 -->
+      <div class="hub-phase-section">
+        <div class="phase-section-title">
+          <i data-lucide="zap" style="width: 16px;"></i>
+          <span>Fase 1: Propulsión Comercial & Atracción</span>
+          <span class="phase-time-pill">0:30 - 1:15 • 45s</span>
+        </div>
+        <div class="hub-cards-grid">
+          <div class="scene-card featured" data-scene="f1-split">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="columns-2" style="width: 16px; color: var(--aura-cyan);"></i> Split-Screen E2E</h3>
+                <p>Ping-Pong omnicanal: Valeria en WhatsApp interactuando en vivo con Carlos en Atento.</p>
+              </div>
+              <span class="role-badge split">Dual CX + EX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">TMF683</span>
+                <span class="tech-tag">Uplift CATE</span>
+                <span class="tech-tag">Form-Fill</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f1-cx">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="smartphone" style="width: 16px; color: #FFA8A8;"></i> Foco Cliente: Valeria</h3>
+                <p>Orbe de Aura, alerta de roaming en Arequipa y carrusel interactivo de ahorro S/ 40.00.</p>
+              </div>
+              <span class="role-badge cx">Solo CX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">WhatsApp</span>
+                <span class="tech-tag">Gap Radar</span>
+                <span class="tech-tag">1-Touch</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f1-ex">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="monitor" style="width: 16px; color: var(--aura-cyan);"></i> Foco Asesor: Carlos</h3>
+                <p>Consola Atento/Salesforce con Live Whisper flotante y autocompletado de orden sin teclear.</p>
+              </div>
+              <span class="role-badge ex">Solo EX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">TMF622</span>
+                <span class="tech-tag">Live Whisper</span>
+                <span class="tech-tag">DITO CRM</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FASE 2 -->
+      <div class="hub-phase-section">
+        <div class="phase-section-title">
+          <i data-lucide="cpu" style="width: 16px;"></i>
+          <span>Fase 2: Eficiencia Operativa & SON-IA</span>
+          <span class="phase-time-pill">1:15 - 2:00 • 45s</span>
+        </div>
+        <div class="hub-cards-grid">
+          <div class="scene-card featured" data-scene="f2-split">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="layers" style="width: 16px; color: var(--aura-cyan);"></i> Split-Screen SON-IA</h3>
+                <p>Juan Carlos (Modo Mantenimiento) + Consola Zero-Excel de Ana + Monitor de Red OSS.</p>
+              </div>
+              <span class="role-badge split">3 Vías</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">TMF666</span>
+                <span class="tech-tag">VeNRA P×Q</span>
+                <span class="tech-tag">Reconexión &lt;5m</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f2-cx">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="smartphone" style="width: 16px; color: #FFA8A8;"></i> Foco Cliente: Juan Carlos</h3>
+                <p>Cobranza empática por WhatsApp, 15 Mbps de seguridad y fraccionamiento en 3 cuotas.</p>
+              </div>
+              <span class="role-badge cx">Solo CX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">BCP Tesora</span>
+                <span class="tech-tag">Zero INFOCORP</span>
+                <span class="tech-tag">Yape</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f2-ex">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="monitor" style="width: 16px; color: var(--aura-cyan);"></i> Foco Back-Office: Ana</h3>
+                <p>Dashboard contable sin excels, conciliación en tiempo real y aprobación HITL con 1 clic.</p>
+              </div>
+              <span class="role-badge ex">Solo EX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">DSO: 31d</span>
+                <span class="tech-tag">HITL 1-Click</span>
+                <span class="tech-tag">TMF676</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FASE 3 -->
+      <div class="hub-phase-section">
+        <div class="phase-section-title">
+          <i data-lucide="shield-check" style="width: 16px;"></i>
+          <span>Fase 3: Post-Venta & Escudo Bill Shock</span>
+          <span class="phase-time-pill">2:00 - 2:45 • 45s</span>
+        </div>
+        <div class="hub-cards-grid">
+          <div class="scene-card featured" data-scene="f3-split">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="columns-2" style="width: 16px; color: var(--aura-cyan);"></i> Split-Screen BrainyBill</h3>
+                <p>Explicación visual del prorrateo en WhatsApp + Cockpit del asesor 104 (Jorge).</p>
+              </div>
+              <span class="role-badge split">Dual CX + EX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">CSR-RAG</span>
+                <span class="tech-tag">0% Alucinación</span>
+                <span class="tech-tag">Tasa Silencio</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f3-cx">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="smartphone" style="width: 16px; color: #FFA8A8;"></i> Foco Cliente: Recibo Inteligente</h3>
+                <p>Divulgación progresiva: gráfico táctil de 3 barras que disipa el miedo en 5 segundos.</p>
+              </div>
+              <span class="role-badge cx">Solo CX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">App Mi Movistar</span>
+                <span class="tech-tag">Prorrateo S/15</span>
+                <span class="tech-tag">Yape</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+
+          <div class="scene-card" data-scene="f3-ex">
+            <div class="scene-card-top">
+              <div class="scene-card-info">
+                <h3><i data-lucide="monitor" style="width: 16px; color: var(--aura-cyan);"></i> Foco Asesor 104: Jorge</h3>
+                <p>Cockpit asistido con semáforo NLP, Warm Hand-off con 3 líneas y cross-selling desbloqueado.</p>
+              </div>
+              <span class="role-badge ex">Solo EX</span>
+            </div>
+            <div class="scene-card-bottom">
+              <div class="scene-tags">
+                <span class="tech-tag">TMO -70%</span>
+                <span class="tech-tag">Línea 104</span>
+                <span class="tech-tag">Cross-Selling</span>
+              </div>
+              <span class="btn-launch-scene">Lanzar Escena →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="./src/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   PITCH DIRECTOR TOOLBAR (FLOATING CONTROL BAR)
+   ========================================================================== */
+
+.director-toolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 25, 44, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 40px;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(1, 157, 244, 0.3);
+  z-index: 999;
+}
+
+.director-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 14px;
+}
+
+.director-timer-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--aura-cyan);
+  background: rgba(0, 212, 255, 0.15);
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.director-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.director-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.director-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.director-btn.btn-play-all {
+  background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
+  color: #FFFFFF;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--aura-cyan-glow);
+}
+
+.director-btn.btn-play-all:hover {
+  filter: brightness(1.15);
+}
+
+.director-btn.active {
+  background: #FFFFFF;
+  color: var(--deep-indigo);
+  border-color: #FFFFFF;
+  font-weight: 700;
+}

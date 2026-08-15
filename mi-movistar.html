@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Mi Movistar • Asistente Inteligente Aura (Valeria Mendoza)</title>
+  <meta name="description" content="Portal interactivo de la App Mi Movistar con Mascota Robótica Aura e interfaz conversacional generativa estilo ChatGPT.">
+  <link rel="stylesheet" href="./src/styles/mi-movistar.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       FLOATING DIRECTOR BAR (CONTROLES DE GRABACIÓN / MÍNIMO EN MÓVIL)
+       ======================================================================== -->
+  <div class="mimovistar-director-bar">
+    <a href="./index.html" class="btn-home" style="background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));">
+      <i data-lucide="layout-dashboard" style="width: 13px;"></i> Cockpit
+    </a>
+    <a href="./valeria.html">
+      <i data-lucide="message-circle" style="width: 13px;"></i> WhatsApp
+    </a>
+    <button id="btnDirScene1">1</button>
+    <button id="btnDirScene2">2</button>
+    <button id="btnDirScene3">3</button>
+    <button id="btnDirScene4">4</button>
+    <button id="btnDirAuto" style="background: var(--movistar-blue); border: none; font-weight: 700;">
+      <i data-lucide="play" style="width: 12px;"></i> Auto
+    </button>
+  </div>
+
+  <!-- Barra de Progreso Tipo Stories Superior -->
+  <div class="tap-story-progress-bar">
+    <div class="story-bar-segment" id="storySeg1"></div>
+    <div class="story-bar-segment" id="storySeg2"></div>
+    <div class="story-bar-segment" id="storySeg3"></div>
+    <div class="story-bar-segment" id="storySeg4"></div>
+  </div>
+
+  <!-- ========================================================================
+       TOP APP NAVBAR
+       ======================================================================== -->
+  <header class="app-navbar">
+    <div class="nav-brand-group">
+      <div class="brand-emblem">M</div>
+      <div class="brand-titles">
+        <h1>App Mi Movistar <span class="brand-badge-agentic" style="font-size: 10px; background: var(--aura-cyan-subtle); color: var(--movistar-blue); padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(0,212,255,0.3);">AI Concierge</span></h1>
+        <p>Ecosistema Digital de Clientes • Movistar Perú</p>
+      </div>
+    </div>
+
+    <div class="user-quick-profile">
+      <div class="user-pill">
+        <div class="user-avatar-circle">VM</div>
+        <span>Valeria</span>
+      </div>
+      <button style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px;" title="Notificaciones">
+        <i data-lucide="bell" style="width: 18px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN STAGE CONTAINER (ZONA TÁCTIL TAP-TO-ADVANCE)
+       ======================================================================== -->
+  <main class="main-stage-container" id="mainStageContainer">
+    
+    <div class="tap-hint-pill">
+      <i data-lucide="hand" style="width: 13px;"></i>
+      <span>Toca la pantalla para avanzar en el pitch</span>
+    </div>
+
+    <!-- STAGE DE LA MASCOTA ROBÓTICA AURA -->
+    <section class="mascot-stage">
+      <div class="mascot-aura-wrapper" id="mascotAuraWrapper">
+        <div class="mascot-halo-ring"></div>
+        <div class="mascot-glow-backdrop"></div>
+        
+        <!-- SVG 3D ROBOT MASCOT ART -->
+        <svg class="mascot-svg-art" id="mascotSvgArt" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Aura Antena y Orbe de Señal -->
+          <circle cx="100" cy="22" r="9" fill="#00D4FF" />
+          <line x1="100" y1="31" x2="100" y2="48" stroke="#019DF4" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="100" cy="22" r="14" stroke="rgba(0, 212, 255, 0.4)" stroke-width="2" stroke-dasharray="3 3"/>
+
+          <!-- Cabeza del Robot (Chasis Blanco Esmerilado) -->
+          <rect x="52" y="46" width="96" height="74" rx="37" fill="#FFFFFF" stroke="#019DF4" stroke-width="3"/>
+          
+          <!-- Visor Facial Oscuro -->
+          <rect x="64" y="58" width="72" height="48" rx="24" fill="#0B192C" />
+          
+          <!-- Ojos Digitales Cian Brillantes -->
+          <g class="robot-eyes">
+            <ellipse cx="84" cy="80" rx="9" ry="12" fill="#00D4FF" />
+            <circle cx="86" cy="77" r="3.5" fill="#FFFFFF" />
+            <ellipse cx="116" cy="80" rx="9" ry="12" fill="#00D4FF" />
+            <circle cx="118" cy="77" r="3.5" fill="#FFFFFF" />
+          </g>
+
+          <!-- Orejeras / Auriculares -->
+          <rect x="42" y="64" width="12" height="36" rx="6" fill="#019DF4"/>
+          <rect x="146" y="64" width="12" height="36" rx="6" fill="#019DF4"/>
+
+          <!-- Cuerpo Flotante con Emblema M -->
+          <path d="M72 128 C72 124, 128 124, 128 128 L122 165 C122 176, 78 176, 78 165 Z" fill="#FFFFFF" stroke="#019DF4" stroke-width="2.5"/>
+          <circle cx="100" cy="146" r="10" fill="#019DF4"/>
+          <text x="100" y="150" font-family="Outfit" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">M</text>
+
+          <!-- Manos Magnéticas Flotantes -->
+          <circle cx="48" cy="148" r="8" fill="#00D4FF" opacity="0.85"/>
+          <circle cx="152" cy="148" r="8" fill="#00D4FF" opacity="0.85"/>
+
+          <!-- Propulsión Antigravedad -->
+          <ellipse cx="100" cy="180" rx="22" ry="5" fill="rgba(0, 212, 255, 0.35)"/>
+        </svg>
+      </div>
+
+      <!-- Indicador de Voz / Ondas Sintetizadas -->
+      <div class="voice-wave-container" id="voiceWaves">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+
+      <div class="mascot-greeting">
+        <h2>¡Hola Valeria! Soy Aura</h2>
+        <p id="mascotEmotionBadge">Tu Concierge Digital Inteligente • Movistar Perú</p>
+      </div>
+    </section>
+
+    <!-- SUGGESTION CHIPS GRID (CHATGPT STYLE) -->
+    <div class="quick-prompts-grid" id="quickPromptsGrid">
+      <div class="prompt-card" data-action="nbo-offer">
+        <div class="prompt-card-icon"><i data-lucide="zap" style="width: 16px;"></i></div>
+        <h4>Optimizar mi gasto de gigas</h4>
+        <p>Detectamos un ahorro de S/ 40.00 unificando en Movistar Total.</p>
+      </div>
+
+      <div class="prompt-card" data-action="bill-shock-doubt">
+        <div class="prompt-card-icon"><i data-lucide="receipt" style="width: 16px;"></i></div>
+        <h4>¿Por qué varió mi recibo?</h4>
+        <p>Desglose transparente del prorrateo con 0% de alucinaciones.</p>
+      </div>
+
+      <div class="prompt-card" data-action="nbo-offer">
+        <div class="prompt-card-icon"><i data-lucide="wifi" style="width: 16px;"></i></div>
+        <h4>Verificar Fibra Óptica 300M</h4>
+        <p>Validar cobertura simétrica y estabilidad de red en tu zona.</p>
+      </div>
+    </div>
+
+    <!-- CONVERSATIONAL STREAM (CHATGPT FEED) -->
+    <div class="chatgpt-feed-stream" id="chatFeedStream">
+      <!-- Los mensajes y widgets interactivos se renderizan aquí dinámicamente -->
+    </div>
+
+  </main>
+
+  <!-- ========================================================================
+       BOTTOM FIXED PROMPT INPUT BAR (CHATGPT STYLE)
+       ======================================================================== -->
+  <div class="bottom-prompt-fixed-bar">
+    <div class="prompt-input-pill-container">
+      <button class="prompt-action-btn" title="Adjuntar documento o recibo">
+        <i data-lucide="plus" style="width: 18px;"></i>
+      </button>
+      <input type="text" class="prompt-input-box" id="promptInputBox" placeholder="Pregúntale a Aura sobre tu plan o recibos...">
+      <button class="prompt-action-btn" title="Hablar por micrófono" id="btnMicPrompt">
+        <i data-lucide="mic" style="width: 18px;"></i>
+      </button>
+      <button class="prompt-action-btn btn-send" id="btnSendPrompt" title="Enviar consulta">
+        <i data-lucide="arrow-up" style="width: 18px;"></i>
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/scripts/mi-movistar.js"></script>
+</body>
+</html>

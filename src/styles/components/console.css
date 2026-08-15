@@ -1,0 +1,318 @@
+/* ==========================================================================
+   MOVISTAR COPILOT - EMPLOYEE CONSOLE (EX) - REFINED
+   ========================================================================== */
+
+.console-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.console-header-card {
+  background: var(--surface-card);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 20px;
+  padding: 16px 22px;
+  box-shadow: var(--shadow-sm);
+  box-shadow: var(--glass-inner-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advisor-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.advisor-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 12px var(--movistar-blue-glow);
+}
+
+.advisor-name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep-indigo);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.advisor-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+.crm-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--movistar-blue);
+  background: var(--movistar-blue-subtle);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(1, 157, 244, 0.22);
+}
+
+/* --- Customer 360 & Uplift Card --- */
+.customer-360-card {
+  background: var(--surface-card);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-md);
+  box-shadow: var(--glass-inner-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--deep-indigo);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.api-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+}
+
+.customer-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  background: rgba(244, 247, 251, 0.75);
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(1, 157, 244, 0.1);
+  transition: transform var(--transition-fast);
+}
+
+.stat-item:hover {
+  transform: translateY(-1px);
+}
+
+.stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--deep-indigo);
+}
+
+.stat-value.highlight {
+  color: var(--accent-red);
+}
+
+/* Uplift Score Bar */
+.uplift-meter-box {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.06), rgba(1, 157, 244, 0.10));
+  border-radius: 14px;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  margin-bottom: 14px;
+}
+
+.uplift-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--deep-indigo);
+  margin-bottom: 8px;
+}
+
+.uplift-badge-persuadible {
+  font-family: var(--font-mono);
+  background: var(--movistar-blue);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px;
+}
+
+.uplift-progress-bar {
+  width: 100%;
+  height: 7px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.uplift-progress-fill {
+  width: 94%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--aura-cyan), var(--movistar-blue));
+  border-radius: 4px;
+  transition: width 1s var(--ease-spring);
+}
+
+/* --- Live Whisper Widget --- */
+.live-whisper-card {
+  background: linear-gradient(135deg, rgba(1, 157, 244, 0.05), rgba(0, 212, 255, 0.03));
+  border: 1px solid var(--movistar-blue);
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 18px rgba(1, 157, 244, 0.15);
+  position: relative;
+  animation: whisperPulse 4s infinite alternate;
+}
+
+.whisper-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--movistar-blue);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.whisper-speech-box {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--deep-indigo);
+  border: 1px solid rgba(1, 157, 244, 0.18);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Form-Fill Activo (Autocompletado de Orden) --- */
+.order-form-card {
+  background: var(--surface-card);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  box-shadow: var(--glass-inner-shadow);
+}
+
+.form-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-input-simulated {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--deep-indigo);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input-simulated.auto-typing {
+  border-color: var(--aura-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.18);
+  background: rgba(0, 212, 255, 0.03);
+}
+
+.btn-confirm-tmf {
+  width: 100%;
+  background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
+  color: #FFFFFF;
+  border: none;
+  padding: 13px 18px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--movistar-blue-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.btn-confirm-tmf:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-confirm-tmf:active {
+  transform: scale(0.98);
+}
+
+@keyframes whisperPulse {
+  0% { box-shadow: 0 0 8px rgba(1, 157, 244, 0.12); }
+  100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+}

@@ -1,0 +1,926 @@
+/* ==========================================================================
+   MOVISTAR TELEMARKETING CRM WORKSTATION (SALESFORCE / DITO + CLUELY AI HUD)
+   Perspectiva 100% Real del Asesor Comercial (Carlos Alvarado - Atento)
+   Estándar: DESIGN.md • Strict Light Tech • Zero Presentation Artifacts
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #F4F7FB;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. GLOBAL SALESFORCE / TELECOM APP HEADER
+   ========================================================================== */
+.sfdc-global-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  height: 52px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sfdc-left-cluster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sfdc-waffle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--movistar-blue);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.sfdc-waffle-btn:hover {
+  background: #F1F5F9;
+}
+
+.sfdc-app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sfdc-m-logo {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
+  color: #FFFFFF;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.sfdc-app-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.sfdc-app-sub {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  background: #F1F5F9;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Global Search Input */
+.sfdc-global-search {
+  flex: 1;
+  max-width: 360px;
+  margin: 0 24px;
+  position: relative;
+}
+
+.sfdc-search-input {
+  width: 100%;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 6px 14px 6px 34px;
+  font-size: 12px;
+  color: var(--deep-indigo);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.sfdc-search-input:focus {
+  background: #FFFFFF;
+  border-color: var(--movistar-blue);
+  box-shadow: 0 0 0 3px rgba(1, 157, 244, 0.15);
+}
+
+.sfdc-search-icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+/* Right Header Cluster (Commissions Odometer & User Profile) */
+.sfdc-right-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Monthly Live Commission Header Widget */
+.sfdc-commission-pill {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.comm-lbl {
+  font-size: 10px;
+  color: #166534;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.comm-val-live {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #15803D;
+  transition: all 0.3s ease;
+}
+
+.comm-target-badge {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  background: #DCFCE7;
+  color: #166534;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.sfdc-user-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sfdc-avatar-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.sfdc-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.sfdc-user-name {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--deep-indigo);
+}
+
+.sfdc-user-status {
+  font-size: 9.5px;
+  color: #008738;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   2. MAIN APPLICATION WORKSPACE (SIDEBAR + CONTENT CANVAS)
+   ========================================================================== */
+.sfdc-workspace-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 52px);
+  position: relative;
+}
+
+/* Sidebar CRM Navigation */
+.sfdc-sidebar {
+  width: 220px;
+  background: #FFFFFF;
+  border-right: 1px solid #E2E8F0;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sfdc-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sfdc-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sfdc-nav-item:hover {
+  background: #F8FAFC;
+  color: var(--deep-indigo);
+}
+
+.sfdc-nav-item.active {
+  background: var(--aura-cyan-subtle);
+  color: var(--movistar-blue);
+  font-weight: 700;
+}
+
+/* Sidebar Shift Stats Widget */
+.sidebar-shift-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shift-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.shift-stats-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+.shift-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.shift-progress-fill {
+  width: 84%;
+  height: 100%;
+  background: #00C853;
+  transition: width 0.5s ease;
+}
+
+/* Content Canvas */
+.sfdc-main-canvas {
+  flex: 1;
+  padding: 20px 24px 80px 24px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* ==========================================================================
+   3. THE 6 REAL IN-APP STATES (PANTALLAS)
+   ========================================================================== */
+.sfdc-screen-view {
+  display: none;
+  animation: sfdcFadeIn 0.35s ease-out forwards;
+}
+
+.sfdc-screen-view.active-screen {
+  display: block;
+}
+
+/* --- PANTALLA 1: DASHBOARD DE ESPERA & MARCADOR PREDICTIVO --- */
+.screen1-dialer-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+.kpi-metric-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.kpi-white-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.kpi-lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.kpi-val {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+  margin-top: 4px;
+}
+
+.dialer-queue-radar-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.dialer-radar-animation {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed rgba(1, 157, 244, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  animation: ringRotate 10s linear infinite;
+  position: relative;
+}
+
+.dialer-radar-core {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--aura-cyan) 0%, var(--movistar-blue) 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px var(--aura-cyan-glow);
+}
+
+/* Incoming Call Notification Card */
+.incoming-call-alert-card {
+  background: #FFFFFF;
+  border: 2px solid var(--movistar-blue);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(1, 157, 244, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: pulseCallCard 2s infinite;
+}
+
+.incoming-call-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-answer-call-action {
+  width: 100%;
+  background: linear-gradient(135deg, #00C853, #009624);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 200, 83, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-answer-call-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 200, 83, 0.45);
+}
+
+/* ==========================================================================
+   PANTALLA 2: EXPEDIENTE EJECUTIVO / CURRÍCULO DEL CLIENTE (DOSSIER 360)
+   ========================================================================== */
+.customer-cv-dossier-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 20px rgba(11, 25, 44, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Encabezado del Currículo del Cliente */
+.dossier-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #F1F5F9;
+  padding-bottom: 18px;
+}
+
+.dossier-id-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dossier-photo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.dossier-name-title h2 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+  margin-bottom: 4px;
+}
+
+.dossier-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dossier-pill-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+}
+
+.dossier-pill-tag.verified {
+  background: #DCFCE7;
+  color: #166534;
+  font-weight: 700;
+}
+
+.dossier-pill-tag.roaming {
+  background: #FEF3C7;
+  color: #B45309;
+  font-weight: 700;
+}
+
+/* Secciones Estilo Currículo / Dossier */
+.dossier-sections-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dossier-section-block {
+  border-left: 3px solid #E2E8F0;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dossier-section-block.pain-border {
+  border-left-color: #EF4444;
+}
+
+.dossier-section-block.offer-border {
+  border-left-color: var(--movistar-blue);
+}
+
+.dossier-section-block.savings-border {
+  border-left-color: #00C853;
+}
+
+.dossier-sec-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dossier-sec-headline {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.dossier-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.dossier-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.dossier-bullet {
+  color: var(--movistar-blue);
+  font-weight: 800;
+}
+
+/* Tabla de Dictamen Financiero */
+.dossier-financial-strip {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.fin-strip-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fin-strip-lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.fin-strip-val {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.fin-strip-val.alert {
+  color: #EF4444;
+  text-decoration: line-through;
+}
+
+.fin-strip-val.gain {
+  color: #008738;
+}
+
+/* --- PANTALLAS 3 & 4: MEETING / CALL VIEW CON CLUELY COPILOT HUD --- */
+.active-call-workspace-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Softphone Video / Audio Stream Box */
+.meeting-call-stage-card {
+  background: #0B192C;
+  border-radius: 20px;
+  padding: 24px;
+  color: #FFFFFF;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(11, 25, 44, 0.4);
+}
+
+.meeting-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.caller-live-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-size: 12px;
+}
+
+/* Live Audio Waveform (Oscillating) */
+.live-speech-waveform-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 80px;
+  margin: 20px 0;
+}
+
+.audio-stream-bar {
+  width: 5px;
+  height: 12px;
+  background: var(--aura-cyan);
+  border-radius: 4px;
+  animation: audioStreamPulse 0.8s ease-in-out infinite alternate;
+}
+
+.audio-stream-bar:nth-child(2) { animation-delay: 0.15s; height: 28px; background: var(--movistar-blue); }
+.audio-stream-bar:nth-child(3) { animation-delay: 0.3s; height: 50px; }
+.audio-stream-bar:nth-child(4) { animation-delay: 0.45s; height: 70px; background: var(--movistar-blue); }
+.audio-stream-bar:nth-child(5) { animation-delay: 0.2s; height: 42px; }
+.audio-stream-bar:nth-child(6) { animation-delay: 0.35s; height: 20px; }
+
+/* Real-time Transcription Stream in Meeting Box */
+.meeting-live-transcript-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #E2E8F0;
+}
+
+/* CLUELY-STYLE AI COPILOT HUD (SIDEBAR OVERLAY) */
+.cluely-copilot-hud-card {
+  background: #FFFFFF;
+  border: 2px solid var(--aura-cyan);
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15), 0 0 25px var(--aura-cyan-glow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.cluely-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 10px;
+}
+
+.cluely-hud-title {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--movistar-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cluely-speech-display-box {
+  background: #F8FAFC;
+  border-left: 4px solid var(--movistar-blue);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--deep-indigo);
+  font-weight: 600;
+  min-height: 80px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.cluely-speech-display-box.objection-alert {
+  border-left-color: #D97706;
+  background: #FFFBEB;
+  color: #78350F;
+}
+
+/* Typing Cursor Animation */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--movistar-blue);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blinkCursor 0.75s infinite;
+}
+
+.typewriter-cursor.orange {
+  background: #D97706;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --- PANTALLA 5: FORM-FILL DITO CRM --- */
+.dito-form-card-container {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dito-form-2x2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.dito-field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dito-field-block label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.dito-input-styled {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 12.5px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--deep-indigo);
+  outline: none;
+}
+
+.dito-input-styled.auto-filled-active {
+  background: #F0FDF4;
+  border-color: #86EFAC;
+  color: #166534;
+}
+
+/* --- PANTALLA 6: VENTA PROCESADA & LIVE COMMISSION CELEBRATION --- */
+.sale-success-celebration-canvas {
+  background: #FFFFFF;
+  border: 1.5px solid #BBF7D0;
+  border-radius: 24px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 200, 83, 0.12);
+}
+
+.commission-live-odometer-stage {
+  background: #F0FDF4;
+  border: 2px solid #00C853;
+  border-radius: 20px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0;
+  box-shadow: 0 8px 30px rgba(0, 200, 83, 0.2);
+}
+
+.odometer-number-big {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  color: #15803D;
+}
+
+/* ==========================================================================
+   DISCREET IN-APP WORKFLOW ACTION BAR (BOTTOM SCREEN CONTROLLER)
+   ========================================================================== */
+.sfdc-workflow-bottom-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 25, 44, 0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 30px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.sfdc-workflow-bottom-bar a,
+.sfdc-workflow-bottom-bar button {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.sfdc-workflow-bottom-bar button.active {
+  background: var(--movistar-blue);
+  border-color: var(--movistar-blue);
+  color: #FFFFFF;
+}
+
+@keyframes sfdcFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseCallCard {
+  0%, 100% { box-shadow: 0 8px 24px rgba(1, 157, 244, 0.2); }
+  50% { box-shadow: 0 12px 35px rgba(1, 157, 244, 0.45); }
+}
+
+@keyframes audioStreamPulse {
+  0% { height: 10px; }
+  100% { height: 65px; }
+}

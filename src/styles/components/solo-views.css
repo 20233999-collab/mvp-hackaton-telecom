@@ -1,0 +1,72 @@
+/* ==========================================================================
+   VIEW MODES: SPLIT vs. SOLO CX vs. SOLO EX
+   ========================================================================== */
+
+/* Modo Pantalla Dividida (Default) */
+.cockpit-split-grid.view-split {
+  grid-template-columns: 420px 1fr;
+}
+
+/* Modo Foco Cliente Solo (iPhone Centrado y Ampliado) */
+.cockpit-split-grid.view-solo-cx {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.cockpit-split-grid.view-solo-cx #exPanel {
+  display: none !important;
+}
+.cockpit-split-grid.view-solo-cx .iphone-device {
+  transform: scale(1.04);
+  box-shadow: 
+    0 0 0 3px #1E293B,
+    0 0 0 6px #0F172A,
+    0 32px 80px rgba(11, 25, 44, 0.35),
+    0 12px 35px rgba(1, 157, 244, 0.25);
+}
+
+/* Modo Foco Empleado Solo (Consola Ampliada Full Widescreen) */
+.cockpit-split-grid.view-solo-ex {
+  grid-template-columns: 1fr;
+}
+.cockpit-split-grid.view-solo-ex #cxPanel {
+  display: none !important;
+}
+.cockpit-split-grid.view-solo-ex .console-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Selector de Modo de Vista Rápido en Toolbar */
+.view-mode-pill-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.view-mode-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.view-mode-btn:hover {
+  color: #FFFFFF;
+}
+
+.view-mode-btn.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-weight: 700;
+}

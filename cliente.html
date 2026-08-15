@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Perspectiva del Cliente • Valeria Mendoza — Mi Movistar &amp; Llamada</title>
+  <meta name="description" content="Experiencia inmersiva del cliente: App Mi Movistar con gráfico didáctico de consumo y llamada personalizada sin spam.">
+  <link rel="stylesheet" href="./src/styles/cliente-flow.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SMARTPHONE FRAME / VIEWPORT STAGE
+       ======================================================================== -->
+  <div class="phone-viewport-stage">
+    
+    <!-- Dynamic Island / Speaker Notch -->
+    <div class="phone-dynamic-island">
+      <div class="island-camera-dot"></div>
+    </div>
+
+    <!-- Phone Status Bar -->
+    <div class="phone-status-bar">
+      <span>14:02</span>
+      <div class="status-bar-icons">
+        <i data-lucide="signal" style="width: 13px;"></i>
+        <span style="font-size: 11px; font-weight: 800;">5G</span>
+        <i data-lucide="wifi" style="width: 14px;"></i>
+        <i data-lucide="battery-charging" style="width: 16px;"></i>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         PANTALLA 1: APP MI MOVISTAR (GRÁFICO DIDÁCTICO & ADVERTENCIA AMIGABLE)
+         ====================================================================== -->
+    <div class="client-screen-view active-screen" id="clientScreen_1">
+      
+      <!-- App Header -->
+      <div class="app-header-brand">
+        <div class="app-brand-left">
+          <div class="app-brand-logo-m">M</div>
+          <div class="app-user-greeting">
+            <h3>Hola, Valeria 👋</h3>
+            <p>Línea 987 654 321 • Miraflores</p>
+          </div>
+        </div>
+
+        <button style="background: none; border: none; color: var(--deep-indigo); cursor: pointer;">
+          <i data-lucide="bell" style="width: 20px;"></i>
+        </button>
+      </div>
+
+      <!-- App Scroll Content -->
+      <div class="app-scroll-content">
+        
+        <!-- CARD DE ADVERTENCIA AMIGABLE (CERO PUBLICIDAD GENÉRICA) -->
+        <div class="smart-advice-banner-card">
+          <div class="advice-badge-top">
+            <i data-lucide="sparkles" style="width: 13px;"></i> Concierge Inteligente Movistar
+          </div>
+          
+          <div class="advice-title-text">
+            Notamos que te quedas sin megas en tus viajes. ¡Mira cómo puedes solucionarlo y ahorrar dinero!
+          </div>
+
+          <div class="advice-savings-pill">
+            <i data-lucide="trending-down" style="width: 14px;"></i> Ahorro Calculado: <strong>S/ 40.00 / mes</strong>
+          </div>
+        </div>
+
+        <!-- GRÁFICO DIDÁCTICO INTERACTIVO DE CONSUMO HISTÓRICO -->
+        <div class="didactic-chart-card">
+          <div class="chart-header-row">
+            <span class="chart-title-lbl">
+              <i data-lucide="bar-chart-2" style="width: 16px; color: var(--movistar-blue);"></i>
+              Tus Consumos Históricos de Datos
+            </span>
+            <span class="chart-sub-tag">Últimos 4 Meses</span>
+          </div>
+
+          <!-- Barras de Consumo Comparativo -->
+          <div class="consumption-bars-wrapper">
+            <!-- Línea de Límite de Plan -->
+            <div class="chart-threshold-line">
+              <span class="threshold-tag">Límite Plan: 20 GB</span>
+            </div>
+
+            <!-- Mes 1: Noviembre -->
+            <div class="month-bar-col">
+              <div class="bar-pill" style="height: 60px;">
+                <span class="bar-val-lbl">18G</span>
+              </div>
+              <span class="month-name">Nov</span>
+            </div>
+
+            <!-- Mes 2: Diciembre (Viaje Arequipa - Pico) -->
+            <div class="month-bar-col">
+              <div class="bar-pill peak-travel" style="height: 110px;">
+                <span class="bar-val-lbl">34G</span>
+              </div>
+              <span class="month-name" style="color: #DC2626; font-weight: 800;">Dic ✈️</span>
+            </div>
+
+            <!-- Mes 3: Enero -->
+            <div class="month-bar-col">
+              <div class="bar-pill" style="height: 65px;">
+                <span class="bar-val-lbl">19G</span>
+              </div>
+              <span class="month-name">Ene</span>
+            </div>
+
+            <!-- Mes 4: Febrero (Viaje Arequipa Actual) -->
+            <div class="month-bar-col">
+              <div class="bar-pill peak-travel current-feb" style="height: 115px; border: 2px solid #FFFFFF;">
+                <span class="bar-val-lbl">35G</span>
+              </div>
+              <span class="month-name" style="color: var(--movistar-blue); font-weight: 800;">Feb ✈️</span>
+            </div>
+          </div>
+
+          <!-- Diagnóstico Didáctico -->
+          <div class="chart-diagnostic-footer">
+            💡 <strong>Diagnóstico:</strong> En tus viajes a Arequipa agotas tus 20 GB el día 18. Compras 3 paquetes sueltos (+S/ 50.00), sumando <strong>S/ 179.80 al mes</strong>.
+          </div>
+        </div>
+
+        <!-- Botón de Solución -->
+        <button class="btn-app-action-main" id="btnRequestAdviceFromApp">
+          <i data-lucide="phone-call" style="width: 16px;"></i> Conectar con Asesor Especializado
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ======================================================================
+         PANTALLA 2: LLAMADA ENTRANTE & LLAMADA EN CURSO DE CARLOS
+         ====================================================================== -->
+    <div class="client-screen-view" id="clientScreen_2">
+      
+      <!-- SUB-VISTA A: LLAMADA ENTRANTE SONANDO -->
+      <div class="incoming-call-fullscreen-stage" id="incomingRingingView">
+        <div class="caller-id-hero">
+          <div class="caller-avatar-circle">
+            <i data-lucide="phone-incoming" style="width: 36px;"></i>
+          </div>
+          <div class="caller-name-main">Carlos Alvarado</div>
+          <div class="caller-role-subtitle">Asesor Especializado Movistar • Verificado</div>
+          <div class="caller-status-timer">Llamada Entrante...</div>
+        </div>
+
+        <!-- Botones de Llamada -->
+        <div class="incoming-call-actions-row">
+          <button class="call-circle-btn hangup" id="btnHangupCallValeria" title="Rechazar">
+            <i data-lucide="phone-off" style="width: 26px;"></i>
+          </button>
+          
+          <button class="call-circle-btn accept" id="btnAcceptCallValeria" title="Contestar">
+            <i data-lucide="phone" style="width: 28px;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUB-VISTA B: LLAMADA ACTIVA & DIÁLOGO RESPETUOSO -->
+      <div class="incoming-call-fullscreen-stage" id="activeCallView" style="display: none;">
+        <div class="caller-id-hero">
+          <div class="caller-avatar-circle" style="width: 64px; height: 64px; font-size: 20px;">CA</div>
+          <div class="caller-name-main" style="font-size: 19px;">Carlos Alvarado</div>
+          <div class="caller-role-subtitle" style="font-size: 11.5px;">Telemarketing Movistar • Cayma, Arequipa</div>
+          <div class="caller-status-timer" id="activeCallTimerVal" style="color: #4ADE80; font-size: 13px;">00:01</div>
+        </div>
+
+        <!-- Diálogo Respetuoso & Pensamiento de Valeria -->
+        <div class="live-call-dialogue-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--aura-cyan);">
+            <span>Audio en Vivo</span>
+            <div class="voice-wave-mini-stage">
+              <div class="voice-wave-bar"></div>
+              <div class="voice-wave-bar"></div>
+              <div class="voice-wave-bar"></div>
+              <div class="voice-wave-bar"></div>
+            </div>
+          </div>
+
+          <div class="carlos-voice-transcript">
+            <strong>Carlos (Asesor):</strong> "Hola Valeria, buenas tardes. Te contacto porque vimos que viajas seguido a Arequipa por tus proyectos de diseño y te quedas corta de megas a mitad de mes, gastando de más en recargas..."
+          </div>
+
+          <!-- PENSAMIENTO INTERNO DE VALERIA -->
+          <div class="valeria-thought-bubble">
+            💡 <strong>Valeria (Pensamiento):</strong> "Normalmente cuelgo de inmediato a los vendedores de Claro... pero este asesor sabe exactamente que viajo a Arequipa y no me está leyendo un guion genérico. Me quedo a escuchar."
+          </div>
+        </div>
+
+        <!-- Botón Finalizar Llamada -->
+        <div class="incoming-call-actions-row">
+          <button class="call-circle-btn hangup" id="btnEndCallValeria" title="Finalizar">
+            <i data-lucide="phone-off" style="width: 26px;"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================================
+       FLOATING DIRECTOR BAR (RECORDING CONTROLS)
+       ======================================================================== -->
+  <div class="client-director-bar">
+    <a href="./index.html" style="background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));">
+      <i data-lucide="layout-dashboard" style="width: 13px;"></i> Cockpit
+    </a>
+    <a href="./operador.html">
+      <i data-lucide="headphones" style="width: 13px;"></i> Operador
+    </a>
+    <button id="btnClientScreen1" class="active">1. App Mi Movistar</button>
+    <button id="btnClientScreen2">2. Llamada de Carlos</button>
+    <button id="btnClientAutoPlay" style="background: var(--movistar-blue); border: none; font-weight: 700;">
+      <i data-lucide="play" style="width: 12px;"></i> Auto-Play
+    </button>
+  </div>
+
+  <script type="module" src="./src/scripts/cliente-flow.js"></script>
+</body>
+</html>

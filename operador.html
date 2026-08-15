@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Salesforce • Portal Telemarketing Movistar (Carlos Alvarado)</title>
+  <meta name="description" content="Plataforma corporativa de telemarketing y CRM unificado con copiloto Cluely AI y trazabilidad E2E.">
+  <link rel="stylesheet" href="./src/styles/operador-workstation.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. GLOBAL SALESFORCE / TELECOM APP HEADER
+       ======================================================================== -->
+  <header class="sfdc-global-header">
+    <div class="sfdc-left-cluster">
+      <div class="sfdc-waffle-btn" title="Lanzador de Aplicaciones">
+        <i data-lucide="grid" style="width: 18px;"></i>
+      </div>
+      <div class="sfdc-app-title">
+        <div class="sfdc-m-logo">M</div>
+        <span class="sfdc-app-name">Sales Cloud Telemarketing</span>
+        <span class="sfdc-app-sub">Atento • Ext. 4082</span>
+      </div>
+    </div>
+
+    <!-- Barra de Búsqueda Global de Clientes -->
+    <div class="sfdc-global-search">
+      <i data-lucide="search" style="width: 14px;" class="sfdc-search-icon"></i>
+      <input type="text" class="sfdc-search-input" placeholder="Buscar clientes, DNI, líneas o contratos..." value="Valeria Mendoza (987-654-321)">
+    </div>
+
+    <!-- Cluster Derecho: Widget de Comisiones en Vivo & Perfil -->
+    <div class="sfdc-right-cluster">
+      <div class="sfdc-commission-pill" title="Comisiones del mes acumuladas en tiempo real">
+        <i data-lucide="trophy" style="width: 14px; color: #166534;"></i>
+        <span class="comm-lbl">Comisiones:</span>
+        <span class="comm-val-live" id="commValLive">S/ 2,450.00</span>
+        <span class="comm-target-badge" id="commTargetBadge">84% Meta</span>
+      </div>
+
+      <div class="sfdc-user-card">
+        <div class="sfdc-avatar-thumb">CA</div>
+        <div class="sfdc-user-details">
+          <span class="sfdc-user-name">Carlos Alvarado</span>
+          <span class="sfdc-user-status"><i data-lucide="circle" style="width: 7px; fill: #008738;"></i> Conectado</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. WORKSPACE LAYOUT (SIDEBAR + MAIN CANVAS)
+       ======================================================================== -->
+  <div class="sfdc-workspace-layout">
+
+    <!-- Sidebar de Navegación CRM -->
+    <aside class="sfdc-sidebar">
+      <nav class="sfdc-nav-list">
+        <div class="sfdc-nav-item active" id="navItemDialer">
+          <i data-lucide="phone-call" style="width: 16px;"></i>
+          <span>Marcador Predictivo</span>
+        </div>
+        <div class="sfdc-nav-item">
+          <i data-lucide="users" style="width: 16px;"></i>
+          <span>Clientes 360</span>
+        </div>
+        <div class="sfdc-nav-item">
+          <i data-lucide="file-text" style="width: 16px;"></i>
+          <span>Oportunidades DITO</span>
+        </div>
+        <div class="sfdc-nav-item">
+          <i data-lucide="headphones" style="width: 16px;"></i>
+          <span>Cluely Copilot AI</span>
+        </div>
+        <div class="sfdc-nav-item">
+          <i data-lucide="award" style="width: 16px;"></i>
+          <span>Mis Comisiones</span>
+        </div>
+      </nav>
+
+      <!-- Widget de Progreso del Turno en Sidebar -->
+      <div class="sidebar-shift-card">
+        <span class="shift-title">Rendimiento de Turno</span>
+        <div class="shift-stats-row">
+          <span>Ventas Hoy: <strong>6</strong></span>
+          <span>TMO: <strong>2m 10s</strong></span>
+        </div>
+        <div class="shift-progress-track">
+          <div class="shift-progress-fill" id="shiftProgressFill"></div>
+        </div>
+        <span style="font-size: 9.5px; color: var(--text-muted); margin-top: 2px;">Meta Diaria: 84% alcanzada</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Canvas (Las 6 Pantallas Reales de la Aplicación) -->
+    <main class="sfdc-main-canvas">
+
+      <!-- ====================================================================
+           PANTALLA 1: DASHBOARD DE ESPERA & MARCADOR PREDICTIVO
+           ==================================================================== -->
+      <div class="sfdc-screen-view active-screen" id="screenView_1">
+        
+        <div class="kpi-metric-cards-row">
+          <div class="kpi-white-card">
+            <span class="kpi-lbl">Llamadas Asignadas Hoy</span>
+            <div class="kpi-val">28</div>
+          </div>
+          <div class="kpi-white-card">
+            <span class="kpi-lbl">Tasa de Contacto Efectivo</span>
+            <div class="kpi-val" style="color: #008738;">68.4%</div>
+          </div>
+          <div class="kpi-white-card">
+            <span class="kpi-lbl">TMO Promedio Asistido por IA</span>
+            <div class="kpi-val" style="color: var(--movistar-blue);">02:10 min</div>
+          </div>
+        </div>
+
+        <div class="screen1-dialer-grid">
+          <!-- Cola Inteligente con Radar CATE -->
+          <div class="dialer-queue-radar-box">
+            <div class="dialer-radar-animation">
+              <div class="dialer-radar-core">
+                <i data-lucide="radar" style="width: 24px;"></i>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 16px; font-weight: 800; color: var(--deep-indigo); margin-bottom: 4px;">
+              Marcador Predictivo Causal (CATE Uplift)
+            </h3>
+            <p style="font-size: 12px; color: var(--text-muted); max-width: 440px; margin-bottom: 12px;">
+              Escaneando cartera en Arequipa... Identificando únicamente a clientes <strong>Persuadibles</strong> para garantizar máxima conversión sin spam.
+            </p>
+            <span style="font-size: 10px; font-family: var(--font-mono); color: var(--aura-cyan); background: var(--aura-cyan-subtle); padding: 3px 10px; border-radius: 12px;">
+              Filtro Activo: Gap de Consumo &gt; S/ 30.00 • Cobertura Fibra OK
+            </span>
+          </div>
+
+          <!-- Alerta de Llamada Entrante Asignada -->
+          <div class="incoming-call-alert-card">
+            <div class="incoming-call-head">
+              <span style="font-size: 11px; font-weight: 800; color: var(--movistar-blue); text-transform: uppercase;">
+                <i data-lucide="phone-incoming" style="width: 13px; display: inline-block; vertical-align: -1px;"></i> Match Asignado
+              </span>
+              <span style="font-size: 10px; background: rgba(0, 200, 83, 0.12); color: #008738; padding: 2px 6px; border-radius: 6px; font-weight: 700;">
+                94% Propensión
+              </span>
+            </div>
+
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 15px; font-weight: 800; color: var(--deep-indigo);">Valeria Mendoza</div>
+              <div style="font-size: 11.5px; color: var(--text-muted);">987-654-321 • Roaming Arequipa</div>
+            </div>
+
+            <div style="font-size: 11px; color: var(--text-secondary); background: #F8FAFC; padding: 8px 10px; border-radius: 8px;">
+              <strong>Oportunidad NBO:</strong> Unificación Movistar Total (Ahorro S/ 40.00).
+            </div>
+
+            <button class="btn-answer-call-action" id="btnAnswerCallAction">
+              <i data-lucide="phone" style="width: 16px;"></i> Conectar y Cargar Ficha 360
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANTALLA 2: EXPEDIENTE / CURRÍCULO DEL CLIENTE (VALERIA MENDOZA)
+           ==================================================================== -->
+      <div class="sfdc-screen-view" id="screenView_2">
+        
+        <div class="customer-cv-dossier-card">
+          <!-- Encabezado del Currículo / Perfil -->
+          <div class="dossier-profile-header">
+            <div class="dossier-id-cluster">
+              <div class="dossier-photo-circle">VM</div>
+              <div class="dossier-name-title">
+                <h2>Valeria Mendoza (31 años)</h2>
+                <div class="dossier-pills-row">
+                  <span class="dossier-pill-tag">DNI: 47829103</span>
+                  <span class="dossier-pill-tag">Diseñadora UI/UX Senior</span>
+                  <span class="dossier-pill-tag">Residencia: Miraflores, Lima</span>
+                  <span class="dossier-pill-tag verified"><i data-lucide="shield-check" style="width: 12px; display: inline-block; vertical-align: -1px;"></i> Score A1 • Antigüedad 3.5 años</span>
+                  <span class="dossier-pill-tag roaming"><i data-lucide="map-pin" style="width: 12px; display: inline-block; vertical-align: -1px;"></i> Roaming Arequipa (Viaje Activo)</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-answer-call-action" id="btnStartPitchCall" style="width: auto; padding: 10px 20px; font-size: 13px; background: linear-gradient(135deg, var(--movistar-blue), #0066CC);">
+              <i data-lucide="headphones" style="width: 16px;"></i> Iniciar Llamada &amp; Desplegar Copiloto
+            </button>
+          </div>
+
+          <!-- Bloques Curriculares / Secciones del Expediente -->
+          <div class="dossier-sections-stack">
+            
+            <!-- 1. Diagnóstico de Consumo y Dolor -->
+            <div class="dossier-section-block pain-border">
+              <span class="dossier-sec-label" style="color: #DC2626;">
+                <i data-lucide="alert-circle" style="width: 14px;"></i> 01. Diagnóstico de Consumo y Dolor Identificado (CVM)
+              </span>
+              <div class="dossier-sec-headline">Agotamiento de Datos en Arequipa y Sobrecosto en Recargas</div>
+              <div class="dossier-points-list">
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Plan Móvil Actual:</strong> Pospago 20 GB (S/ 59.90/mes) — Agotado el día 18 por videollamadas de trabajo.</span>
+                </div>
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Plan Fibra Fijo:</strong> 100 Mbps Simétrica en Miraflores (S/ 69.90/mes) — Sin unificar.</span>
+                </div>
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Gasto Disperso Ineficiente:</strong> Compra 3 paquetes extra de 5 GB al mes (+S/ 50.00) totalizando <strong>S/ 179.80 / mes</strong>.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Solución Propuesta (Movistar Total) -->
+            <div class="dossier-section-block offer-border">
+              <span class="dossier-sec-label" style="color: var(--movistar-blue);">
+                <i data-lucide="sparkles" style="width: 14px;"></i> 02. Propuesta Comercial Recomendada (NBO CATE Uplift)
+              </span>
+              <div class="dossier-sec-headline">Upgrade a "Movistar Total 300M Simétrico + Móvil Ilimitado"</div>
+              <div class="dossier-points-list">
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Gigas Ilimitados:</strong> Sin cortes ni necesidad de recargas sueltas en Arequipa.</span>
+                </div>
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Fibra Óptica 300 Mbps:</strong> Triplica su velocidad en Miraflores con Smart WiFi 6 bonificado.</span>
+                </div>
+                <div class="dossier-point-item">
+                  <span class="dossier-bullet">•</span>
+                  <span><strong>Unificación de Factura:</strong> 1 solo recibo digital con Débito Automático BCP.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Dictamen Financiero y Ahorro -->
+            <div class="dossier-section-block savings-border">
+              <span class="dossier-sec-label" style="color: #008738;">
+                <i data-lucide="trending-down" style="width: 14px;"></i> 03. Dictamen Financiero &amp; Impacto de Ahorro
+              </span>
+              
+              <div class="dossier-financial-strip">
+                <div class="fin-strip-col">
+                  <span class="fin-strip-lbl">Gasto Actual Disperso</span>
+                  <div class="fin-strip-val alert">S/ 179.80 / mes</div>
+                </div>
+                <div class="fin-strip-col">
+                  <span class="fin-strip-lbl">Nueva Tarifa Plana Total</span>
+                  <div class="fin-strip-val" style="color: var(--movistar-blue);">S/ 139.90 / mes</div>
+                </div>
+                <div class="fin-strip-col">
+                  <span class="fin-strip-lbl">Ahorro Mensual Neto</span>
+                  <div class="fin-strip-val gain">S/ 40.00 / mes</div>
+                </div>
+                <div class="fin-strip-col">
+                  <span class="fin-strip-lbl">Ahorro Anual Proyectado</span>
+                  <div class="fin-strip-val gain" style="font-size: 18px;">S/ 480.00 / año</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANTALLA 3: MEETING / CALL VIEW CON CLUELY COPILOT HUD (PITCH 12S)
+           ==================================================================== -->
+      <div class="sfdc-screen-view" id="screenView_3">
+        
+        <div class="active-call-workspace-layout">
+          <!-- Softphone Video/Audio Call Stage -->
+          <div class="meeting-call-stage-card">
+            <div class="meeting-header-row">
+              <div class="caller-live-pill">
+                <span class="call-pulse-dot"></span>
+                <span>Llamada Activa: Valeria Mendoza (Arequipa)</span>
+                <span style="font-family: var(--font-mono); color: #00C853;">00:14</span>
+              </div>
+              <span style="font-size: 11px; color: var(--aura-cyan);">Calidad de Red: 100% HD</span>
+            </div>
+
+            <!-- Oscillating Audio Waveform -->
+            <div class="live-speech-waveform-stage">
+              <div class="audio-stream-bar"></div>
+              <div class="audio-stream-bar"></div>
+              <div class="audio-stream-bar"></div>
+              <div class="audio-stream-bar"></div>
+              <div class="audio-stream-bar"></div>
+              <div class="audio-stream-bar"></div>
+            </div>
+
+            <!-- Real-time Live Transcription Stream -->
+            <div class="meeting-live-transcript-box" id="meetingTranscriptBox3">
+              <!-- Se escribe en vivo por JS -->
+            </div>
+          </div>
+
+          <!-- CLUELY-STYLE AI COPILOT HUD -->
+          <div class="cluely-copilot-hud-card">
+            <div class="cluely-hud-header">
+              <span class="cluely-hud-title">
+                <i data-lucide="headphones" style="width: 16px;"></i> Cluely Copilot AI (Escucha Activa)
+              </span>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: #008738; background: #DCFCE7; padding: 2px 6px; border-radius: 6px;">42ms</span>
+            </div>
+
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Pitch Sugerido Inyectado (12s):</span>
+            
+            <div class="cluely-speech-display-box" id="cluelyPitchDisplayBox">
+              <!-- Se escribe en vivo en tiempo real -->
+            </div>
+
+            <button class="btn-answer-call-action" id="btnTriggerObjection" style="background: #F1F5F9; color: var(--deep-indigo); border: 1px solid #CBD5E1; box-shadow: none; font-size: 11.5px;">
+              Simular Pregunta / Objeción de Valeria →
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANTALLA 4: DETECCIÓN DE OBJECIÓN "PRORRATEO" & REBATE
+           ==================================================================== -->
+      <div class="sfdc-screen-view" id="screenView_4">
+        
+        <div class="active-call-workspace-layout">
+          <!-- Softphone Video/Audio Call Stage -->
+          <div class="meeting-call-stage-card">
+            <div class="meeting-header-row">
+              <div class="caller-live-pill">
+                <span class="call-pulse-dot" style="background: #F59E0B; box-shadow: 0 0 8px #F59E0B;"></span>
+                <span>Valeria Hablando • Detección NLP en Vivo</span>
+                <span style="font-family: var(--font-mono); color: #F59E0B;">00:26</span>
+              </div>
+              <span style="font-size: 11px; color: #FFA726;">Alerta de Objeción Detectada</span>
+            </div>
+
+            <!-- Oscillating Audio Waveform -->
+            <div class="live-speech-waveform-stage">
+              <div class="audio-stream-bar" style="background: #FFA726;"></div>
+              <div class="audio-stream-bar" style="background: #FF8E53;"></div>
+              <div class="audio-stream-bar" style="background: #FFA726;"></div>
+              <div class="audio-stream-bar" style="background: #FF8E53;"></div>
+              <div class="audio-stream-bar" style="background: #FFA726;"></div>
+              <div class="audio-stream-bar" style="background: #FF8E53;"></div>
+            </div>
+
+            <!-- Transcription with Highlighted Keyword -->
+            <div class="meeting-live-transcript-box" id="meetingTranscriptBox4" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">
+              <!-- Se escribe en vivo por JS -->
+            </div>
+          </div>
+
+          <!-- CLUELY-STYLE AI COPILOT HUD (REBATE MODE) -->
+          <div class="cluely-copilot-hud-card" style="border-color: #D97706; box-shadow: 0 0 30px rgba(245, 158, 11, 0.25);">
+            <div class="cluely-hud-header">
+              <span class="cluely-hud-title" style="color: #D97706;">
+                <i data-lucide="shield-alert" style="width: 16px;"></i> Speech de Rebate Automático
+              </span>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: #B45309; background: #FEF3C7; padding: 2px 6px; border-radius: 6px;">NLP Match: Prorrateo</span>
+            </div>
+
+            <div class="cluely-speech-display-box objection-alert" id="cluelyRebateDisplayBox">
+              <!-- Se escribe en vivo en tiempo real -->
+            </div>
+
+            <button class="btn-answer-call-action" id="btnProceedToFormFill" style="background: linear-gradient(135deg, var(--movistar-blue), #0066CC);">
+              Valeria Acepta Oferta → Pasar a Cierre DITO
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANTALLA 5: VENTA ACEPTADA & FORM-FILL ZERO-TYPING DITO CRM
+           ==================================================================== -->
+      <div class="sfdc-screen-view" id="screenView_5">
+        
+        <div class="dito-form-card-container">
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="file-check-2" style="width: 18px; color: #008738;"></i>
+              <h2 style="font-family: var(--font-heading); font-size: 16px; font-weight: 800; color: var(--deep-indigo);">
+                Registro de Venta en DITO CRM (Form-Fill Automático)
+              </h2>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 10px; background: rgba(0, 200, 83, 0.1); color: #008738; padding: 3px 8px; border-radius: 8px; font-weight: 700;">
+              API TMF622 • Cero Digitación
+            </span>
+          </div>
+
+          <!-- Cuadrícula 2x2 de Campos DITO -->
+          <div class="dito-form-2x2-grid">
+            <div class="dito-field-block">
+              <label>Producto Convergente <span style="color: #008738;">✓ Capturado por Voz</span></label>
+              <input type="text" class="dito-input-styled auto-filled-active" id="ditoFldProduct" value="Movistar Total 300M Fibra + Móvil" readonly>
+            </div>
+
+            <div class="dito-field-block">
+              <label>Tarifa Pactada <span style="color: #008738;">✓ 0% Error Aritmético</span></label>
+              <input type="text" class="dito-input-styled auto-filled-active" id="ditoFldPrice" value="S/ 139.90 / mes" readonly>
+            </div>
+
+            <div class="dito-field-block">
+              <label>Dirección de Instalación Fibra</label>
+              <input type="text" class="dito-input-styled auto-filled-active" id="ditoFldAddress" value="Av. Cayma 402, Dpto 501, Arequipa" readonly>
+            </div>
+
+            <div class="dito-field-block">
+              <label>Modalidad de Recaudo</label>
+              <input type="text" class="dito-input-styled auto-filled-active" id="ditoFldPayment" value="Débito Automático BCP" readonly>
+            </div>
+          </div>
+
+          <div class="dito-field-block" style="margin-bottom: 20px;">
+            <label>Firma Digital &amp; Enlace Probatorio de Audio</label>
+            <input type="text" class="dito-input-styled auto-filled-active" id="ditoFldHash" value="SHA256: 8f7e2a9b4c10... [AUDIO DE LLAMADA VERIFICADO EN SGA]" readonly>
+          </div>
+
+          <button class="btn-answer-call-action" id="btnSubmitDitoSale">
+            <i data-lucide="check-circle" style="width: 18px;"></i> Confirmar "Venta Aceptada" en DITO (1-Click)
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANTALLA 6: VENTA PROCESADA & LIVE COMMISSION CELEBRATION
+           ==================================================================== -->
+      <div class="sfdc-screen-view" id="screenView_6">
+        
+        <div class="sale-success-celebration-canvas">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: #00C853; color: #FFFFFF; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; box-shadow: 0 0 25px rgba(0, 200, 83, 0.4);">
+            <i data-lucide="check" style="width: 32px;"></i>
+          </div>
+
+          <h2 style="font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: var(--deep-indigo); margin-bottom: 4px;">
+            ¡Venta Procesada con Éxito!
+          </h2>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            La orden #<strong>TMF622-ORD-2026-8842</strong> ha sido emitida al Back-Office y tu panel de comisiones se actualizó al instante.
+          </p>
+
+          <!-- Odómetro de Comisiones en Vivo -->
+          <div class="commission-live-odometer-stage">
+            <span style="font-size: 12px; font-weight: 800; color: #166534; text-transform: uppercase;">
+              Tus Comisiones Acumuladas del Mes
+            </span>
+            <div class="odometer-number-big" id="odometerNumberLive">
+              S/ 2,570.00 <span style="font-size: 18px; color: #00C853; font-weight: 800;">(+S/ 120.00)</span>
+            </div>
+            <div style="width: 100%; height: 8px; background: #DCFCE7; border-radius: 4px; overflow: hidden; margin-top: 4px;">
+              <div style="width: 92%; height: 100%; background: #00C853; transition: width 1s ease;"></div>
+            </div>
+            <span style="font-size: 11px; color: #166534; font-weight: 700;">
+              🔥 Meta Mensual: 92% (¡A solo 2 ventas del Bono Top Performer!)
+            </span>
+          </div>
+
+          <button class="btn-answer-call-action" id="btnResetShift" style="width: auto; padding: 10px 24px; background: #FFFFFF; color: var(--deep-indigo); border: 1px solid #CBD5E1; box-shadow: var(--shadow-sm);">
+            <i data-lucide="rotate-ccw" style="width: 15px;"></i> Volver al Marcador Predictivo
+          </button>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       DISCREET IN-APP WORKFLOW ACTION BAR (BOTTOM CONTROLLER FOR RECORDING)
+       ======================================================================== -->
+  <div class="sfdc-workflow-bottom-bar">
+    <a href="./index.html" style="background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));">
+      <i data-lucide="layout-dashboard" style="width: 13px;"></i> Cockpit
+    </a>
+    <a href="./valeria.html">
+      <i data-lucide="message-circle" style="width: 13px;"></i> WhatsApp
+    </a>
+    <a href="./mi-movistar.html">
+      <i data-lucide="bot" style="width: 13px;"></i> Mi Movistar
+    </a>
+    <button id="btnWorkflow1" class="active">1. Standby</button>
+    <button id="btnWorkflow2">2. Ficha 360</button>
+    <button id="btnWorkflow3">3. Pitch Cluely</button>
+    <button id="btnWorkflow4">4. Rebate</button>
+    <button id="btnWorkflow5">5. DITO Form</button>
+    <button id="btnWorkflow6">6. Comisiones</button>
+    <button id="btnAutoPlayWorkflow" style="background: var(--movistar-blue); border: none; font-weight: 700;">
+      <i data-lucide="play" style="width: 12px;"></i> Auto-Play
+    </button>
+  </div>
+
+  <script type="module" src="./src/scripts/operador-workstation.js"></script>
+</body>
+</html>

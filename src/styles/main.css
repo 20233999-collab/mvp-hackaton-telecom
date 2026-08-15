@@ -1,0 +1,113 @@
+/* ==========================================================================
+   MOVISTAR JOURNEY TRACKER - MAIN STYLESHEET (100% RESPONSIVE & ADAPTIVE)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@import './variables.css';
+@import './components/aura-orb.css';
+@import './components/rappi-track.css';
+@import './components/phone-frame.css';
+@import './components/console.css';
+@import './components/director-toolbar.css';
+@import './components/director-hub.css';
+@import './components/solo-views.css';
+
+/* --- Reset & Global Defaults --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface-ground);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(1, 157, 244, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 212, 255, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.6) 0px, transparent 80%);
+  color: var(--text-primary);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Contenedor de Pantalla Dividida --- */
+.main-app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 90px;
+}
+
+.cockpit-split-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 28px;
+  max-width: 1440px;
+  margin: 20px auto;
+  padding: 0 24px;
+  width: 100%;
+  align-items: start;
+  transition: all 0.35s var(--ease-smooth);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .cockpit-split-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    gap: 20px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .cockpit-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .rappi-tracker-nav {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .cockpit-split-grid {
+    padding: 0 10px;
+    margin: 10px auto;
+    gap: 16px;
+  }
+
+  .phone-mockup-wrapper {
+    width: 100%;
+    max-width: 410px;
+  }
+
+  .console-wrapper {
+    width: 100%;
+  }
+
+  .director-toolbar-fixed {
+    bottom: 10px;
+    transform: scale(0.9) translateX(-50%);
+    transform-origin: bottom left;
+  }
+}
+
+/* Animaciones Globales */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

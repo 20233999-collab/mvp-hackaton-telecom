@@ -1,0 +1,965 @@
+/* ==========================================================================
+   ATENCIÓN 104 & EXPLICACIÓN CSR-RAG • FASE 3 POST-VENTA & BILL SHOCK
+   Directivas: DESIGN.md • Strict Light Tech • Dual Screen CX vs. EX
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #F8FAFC;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Master Stage */
+.postventa-master-stage {
+  width: 100%;
+  min-height: 100dvh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 24px 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .postventa-master-stage {
+    padding: 12px 14px 24px 14px;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
+   TOP NAVBAR
+   ========================================================================== */
+.postventa-navbar {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.pv-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pv-back-hub-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.pv-back-hub-btn:hover {
+  background: var(--movistar-blue);
+  color: #FFFFFF;
+}
+
+.pv-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pv-logo-m {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pv-system-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.pv-system-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.pv-live-indicators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pv-pill-metric {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.pv-pill-metric strong {
+  color: var(--deep-indigo);
+  font-weight: 700;
+}
+
+.pv-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00C853;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.8);
+  animation: pulseDot 1.5s infinite;
+}
+
+/* ==========================================================================
+   STEPPER STRIP (4 PASOS)
+   ========================================================================== */
+.pv-stepper-strip {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.pv-step-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0.55;
+}
+
+.pv-step-card.active {
+  background: rgba(1, 157, 244, 0.08);
+  border: 1px solid rgba(1, 157, 244, 0.3);
+  opacity: 1;
+}
+
+.pv-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  color: var(--text-secondary);
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pv-step-card.active .pv-step-num {
+  background: var(--movistar-blue);
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(1, 157, 244, 0.5);
+}
+
+.pv-step-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pv-step-text strong {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  color: var(--deep-indigo);
+}
+
+.pv-step-text span {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.pv-step-divider {
+  width: 16px;
+  height: 2px;
+  background: #E2E8F0;
+}
+
+@media (max-width: 1024px) {
+  .pv-stepper-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .pv-step-divider { display: none; }
+}
+
+/* ==========================================================================
+   DUAL SPLIT CANVAS (CX vs. EX)
+   ========================================================================== */
+.pv-dual-canvas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+}
+
+@media (max-width: 960px) {
+  .pv-dual-canvas {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pv-panel-container {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 22px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.pv-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #F1F5F9;
+  padding-bottom: 12px;
+}
+
+.pv-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-header-title h3 {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.pv-channel-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: #EFF6FF;
+  color: var(--movistar-blue);
+  border: 1px solid #BFDBFE;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.ex-call-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: #ECFDF5;
+  color: #047857;
+  border: 1px solid #A7F3D0;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   CX INTERACTIVE STAGE (VALERIA)
+   ========================================================================== */
+.cx-interactive-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cx-view-sub {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  animation: screenFadeIn 0.35s ease-out forwards;
+}
+
+.cx-view-sub.active {
+  display: flex;
+}
+
+/* STAGE 1: BILL SHOCK CARD */
+.bill-shock-card {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bill-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bill-period-tag {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.bill-head-row h4 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+  margin-top: 2px;
+}
+
+.bill-alert-amber-badge {
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  color: #B45309;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 11.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bill-amount-spotlight {
+  background: #FFFFFF;
+  border: 1.5px solid #FDE68A;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 4px 14px rgba(234, 179, 8, 0.1);
+}
+
+.spot-lbl {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.spot-val {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 900;
+  color: #DC2626;
+}
+
+.spot-note {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.valeria-emotion-bubble {
+  background: #FFFBEB;
+  border-left: 3.5px solid #F59E0B;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #92400E;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cx-action {
+  background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(1, 157, 244, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.btn-cx-action:active { transform: scale(0.98); }
+
+/* STAGE 2 & 3: WHATSAPP CARD & 3-BAR GRAPH */
+.whatsapp-card-mini {
+  background: #EFEAE2;
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.wa-mini-header {
+  background: #F0F2F5;
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-mini-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-mini-header strong { font-size: 13.5px; color: #111B21; display: block; }
+.wa-verified-tag { font-size: 11px; color: #008738; font-weight: 600; }
+
+.wa-mini-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wa-bubble-m {
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  position: relative;
+}
+
+.wa-bubble-m.outgoing {
+  align-self: flex-end;
+  background: #D9FDD3;
+  color: #111B21;
+}
+
+.wa-bubble-m.incoming {
+  align-self: flex-start;
+  background: #FFFFFF;
+  color: #111B21;
+}
+
+.wa-time-m {
+  font-size: 10px;
+  color: #667781;
+  float: right;
+  margin-top: 4px;
+  margin-left: 8px;
+}
+
+/* 3-BAR INTERACTIVE CSR-RAG GRAPH */
+.csr-rag-3bar-card {
+  background: #F8FAFC;
+  border: 1.5px solid rgba(1, 157, 244, 0.35);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bar-card-header {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  color: var(--deep-indigo);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.three-bars-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.single-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bar-info-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.bar-track {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-progress {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.bar-progress.cyan {
+  background: linear-gradient(90deg, #00D4FF, var(--movistar-blue));
+}
+
+.bar-progress.blue {
+  background: linear-gradient(90deg, var(--movistar-blue), #0066CC);
+}
+
+.bar-card-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.total-exact-val {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--movistar-blue);
+}
+
+.bar-card-promise {
+  background: #DCFCE7;
+  border: 1px solid #BBF7D0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 11.5px;
+  color: #166534;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-payment-action-box {
+  margin-top: 10px;
+}
+
+.btn-pay-yape-1touch {
+  width: 100%;
+  background: linear-gradient(135deg, #742284, #8E24AA);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(142, 36, 170, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.btn-pay-yape-1touch:active { transform: scale(0.98); }
+
+/* STAGE 4: SUCCESS & RELIEF */
+.cx-success-card {
+  background: #FFFFFF;
+  border: 1.5px solid #86EFAC;
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(0, 200, 83, 0.1);
+}
+
+.cx-success-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cx-check-giant {
+  width: 38px;
+  height: 38px;
+  color: #00C853;
+}
+
+.cx-success-card h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.cx-success-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.cx-relief-quote {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 12.5px;
+  color: #166534;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+/* ==========================================================================
+   EX COCKPIT (JORGE ATENTO 104)
+   ========================================================================== */
+.ex-cockpit-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.jorge-profile-bar {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jorge-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--aura-cyan), var(--movistar-blue));
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jorge-meta {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.jorge-meta strong { font-family: var(--font-heading); font-size: 13px; color: var(--deep-indigo); }
+.jorge-meta span { font-size: 10.5px; color: var(--text-muted); }
+
+.jorge-tmo-pill {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tmo-lbl { font-size: 9.5px; color: var(--text-muted); text-transform: uppercase; }
+.tmo-target { font-family: var(--font-mono); font-size: 12px; color: var(--movistar-blue); font-weight: 800; }
+
+/* Sentinel Monitor Card */
+.sentinel-monitor-card {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3);
+}
+
+.sentinel-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sentinel-title {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sentiment-indicator-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.sentiment-indicator-pill.amber {
+  background: rgba(234, 179, 8, 0.2);
+  color: #FACC15;
+  border: 1px solid rgba(234, 179, 8, 0.5);
+}
+
+.sentiment-indicator-pill.green {
+  background: rgba(0, 200, 83, 0.2);
+  color: #4ADE80;
+  border: 1px solid rgba(0, 200, 83, 0.5);
+}
+
+.intercepted-case-strip {
+  background: #1E293B;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-user-details strong {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  color: #F8FAFC;
+  display: block;
+}
+
+.case-user-details span {
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+.case-status-tag {
+  background: rgba(1, 157, 244, 0.2);
+  color: var(--aura-cyan);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+}
+
+.neuro-symbolic-trace-box {
+  background: #020617;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trace-title {
+  font-size: 10.5px;
+  color: #64748B;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trace-log-lines {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #38BDF8;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Business Impact & TMO Saved Hero */
+.business-impact-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tmo-saved-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tmo-saved-metric-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-title-sub { font-size: 11px; color: var(--text-muted); }
+.tmo-big-counter { font-family: var(--font-mono); font-size: 22px; font-weight: 800; color: #008738; }
+.metric-desc-sub { font-size: 11px; color: var(--text-secondary); }
+
+.cross-selling-flag-pill {
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  color: #92400E;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cross-selling-flag-pill.unlocked {
+  background: #DCFCE7;
+  border-color: #86EFAC;
+  color: #166534;
+}
+
+/* ==========================================================================
+   BOTTOM KPIS STRIP
+   ========================================================================== */
+.pv-bottom-kpis-strip {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.pv-kpi-quad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .pv-kpi-quad { grid-template-columns: repeat(2, 1fr); }
+}
+
+.pv-kpi-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pv-kpi-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+.pv-kpi-val { font-family: var(--font-heading); font-size: 13.5px; font-weight: 800; color: var(--deep-indigo); display: flex; justify-content: space-between; }
+.pv-trend.green { font-size: 11px; color: #00C853; font-weight: 800; }
+
+/* ==========================================================================
+   DIRECTOR FLOATING BAR (DESKTOP ONLY)
+   ========================================================================== */
+.pv-director-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 25, 44, 0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 30px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.pv-director-bar a,
+.pv-director-bar button {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all var(--transition-fast);
+}
+
+.pv-director-bar button.active {
+  background: var(--movistar-blue);
+  border-color: var(--movistar-blue);
+}
+
+@media (max-width: 768px) {
+  .pv-director-bar {
+    display: none !important;
+  }
+}
+
+@keyframes screenFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}

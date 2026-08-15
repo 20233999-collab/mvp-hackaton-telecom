@@ -15,7 +15,8 @@ export default defineConfig({
         mimovistar: resolve(__dirname, 'mi-movistar.html'),
         operador: resolve(__dirname, 'operador.html'),
         cliente: resolve(__dirname, 'cliente.html'),
-        operaciones: resolve(__dirname, 'operaciones.html')
+        operaciones: resolve(__dirname, 'operaciones.html'),
+        atencion: resolve(__dirname, 'atencion.html')
       }
     }
   }

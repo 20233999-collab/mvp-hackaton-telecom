@@ -177,16 +177,101 @@ html, body {
 }
 
 /* ==========================================================================
-   3. GRAND BENTO GRID DE ACCESOS DIRECTOS (CARDS GIGANTES)
+/* ==========================================================================
+   3. SECCIONES AGRUPADAS POR FASES (PHASE SECTIONS)
    ========================================================================== */
-.portal-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+.portal-phases-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
   margin-top: 10px;
 }
 
+.phase-section-block {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 26px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.phase-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #F1F5F9;
+  padding-bottom: 14px;
+}
+
+.phase-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.phase-num-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.phase-num-badge.p1 { background: linear-gradient(135deg, #00C853, #009624); }
+.phase-num-badge.p2 { background: linear-gradient(135deg, #FF7800, #E65100); }
+.phase-num-badge.p3 { background: linear-gradient(135deg, #742284, #8E24AA); }
+
+.phase-info-text h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--deep-indigo);
+}
+
+.phase-info-text p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.phase-tag-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.phase-tag-badge.p1 { background: #DCFCE7; color: #166534; border: 1px solid #BBF7D0; }
+.phase-tag-badge.p2 { background: #FFEDD5; color: #9A3412; border: 1px solid #FED7AA; }
+.phase-tag-badge.p3 { background: #F3E8FF; color: #6B21A8; border: 1px solid #E9D5FF; }
+
+/* Grid de Tarjetas dentro de cada fase */
+.portal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
 @media (max-width: 900px) {
+  .phase-section-block {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+  .phase-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .portal-cards-grid {
     grid-template-columns: 1fr;
   }
@@ -194,10 +279,10 @@ html, body {
 
 /* Grand Access Card */
 .grand-access-card {
-  background: #FFFFFF;
+  background: #F8FAFC;
   border: 1.5px solid #E2E8F0;
-  border-radius: 24px;
-  padding: 30px 32px;
+  border-radius: 20px;
+  padding: 22px 24px;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -342,6 +427,11 @@ html, body {
   background: linear-gradient(135deg, #FF7800, #E65100);
 }
 .theme-operaciones .card-phase-badge { color: #E65100; }
+
+.theme-atencion .card-icon-frame {
+  background: linear-gradient(135deg, #742284, #8E24AA);
+}
+.theme-atencion .card-phase-badge { color: #8E24AA; }
 
 .theme-mimovistar .card-icon-frame {
   background: linear-gradient(135deg, var(--aura-cyan), var(--movistar-blue));

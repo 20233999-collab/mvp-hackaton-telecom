@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Atención 104 & Explicación de Factura (Fase 3) • M.O.V.I. — Movistar Journey Tracker</title>
+  <meta name="description" content="Prototipo dual de la Fase 3: Explicación didáctica de facturas CSR-RAG, mitigación de Bill Shock y Cockpit Asesor 104 en Atento.">
+  <link rel="stylesheet" href="./src/styles/atencion-cockpit.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MASTER STAGE CONTAINER (DUAL CX vs. EX)
+       ======================================================================== -->
+  <main class="postventa-master-stage">
+
+    <!-- TOP GLOBAL HEADER: M.O.V.I. POST-VENTA & EXPLICABILIDAD -->
+    <header class="postventa-navbar">
+      <div class="pv-brand-cluster">
+        <a href="./index.html" class="pv-back-hub-btn" title="Volver al Cockpit">
+          <i data-lucide="layout-grid" style="width: 18px;"></i>
+        </a>
+        <div class="pv-logo-badge">
+          <span class="pv-logo-m">M</span>
+          <div>
+            <h1 class="pv-system-title">M.O.V.I. • Post-Venta &amp; Explicación CSR-RAG</h1>
+            <span class="pv-system-sub">Fase 3: Mitigación de Bill Shock, Desvío de Call Center &amp; Cockpit 104 (Reto 1)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pv-live-indicators">
+        <div class="pv-pill-metric">
+          <span class="pv-pulse-dot"></span>
+          <span>Arquitectura: <strong>CSR-RAG (0% Error)</strong></span>
+        </div>
+        <div class="pv-pill-metric">
+          <span>Call Center 104: <strong>Atento Perú</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- STEPPER INTERACTIVO DE 4 PASOS -->
+    <section class="pv-stepper-strip">
+      <div class="pv-step-card active" id="stepPvNode1">
+        <div class="pv-step-num">1</div>
+        <div class="pv-step-text">
+          <strong>Bill Shock &amp; Presión TMO</strong>
+          <span>Recibo S/ 154.90 vs TMO &lt;180s</span>
+        </div>
+      </div>
+
+      <div class="pv-step-divider"></div>
+
+      <div class="pv-step-card" id="stepPvNode2">
+        <div class="pv-step-num">2</div>
+        <div class="pv-step-text">
+          <strong>Consulta WhatsApp &amp; Warm Hand-off</strong>
+          <span>Asignación silenciosa L2 Jorge</span>
+        </div>
+      </div>
+
+      <div class="pv-step-divider"></div>
+
+      <div class="pv-step-card" id="stepPvNode3">
+        <div class="pv-step-num">3</div>
+        <div class="pv-step-text">
+          <strong>Explicación CSR-RAG 3 Barras</strong>
+          <span>Prorrateo 20d (S/ 15) + Cargo Fijo</span>
+        </div>
+      </div>
+
+      <div class="pv-step-divider"></div>
+
+      <div class="pv-step-card" id="stepPvNode4">
+        <div class="pv-step-num">4</div>
+        <div class="pv-step-text">
+          <strong>Pago Yape &amp; Cross-Selling</strong>
+          <span>360s TMO Ahorrado + Bucle Cerrado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DUAL SPLIT SCREEN: CX (CLIENTE) vs. EX (ASESOR 104 ATENTO) -->
+    <div class="pv-dual-canvas">
+
+      <!-- ====================================================================
+           LADO IZQUIERDO: FRENTE CLIENTE (VALERIA MENDOZA)
+           ==================================================================== -->
+      <section class="pv-panel-container cx-panel">
+        <div class="pv-panel-header">
+          <div class="pv-header-title">
+            <i data-lucide="smartphone" style="width: 18px; color: var(--movistar-blue);"></i>
+            <h3>Frente Cliente (Valeria Mendoza)</h3>
+          </div>
+          <span class="pv-channel-badge" id="cxChannelBadge">App Mi Movistar</span>
+        </div>
+
+        <!-- Dynamic Stages for Valeria -->
+        <div class="cx-interactive-stage" id="cxInteractiveStage">
+
+          <!-- STAGE 1: FACTURA DIGITAL CON BILL SHOCK -->
+          <div class="cx-view-sub active" id="cxView1BillShock">
+            <div class="bill-shock-card">
+              <div class="bill-head-row">
+                <div>
+                  <span class="bill-period-tag">Ciclo: 10 Ene - 09 Feb</span>
+                  <h4>Recibo Digital Movistar Total</h4>
+                </div>
+                <span class="bill-alert-amber-badge">
+                  <i data-lucide="alert-triangle" style="width: 13px;"></i> Variación +S/ 15.00
+                </span>
+              </div>
+
+              <div class="bill-amount-spotlight">
+                <span class="spot-lbl">Total a Pagar Este Mes</span>
+                <div class="spot-val">S/ 154.90</div>
+                <span class="spot-note">Tarifa Plana Pactada: <strong>S/ 139.90</strong></span>
+              </div>
+
+              <!-- Valeria Emotion Bubble -->
+              <div class="valeria-emotion-bubble">
+                <i data-lucide="help-circle" style="width: 16px; color: #B45309; flex-shrink: 0;"></i>
+                <span><strong>Desconcierto de Valeria (Bill Shock):</strong> "¿Por qué me cobran S/ 154.90 si Carlos me prometió S/ 139.90 fijos? ¡Voy a reclamar a Movistar!".</span>
+              </div>
+
+              <button class="btn-cx-action" id="btnAskBotWhatsapp">
+                <i data-lucide="message-circle" style="width: 16px;"></i> Preguntar por WhatsApp a Aura
+              </button>
+            </div>
+          </div>
+
+          <!-- STAGE 2 & 3: CHAT WHATSAPP CON AURA & GRÁFICO 3 BARRAS CSR-RAG -->
+          <div class="cx-view-sub" id="cxView2ChatGraph">
+            <div class="whatsapp-card-mini">
+              <div class="wa-mini-header">
+                <div class="wa-mini-avatar">A</div>
+                <div>
+                  <strong>Aura Movistar</strong>
+                  <span class="wa-verified-tag">Cuenta Oficial • Explicación Inmediata</span>
+                </div>
+              </div>
+
+              <div class="wa-mini-body" id="waMiniChatBody">
+                <!-- Valeria Doubt -->
+                <div class="wa-bubble-m outgoing">
+                  <p>¿Por qué mi recibo de este mes vino más caro de lo normal? Es un cobro abusivo.</p>
+                  <span class="wa-time-m">14:05</span>
+                </div>
+
+                <!-- Aura CSR-RAG Response with 3-Bar Graph -->
+                <div class="wa-bubble-m incoming" id="auraBubbleResponse">
+                  <p>Hola <strong>Valeria</strong>, entendemos tu consulta. ¡No es un cobro doble ni un error! Se debe a que migraste a <strong>Movistar Total</strong> el día 10:</p>
+
+                  <!-- 3-BAR INTERACTIVE CSR-RAG GRAPH -->
+                  <div class="csr-rag-3bar-card">
+                    <div class="bar-card-header">
+                      <i data-lucide="bar-chart-2" style="width: 14px; color: var(--movistar-blue);"></i>
+                      <strong>Desglose Matemático Exacto (CSR-RAG):</strong>
+                    </div>
+
+                    <div class="three-bars-stack">
+                      <!-- Bar 1 -->
+                      <div class="single-bar-row">
+                        <div class="bar-info-line">
+                          <span>1. Plan Anterior (10 días previo):</span>
+                          <strong>S/ 0.00</strong>
+                        </div>
+                        <div class="bar-track">
+                          <div class="bar-progress" style="width: 5%; background: #94A3B8;"></div>
+                        </div>
+                      </div>
+
+                      <!-- Bar 2: Prorrateo -->
+                      <div class="single-bar-row highlight">
+                        <div class="bar-info-line">
+                          <span style="color: var(--movistar-blue); font-weight: 700;">2. Prorrateo Movistar Total (20 días de uso):</span>
+                          <strong style="color: var(--movistar-blue);">S/ 15.00</strong>
+                        </div>
+                        <div class="bar-track">
+                          <div class="bar-progress cyan" style="width: 25%;"></div>
+                        </div>
+                      </div>
+
+                      <!-- Bar 3: Cargo Fijo Adelantado -->
+                      <div class="single-bar-row">
+                        <div class="bar-info-line">
+                          <span>3. Cargo Fijo Adelantado Mes Siguiente:</span>
+                          <strong>S/ 139.90</strong>
+                        </div>
+                        <div class="bar-track">
+                          <div class="bar-progress blue" style="width: 90%;"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bar-card-total-row">
+                      <span>Total Recibo: <strong>S/ 15.00 + S/ 139.90 =</strong></span>
+                      <strong class="total-exact-val">S/ 154.90</strong>
+                    </div>
+
+                    <div class="bar-card-promise">
+                      <i data-lucide="check-circle" style="width: 14px; color: #00C853;"></i>
+                      <span><strong>¡Tranquila!</strong> Tu próximo recibo ya vendrá neto y fijo por <strong>S/ 139.90</strong>.</span>
+                    </div>
+                  </div>
+
+                  <!-- 1-Touch Payment Button -->
+                  <div class="chat-payment-action-box" id="yapeActionBox">
+                    <button class="btn-pay-yape-1touch" id="btnPayYape1Touch">
+                      <i data-lucide="zap" style="width: 16px;"></i> Pagar S/ 154.90 con Yape (1-Touch)
+                    </button>
+                  </div>
+
+                  <span class="wa-time-m">14:06</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 4: PAGO EXITOSO & ALIVIO DE VALERIA -->
+          <div class="cx-view-sub" id="cxView4PaidSuccess">
+            <div class="cx-success-card">
+              <div class="cx-success-icon-wrap">
+                <i data-lucide="check-circle-2" class="cx-check-giant"></i>
+              </div>
+              <h3>¡Pago Confirmado con Yape!</h3>
+              <p class="cx-success-sub">Recibo de S/ 154.90 liquidado en tiempo real sin llamar al 104.</p>
+
+              <div class="cx-relief-quote">
+                <i data-lucide="smile" style="width: 18px; color: #00C853;"></i>
+                <span><strong>Valeria sonríe aliviada:</strong> "Qué alivio, me explicaron todo con números claros en menos de un minuto. ¡Me encanta la transparencia de Movistar!".</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           LADO DERECHO: FRENTE ASESOR 104 (JORGE EN ATENTO CALL CENTER)
+           ==================================================================== -->
+      <section class="pv-panel-container ex-panel">
+        <div class="pv-panel-header">
+          <div class="pv-header-title">
+            <i data-lucide="headphones" style="width: 18px; color: var(--aura-cyan);"></i>
+            <h3>Frente Asesor 104 (Jorge • Atento Perú)</h3>
+          </div>
+          <span class="ex-call-status-badge" id="exCallStatusBadge">Terminal en Espera</span>
+        </div>
+
+        <div class="ex-cockpit-workspace">
+
+          <!-- Jorge Agent Profile Header -->
+          <div class="jorge-profile-bar">
+            <div class="jorge-avatar">JR</div>
+            <div class="jorge-meta">
+              <strong>Jorge Ramos • Asesor Nivel 2 (Soporte Facturación)</strong>
+              <span>Estación: ATN-LIMA-4491 • Campaña: 104 Retención &amp; Reclamos</span>
+            </div>
+            <div class="jorge-tmo-pill">
+              <span class="tmo-lbl">TMO Objetivo:</span>
+              <strong class="tmo-target">&lt; 180 seg</strong>
+            </div>
+          </div>
+
+          <!-- Live Sentinel Monitoring Card -->
+          <div class="sentinel-monitor-card">
+            <div class="sentinel-head-row">
+              <span class="sentinel-title">
+                <i data-lucide="shield-alert" style="width: 15px; color: var(--aura-cyan);"></i> Monitor de Casos en Cola L2
+              </span>
+              <span class="sentiment-indicator-pill" id="sentimentPill">Semáforo: Neutro</span>
+            </div>
+
+            <!-- Intercepted Case Card -->
+            <div class="intercepted-case-strip" id="interceptedCaseStrip">
+              <div class="case-user-details">
+                <strong>Cliente Asignado: Valeria Mendoza</strong>
+                <span>Motivo: Reto 1 - Autogestión en Progreso • Explicación de Prorrateo</span>
+              </div>
+              <span class="case-status-tag" id="caseStatusTag">Aura Interceptando</span>
+            </div>
+
+            <!-- Neuro-Symbolic RAG Trace Box -->
+            <div class="neuro-symbolic-trace-box">
+              <div class="trace-title">
+                <i data-lucide="binary" style="width: 13px; color: var(--aura-cyan);"></i> Traza Neuro-Simbólica CSR-RAG (0% Alucinación):
+              </div>
+              <div class="trace-log-lines" id="traceLogLines">
+                <div>[14:05:10] Ingesta SGA: Factura B_t = S/ 154.90 | Cargo Fijo S = 139.90.</div>
+                <div>[14:05:11] Motor Simbólico: Prorrateo P = 139.90 * (20/30) = S/ 15.00.</div>
+                <div style="color: #4ADE80;">[14:05:12] Validación de Consistencia: Desvío ±S/ 0.00 (0% Error).</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Business Impact Box (TMO Saved & Cross-Selling Flag) -->
+          <div class="business-impact-card">
+            <div class="tmo-saved-hero">
+              <div class="tmo-saved-metric-block">
+                <span class="metric-title-sub">Tiempo Medio de Operación Ahorrado:</span>
+                <div class="tmo-big-counter" id="tmoSavedCounter">⏱️ 360 Segundos</div>
+                <span class="metric-desc-sub">6 minutos de llamada de reclamo evitada en el 104</span>
+              </div>
+
+              <div class="cross-selling-flag-pill" id="crossSellingFlagPill">
+                <i data-lucide="lock" style="width: 14px;"></i>
+                <span>Cross-Selling Restrictivo: <strong>Bloqueado (Esperando Conformidad)</strong></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================================
+         BOTTOM KPIS BAR (MÉTRICAS OFICIALES DE LA RÚBRICA)
+         ====================================================================== -->
+    <footer class="pv-bottom-kpis-strip">
+      <div class="pv-kpi-quad">
+        <div class="pv-kpi-item">
+          <span class="pv-kpi-lbl">Call Deflection Rate</span>
+          <div class="pv-kpi-val">40% Desvío <span class="pv-trend green">↑40%</span></div>
+        </div>
+        <div class="pv-kpi-item">
+          <span class="pv-kpi-lbl">TMO en Reclamos</span>
+          <div class="pv-kpi-val">180s ➔ 45s <span class="pv-trend green">↓75%</span></div>
+        </div>
+        <div class="pv-kpi-item">
+          <span class="pv-kpi-lbl">Resolución Primer Contacto (FCR)</span>
+          <div class="pv-kpi-val">85% Inmediato <span class="pv-trend green">↑25%</span></div>
+        </div>
+        <div class="pv-kpi-item">
+          <span class="pv-kpi-lbl">Reclamos OSIPTEL Evitados</span>
+          <div class="pv-kpi-val">0% Escalados <span class="pv-trend green">100% Éxito</span></div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================================
+       FLOATING DIRECTOR BAR (CONTROLES DE PITCH • SOLO DESKTOP)
+       ======================================================================== -->
+  <div class="pv-director-bar">
+    <a href="./index.html" class="btn-pv-link">
+      <i data-lucide="layout-grid" style="width: 13px;"></i> Cockpit
+    </a>
+    <button id="btnPvStep1" class="active">1. Bill Shock</button>
+    <button id="btnPvStep2">2. Consulta WhatsApp</button>
+    <button id="btnPvStep3">3. Explicación 3 Barras</button>
+    <button id="btnPvStep4">4. Pago Yape &amp; Cierre</button>
+    <button id="btnPvAutoSequence" style="background: var(--movistar-blue); border: none; font-weight: 700; color: #FFFFFF;">
+      <i data-lucide="play" style="width: 12px;"></i> Auto Pitch
+    </button>
+  </div>
+
+  <script type="module" src="./src/scripts/atencion-cockpit.js"></script>
+</body>
+</html>

@@ -56,7 +56,7 @@ Durante estos primeros 30 segundos, el video debe mostrar la consola de control 
 >
 > Cuando Miguel duda sobre cobros futuros, Aura activa un *Warm Hand-off* vía API **TMF683** hacia Carlos. **M.O.V.I.** le susurra al oído el speech de rebate exacto y proyecta un gráfico interactivo de prorrateo en el celular de Miguel. 
 >
-> Carlos no digita nada: la IA autocompleta la orden desde la voz de la llamada. Miguel acepta, Carlos confirma con un solo clic, y la orden **TMF622** viaja en tiempo real al back-office."*
+> Carlos no digita nada: la IA autocompleta la orden desde la voz de la llamada. Miguel acepta, Carlos confirma con un solo clic, y la orden **TMF622** viaja en tiempo real al back-office. Pero, una vez cerrada la venta... ¿cómo garantizamos que su facturación y activación sean perfectas?"*
 
 ---
 

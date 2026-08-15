@@ -486,14 +486,14 @@ html, body {
   height: 100%;
   background: rgba(230, 0, 0, 0.92);
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   animation: waBubblePopIn 0.3s ease-out forwards;
 }
 
 .pain-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   text-align: center;
   color: white;
   padding: 20px;

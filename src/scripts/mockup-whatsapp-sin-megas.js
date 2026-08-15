@@ -130,10 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Pain overlay
+      const overlayTop = window.scrollY + (window.innerHeight / 2);
       const painOverlay = document.createElement('div');
       painOverlay.className = 'pain-overlay';
       painOverlay.innerHTML = `
-        <div class="pain-content">
+        <div class="pain-content" style="top: ${overlayTop}px;">
           <i data-lucide="x-circle" style="width: 100px; height: 100px; color: #ffffff;"></i>
           <h2>¡Gasto Excesivo!</h2>
           <p>Has acumulado este mes:</p>

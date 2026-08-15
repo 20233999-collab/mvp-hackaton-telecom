@@ -1,0 +1,6 @@
+node_modules
+Recursos Innova Ulima/
+.git
+.agents
+.env*
+dist

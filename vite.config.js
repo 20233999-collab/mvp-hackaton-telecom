@@ -14,7 +14,8 @@ export default defineConfig({
         valeria: resolve(__dirname, 'valeria.html'),
         mimovistar: resolve(__dirname, 'mi-movistar.html'),
         operador: resolve(__dirname, 'operador.html'),
-        cliente: resolve(__dirname, 'cliente.html')
+        cliente: resolve(__dirname, 'cliente.html'),
+        operaciones: resolve(__dirname, 'operaciones.html')
       }
     }
   }

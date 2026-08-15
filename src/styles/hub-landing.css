@@ -338,6 +338,11 @@ html, body {
 }
 .theme-operador .card-phase-badge { color: var(--movistar-blue); }
 
+.theme-operaciones .card-icon-frame {
+  background: linear-gradient(135deg, #FF7800, #E65100);
+}
+.theme-operaciones .card-phase-badge { color: #E65100; }
+
 .theme-mimovistar .card-icon-frame {
   background: linear-gradient(135deg, var(--aura-cyan), var(--movistar-blue));
 }

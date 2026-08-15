@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (e.key === '2') {
       window.location.href = './operador.html';
     } else if (e.key === '3') {
-      window.location.href = './mi-movistar.html';
+      window.location.href = './operaciones.html';
     } else if (e.key === '4') {
+      window.location.href = './mi-movistar.html';
+    } else if (e.key === '5') {
       window.location.href = './valeria.html';
     }
   });

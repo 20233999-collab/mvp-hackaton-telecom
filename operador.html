@@ -304,11 +304,45 @@
           <!-- CLUELY-STYLE AI COPILOT HUD -->
           <div class="cluely-copilot-hud-card">
             <div class="cluely-hud-header">
-              <span class="cluely-hud-title">
-                <i data-lucide="headphones" style="width: 16px;"></i> Cluely Copilot AI (Escucha Activa)
+              <span class="cluely-hud-title" style="display: flex; align-items: center; gap: 8px;">
+                <div class="ai-listening-sonar">
+                  <i data-lucide="headphones" style="width: 16px; position: relative; z-index: 2; color: #019DF4;"></i>
+                  <div class="sonar-ring ring-1"></div>
+                  <div class="sonar-ring ring-2"></div>
+                </div>
+                Cluely Copilot AI (Escucha Activa)
               </span>
               <span style="font-size: 10px; font-family: var(--font-mono); color: #008738; background: #DCFCE7; padding: 2px 6px; border-radius: 6px;">42ms</span>
             </div>
+
+            <!-- Estilos inyectados para el sonar de escucha -->
+            <style>
+              .ai-listening-sonar {
+                position: relative;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(1, 157, 244, 0.1);
+                border-radius: 50%;
+              }
+              .sonar-ring {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                border: 1px solid #019DF4;
+                opacity: 0;
+              }
+              .ring-1 { animation: listeningPulse 1.5s infinite ease-out; }
+              .ring-2 { animation: listeningPulse 1.5s infinite ease-out 0.4s; }
+              @keyframes listeningPulse {
+                0% { width: 24px; height: 24px; opacity: 1; }
+                100% { width: 50px; height: 50px; opacity: 0; }
+              }
+            </style>
 
             <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Pitch Sugerido Inyectado (12s):</span>
             

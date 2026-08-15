@@ -10,96 +10,80 @@
 <body>
 
   <!-- ========================================================================
-       FLOATING DIRECTOR BAR (CONTROLES DE GRABACIÓN / MÍNIMO EN MÓVIL)
+       MASTER FULLSCREEN RESPONSIVE WHATSAPP VIEWPORT
+       ======================================================================== -->
+  <main class="wa-app-viewport">
+    
+    <!-- Barra de Progreso Tipo Stories (Feedback Visual del Tap) -->
+    <div class="tap-story-progress-bar">
+      <div class="story-bar-segment active" id="storySeg1"></div>
+      <div class="story-bar-segment" id="storySeg2"></div>
+      <div class="story-bar-segment" id="storySeg3"></div>
+      <div class="story-bar-segment" id="storySeg4"></div>
+    </div>
+
+    <!-- WhatsApp Top Header -->
+    <header class="wa-nav-header">
+      <div class="wa-nav-left" onclick="window.location.href='./index.html'">
+        <div class="wa-back-btn">
+          <i data-lucide="chevron-left" style="width: 22px;"></i>
+          <span class="wa-unread-badge">12</span>
+        </div>
+        <div class="wa-contact-card">
+          <div class="wa-avatar-box">
+            <div class="aura-orb-container">
+              <div class="aura-orb" id="auraOrbHeader" style="width: 36px; height: 36px;">
+                <div class="aura-orb-rings"></div>
+                <div class="aura-orb-core" style="width: 10px; height: 10px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="wa-contact-details">
+            <h2>Aura Movistar <i data-lucide="check-circle" class="wa-verified-icon"></i></h2>
+            <span class="wa-contact-status" id="waContactStatus">Cuenta oficial de empresa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wa-nav-actions">
+        <button class="wa-nav-icon-btn" title="Videollamada"><i data-lucide="video" style="width: 20px;"></i></button>
+        <button class="wa-nav-icon-btn" title="Llamada"><i data-lucide="phone" style="width: 18px;"></i></button>
+      </div>
+    </header>
+
+    <!-- WhatsApp Chat Message Body (Zona Táctil Tap-to-Advance) -->
+    <div class="wa-chat-body" id="waChatBody">
+      <!-- Contenido dinámico renderizado por valeria-whatsapp.js -->
+    </div>
+
+    <!-- WhatsApp Bottom Input Bar -->
+    <footer class="wa-input-bar">
+      <button class="wa-action-icon-btn" title="Adjuntar"><i data-lucide="plus" style="width: 22px;"></i></button>
+      <input type="text" class="wa-text-input-box" placeholder="Escribe un mensaje..." id="waInputSimulated">
+      <button class="wa-action-icon-btn" title="Cámara"><i data-lucide="camera" style="width: 20px;"></i></button>
+      <button class="wa-mic-btn" id="waMicBtn" title="Nota de voz"><i data-lucide="mic" style="width: 18px;"></i></button>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================================
+       FLOATING DIRECTOR BAR (CONTROLES DE GRABACIÓN)
        ======================================================================== -->
   <div class="valeria-director-bar">
-    <a href="./index.html" class="btn-home" style="text-decoration: none; padding: 6px 12px; border-radius: 16px; font-size: 11px; display: flex; align-items: center; gap: 4px;">
-      <i data-lucide="layout-dashboard" style="width: 14px;"></i> Cockpit
+    <a href="./index.html" class="btn-home">
+      <i data-lucide="layout-dashboard" style="width: 13px;"></i> Cockpit
     </a>
-    <a href="./mi-movistar.html" style="text-decoration: none; padding: 6px 12px; border-radius: 16px; font-size: 11px; display: flex; align-items: center; gap: 4px; background: rgba(0,212,255,0.2);">
-      <i data-lucide="bot" style="width: 14px;"></i> Mi Movistar
+    <a href="./cliente.html">
+      <i data-lucide="smartphone" style="width: 13px;"></i> Cliente
     </a>
-    <button id="btnStep1" class="active">1</button>
-    <button id="btnStep2">2</button>
-    <button id="btnStep3">3</button>
-    <button id="btnStep4">4</button>
-    <button id="btnAutoSequence" style="background: linear-gradient(135deg, #019DF4, #00D4FF); border: none; font-weight: 700;">
+    <button id="btnStep1" class="active">1. Oferta</button>
+    <button id="btnStep2">2. Duda</button>
+    <button id="btnStep3">3. Desglose</button>
+    <button id="btnStep4">4. Cierre</button>
+    <button id="btnAutoSequence" style="background: var(--movistar-blue); border: none; font-weight: 700;">
       <i data-lucide="play" style="width: 12px;"></i> Auto
     </button>
   </div>
-
-  <!-- ========================================================================
-       IPHONE 16 PRO HARDWARE CHASSIS / FULL SCREEN REAL MOBILE
-       ======================================================================== -->
-  <main class="phone-container">
-    <div class="phone-inner-screen">
-      
-      <!-- Barra de Progreso Tipo Stories (Feedback Visual del Tap) -->
-      <div class="tap-story-progress-bar">
-        <div class="story-bar-segment active" id="storySeg1"></div>
-        <div class="story-bar-segment" id="storySeg2"></div>
-        <div class="story-bar-segment" id="storySeg3"></div>
-        <div class="story-bar-segment" id="storySeg4"></div>
-      </div>
-
-      <!-- iOS Status Bar (Visible en Desktop, Oculta en Mobile) -->
-      <div class="ios-status-bar">
-        <span class="status-time">14:02</span>
-        <div class="dynamic-island-notch">
-          <div class="dynamic-island-sensor"></div>
-          <div class="dynamic-island-lens"></div>
-        </div>
-        <div class="status-icons">
-          <i data-lucide="signal" style="width: 14px;"></i>
-          <span style="font-weight: 700; font-size: 11px;">5G</span>
-          <i data-lucide="battery-full" style="width: 18px;"></i>
-        </div>
-      </div>
-
-      <!-- WhatsApp Top Header -->
-      <header class="wa-nav-header">
-        <div class="wa-nav-left" onclick="window.location.href='./index.html'">
-          <div class="wa-back-btn">
-            <i data-lucide="chevron-left" style="width: 22px;"></i>
-            <span class="wa-unread-badge">12</span>
-          </div>
-          <div class="wa-contact-card">
-            <div class="wa-avatar-box">
-              <div class="aura-orb-container">
-                <div class="aura-orb" id="auraOrbHeader" style="width: 38px; height: 38px;">
-                  <div class="aura-orb-rings"></div>
-                  <div class="aura-orb-core" style="width: 11px; height: 11px;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="wa-contact-details">
-              <h2>Aura Movistar <i data-lucide="check-circle" class="wa-verified-icon"></i></h2>
-              <span class="wa-contact-status" id="waContactStatus">Cuenta oficial de empresa</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="wa-nav-actions">
-          <button class="wa-nav-icon-btn" title="Videollamada"><i data-lucide="video" style="width: 20px;"></i></button>
-          <button class="wa-nav-icon-btn" title="Llamada"><i data-lucide="phone" style="width: 18px;"></i></button>
-        </div>
-      </header>
-
-      <!-- WhatsApp Chat Message Body (Zona Táctil Tap-to-Advance) -->
-      <div class="wa-chat-body" id="waChatBody">
-        <!-- Contenido dinámico renderizado por valeria-whatsapp.js -->
-      </div>
-
-      <!-- WhatsApp Bottom Input Bar -->
-      <footer class="wa-input-bar">
-        <button class="wa-action-icon-btn" title="Adjuntar"><i data-lucide="plus" style="width: 22px;"></i></button>
-        <input type="text" class="wa-text-input-box" placeholder="Escribe un mensaje..." id="waInputSimulated">
-        <button class="wa-action-icon-btn" title="Cámara"><i data-lucide="camera" style="width: 20px;"></i></button>
-        <button class="wa-mic-btn" id="waMicBtn" title="Nota de voz"><i data-lucide="mic" style="width: 18px;"></i></button>
-      </footer>
-
-    </div>
-  </main>
 
   <script type="module" src="./src/scripts/valeria-whatsapp.js"></script>
 </body>

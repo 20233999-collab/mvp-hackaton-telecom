@@ -16,7 +16,9 @@ export default defineConfig({
         operador: resolve(__dirname, 'operador.html'),
         cliente: resolve(__dirname, 'cliente.html'),
         operaciones: resolve(__dirname, 'operaciones.html'),
-        atencion: resolve(__dirname, 'atencion.html')
+        atencion: resolve(__dirname, 'atencion.html'),
+        sinmegas: resolve(__dirname, 'mockup-sin-megas.html'),
+        wsspmegas: resolve(__dirname, 'mockup-whatsapp-sin-megas.html')
       }
     }
   }

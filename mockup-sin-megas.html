@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Miguel, ¡te has quedado sin megas! • Living Mockup</title>
+  <meta name="description" content="Minimalist living mockup: Notificación de saldo de datos agotado.">
+  <link rel="stylesheet" href="./src/styles/mockup-sin-megas.css">
+</head>
+<body>
+
+  <!-- Fullscreen Minimal Canvas -->
+  <main class="minimal-stage">
+
+    <!-- Subtle Floating Navigation -->
+    <nav class="minimal-nav">
+      <a href="./index.html" class="nav-brand-link">
+        <span class="nav-dot"></span>
+        <span class="nav-title">M.O.V.I.</span>
+      </a>
+      <span class="nav-tag" id="statusTag">0% DATOS</span>
+    </nav>
+
+    <!-- Center Hero Focus -->
+    <div class="minimal-hero-center">
+      
+      <!-- Visual Mascot Frame -->
+      <div class="mascot-display-frame">
+        <div class="mascot-ambient-glow"></div>
+        <img src="./assets/sin_megas_miguel.jpg" alt="Aura Robot" class="mascot-img" id="mascotImg">
+      </div>
+
+      <!-- Concise Typography -->
+      <div class="minimal-text-group">
+        <h1 class="minimal-headline">
+          Miguel, ¡te has quedado sin megas!
+        </h1>
+        <p class="minimal-sub" id="minimalSubText">
+          Tu velocidad se redujo a 15 Mbps.
+        </p>
+      </div>
+
+      <!-- Live Data Pill / Speed Meter -->
+      <div class="telemetry-bar">
+        <div class="telemetry-metric">
+          <span class="t-lbl">Saldo Disponible</span>
+          <strong class="t-val red" id="dataValue">0.00 GB</strong>
+        </div>
+        <div class="telemetry-divider"></div>
+        <div class="telemetry-metric">
+          <span class="t-lbl">Velocidad Actual</span>
+          <strong class="t-val" id="speedValue">15 Mbps</strong>
+        </div>
+      </div>
+
+      <!-- Minimal Tactile Action Button -->
+      <div class="minimal-cta-block">
+        <button class="btn-minimal-primary" id="btnRechargeMinimal">
+          <span>+ Activar 2 GB de Emergencia</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Minimal Bottom Footer -->
+    <footer class="minimal-footer">
+      <span>Movistar Total • Modo Mantenimiento Activo</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="./src/scripts/mockup-sin-megas.js"></script>
+</body>
+</html>

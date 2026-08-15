@@ -1,62 +1,28 @@
-# 🤖 Hub de Agentes e Inteligencia • Movistar Journey Tracker (M.O.V.I.)
-## Hackathon en Tecnologías Digitales AI Telecom 2026
+# 🤖 Memoria Central de Agentes AI — Movistar Journey Tracker (M.O.V.I.)
 
-Bienvenido al directorio central de agentes. Este espacio contiene el **contexto maestro, reglas de negocio, arquitectura tecnológica, historial completo de decisiones y transcripciones de interacción** con Google Antigravity para que cualquier agente de IA pueda entender el proyecto en su totalidad y continuar el trabajo de forma consistente y sin fricción.
-
----
-
-## 📌 1. Regla Suprema de Referencia (NotebookLM)
-* **Cuaderno Principal Oficial:** `Hackathon AI Telecom Challenge: Innovation and Guidelines` (ID de biblioteca: `nb_el0iofw1` / `💻 [CONCURSO] Bases de la Hackathon en Tecnologías Digitales 2026`).
-* **Protocolo Obligatorio:** Toda consulta estratégica, técnica, de negocio o de bases debe tomar como fuente primaria y verdad de referencia los documentos y directrices indexados en este cuaderno.
+Este directorio contiene la memoria de trabajo, bitácora de arquitectura y contexto integral del proyecto para que cualquier agente de inteligencia artificial (Google Antigravity, Claude Code, GitHub Copilot, Codex, etc.) pueda entender de inmediato el propósito, decisiones y código del repositorio.
 
 ---
 
-## 🎯 2. Tesis Central y Nombre de la Solución
-* **Nombre de la Solución:** **Movistar Journey Tracker (MJT)** & Mega-Orquestador E2E Unificado por IA (**M.O.V.I. - Modelo Operativo Virtual Inteligente**).
-* **Propósito de Competencia:** No desarrollar modelos aislados en silos. La solución unifica los 3 desafíos de la Hackathon en un ciclo continuo optimizado para un **Pitch de 3 minutos (180 segundos)**:
-  1. **Fase 1 (Reto 2):** Propulsión Comercial y Atracción (NBO, CVM, Movistar Total, CATE Uplift).
-  2. **Fase 2 (Reto 3):** Eficiencia Operativa, Facturación y Recaudación (SON-IA, Auditoría $P \times Q$, Conciliación en Tiempo Real).
-  3. **Fase 3 (Reto 1):** Post-Venta, Explicación y Contención (Aura Mascota / BrainyBill, Mitigación de Bill Shock).
-  4. **Bucle de Retroalimentación:** Cross-Selling Restrictivo con conformidad del cliente (*Problem-Solving First*).
+## 📂 Estructura de Documentación en `/agents`
+
+* **[`PROJECT_CONTEXT_AND_DECISIONS.md`](file:///home/laptop/Documentos/mvp-hackaton-telecom/agents/PROJECT_CONTEXT_AND_DECISIONS.md):** Arquitectura técnica del Mega-Orquestador, capas del sistema (CX, Orquestador, EX/BSS), KPIs de la rúbrica y pila tecnológica.
+* **[`CONVERSATION_HISTORY.md`](file:///home/laptop/Documentos/mvp-hackaton-telecom/agents/CONVERSATION_HISTORY.md):** Bitácora cronológica completa de todas las sesiones de trabajo, decisiones de diseño tomadas y mapa de las 9 rutas activas.
+* **[`ROLES_AND_PERSONAS.md`](file:///home/laptop/Documentos/mvp-hackaton-telecom/agents/ROLES_AND_PERSONAS.md):** Fichas detalladas de las personas del ecosistema (Valeria Mendoza, Carlos Alvarado, Ana Morales, Jorge Ramos y Miguel).
+* **[`logs/transcript.jsonl`](file:///home/laptop/Documentos/mvp-hackaton-telecom/agents/logs/transcript.jsonl):** Transcripción completa en formato JSON Lines de las sesiones de ejecución con Google Antigravity.
 
 ---
 
-## 👥 3. La Triada de Valor (Perspectivas Obligatorias)
-1. **Frente Cliente (CX):** Concierge Digital / Aura, visor de progreso tipo "Rappi-Track", transparencia total de facturación y cero spam telefónico.
-2. **Frente Empleado (EX):**
-   * **Asesor de Ventas / 104 (Carlos):** Pantalla Única Salesforce CRM, Copiloto *Live Whisper* estilo Cluely (42ms), autocompletado TMF622 y odómetro de comisiones en vivo (+S/ 120).
-   * **Analista de Back-Office (Ana):** Estación de trabajo unificada, copiloto contable, conciliación con 1 clic (HITL).
-3. **Frente Directivo (DX / ROI):** Trazabilidad E2E con estándares TM Forum (TMF622, TMF683, TMF637), reducción drástica de *Cost-to-Serve*, eliminación del *Churn* y aumento del ARPU.
+## 🚀 Resumen Rápido del Ecosistema
+
+1. **Fase 1 (Reto 2):** Venta Consultiva NBO/CVM a Valeria Mendoza con Zero Spam (`cliente.html`), Salesforce CRM para Carlos (`operador.html`) y WhatsApp interactivo (`valeria.html`).
+2. **Fase 2 (Reto 3):** Consola Tablet SON-IA para Ana Morales con Soft-Suspension 15 Mbps, recaudo API BCP en vivo, conciliación SGA P×Q (HITL) y reconexión GPON en 4.2 segundos (`operaciones.html`).
+3. **Fase 3 (Reto 1):** Post-Venta y Explicación Didáctica CSR-RAG de 3 barras para mitigar el Bill Shock ($S/\ 154.90$), pago con Yape en 1 toque, ahorro de 360s de TMO en Atento 104 (`atencion.html`) y App Mi Movistar con Mascota 3D (`mi-movistar.html`).
+4. **Mockups de Apoyo para Video Pitch:**
+   - `mockup-sin-megas.html`: Pantalla limpia corporativa de notificación de saldo agotado (`DESIGN.md`).
+   - `mockup-whatsapp-sin-megas.html`: Living mockup de WhatsApp con isotipo 2025 y animación *Tap-to-Receive*.
+5. **Portal Master:** `index.html` con atajos globales `[1]` al `[8]`.
 
 ---
 
-## 📂 4. Mapa del Directorio `agents/`
-
-| Archivo / Carpeta | Propósito |
-| :--- | :--- |
-| 📄 [`agents/PROJECT_CONTEXT_AND_DECISIONS.md`](./PROJECT_CONTEXT_AND_DECISIONS.md) | Contexto exhaustivo de la arquitectura, decisiones de diseño, benchmarks y estado actual. |
-| 📄 [`agents/ROLES_AND_PERSONAS.md`](./ROLES_AND_PERSONAS.md) | Definición técnica de los personajes (Valeria, Carlos, Ana, Aura y M.O.V.I.). |
-| 📄 [`agents/CONVERSATION_HISTORY.md`](./CONVERSATION_HISTORY.md) | Registro cronológico y estructurado de todas las interacciones, pedidos del usuario y soluciones generadas. |
-| 📁 [`agents/logs/`](./logs/) | Transcripciones raw en formato JSONL (`transcript.jsonl` y `transcript_full.jsonl`) exportadas desde Google Antigravity. |
-
----
-
-## 🌐 5. Rutas y Despliegue en Producción
-
-* **Producción en Vercel:** 👉 **[`https://mvp-hackaton-telecom.vercel.app/`](https://mvp-hackaton-telecom.vercel.app/)**
-* **Repositorio GitHub:** 👉 **[`https://github.com/20233999-collab/mvp-hackaton-telecom`](https://github.com/20233999-collab/mvp-hackaton-telecom)**
-
-### Rutas Activas del Ecosistema:
-* `/` (`index.html`) ➔ **Master Launchpad** con Bento Grid de accesos directos y atajos `[1]`, `[2]`, `[3]`, `[4]`.
-* `/cliente.html` ➔ **Perspectiva del Cliente (Valeria)**: App Mi Movistar con gráfico didáctico de consumos históricos en Arequipa y llamada entrante respetuosa sin spam.
-* `/operador.html` ➔ **Perspectiva del Asesor (Carlos)**: Salesforce CRM corporativo con Copiloto Cluely AI (streaming en vivo), Ficha 360 en formato Dossier/CV, Form-Fill DITO y Odómetro de Comisiones.
-* `/mi-movistar.html` ➔ **App Mi Movistar con Mascota Robótica 3D Aura**: Chat ChatGPT-style con visualizador de ondas y CSR-RAG.
-* `/valeria.html` ➔ **Simulador WhatsApp Inmersivo**: Flujo conversacional omnicanal tap-to-advance.
-
----
-
-## 🛡️ 6. Directivas para Agentes Entrantes
-1. **Zero Mockups Plásticos:** Todas las vistas deben ocupar el 100% de la pantalla en cualquier dispositivo (`100vw`, `100dvh`), sin carcasas artificiales de teléfonos.
-2. **Ocultamiento de Barras en Móviles:** Toda barra flotante de control (`.director-bar`, `.sfdc-workflow-bottom-bar`) debe estar oculta en pantallas móviles (`@media (max-width: 768px)` con `display: none !important;`) y visible únicamente en desktop.
-3. **Cero Alucinaciones Aritméticas:** Cálculos exactos ($S/\ 179.80 \rightarrow S/\ 139.90 = S/\ 40.00$ de ahorro).
-4. **Política de Git:** **NO realizar `git commit` ni `git push` automáticamente a menos que el usuario lo solicite explícitamente.**
+*Desarrollado para la Hackathon AI Telecom Challenge 2026.*

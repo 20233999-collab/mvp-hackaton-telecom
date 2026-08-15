@@ -1,87 +1,59 @@
-# 📜 Historial de Conversación y Registro de Iteraciones
-## Sesión Google Antigravity • MVP Hackathon AI Telecom 2026
+# 📜 Historial de Conversación y Decisiones de Arquitectura (Google Antigravity)
 
-Este documento sintetiza cronológicamente todos los requerimientos, retroalimentaciones, decisiones de diseño e iteraciones ejecutadas en colaboración entre el **Usuario** y el agente **Google Antigravity**.
-
----
-
-### 🕒 Iteración 1: Estructuración Inicial y Regla de Oro
-* **Requerimiento:** Definición del ecosistema unificado para la Hackathon 2026 y fijación del cuaderno de NotebookLM (`nb_el0iofw1`) como verdad de referencia primaria.
-* **Acción:** Creación de `AGENTS.md`, `DESIGN.md` y lectura de las bases oficiales. Se estableció la tesis central: *M.O.V.I. como orquestador E2E que une los Retos 1, 2 y 3*.
+Este documento registra la bitácora cronológica completa del trabajo conjunto realizado entre el **Usuario (Arquitecto y Diseñador Líder)** y el **Agente AI (Antigravity)** para la concepción, diseño e implementación del ecosistema **M.O.V.I. (Movistar Journey Tracker)** para la **Hackathon AI Telecom 2026**.
 
 ---
 
-### 🕒 Iteración 2: Vista del Operador (Carlos) & Salesforce CRM
-* **Feedback del Usuario:** *"no me gusto nada lo que hiciste, pareció más una presentación que una maqueta... quiero que crees una interfaz igual a la de salesforce... una simulación inmersiva... nada indicativo... que parezca una aplicación real"*.
-* **Acción:** 
-  * Se rediseñó por completo `operador.html` adoptando la arquitectura visual oficial de **Salesforce Sales Cloud CRM**.
-  * Se implementaron 6 estados operativos reales (Dialer, Llamada Activa, Ficha 360, Transcripción de Audio, Copiloto Cluely AI, y Formulario DITO con odómetro de comisiones $+S/\ 120$).
+## 🎯 1. Tesis Fundamental y Alcance
+* **Nombre Oficial:** Movistar Journey Tracker (M.O.V.I.) & Mega-Orquestador E2E Unificado por IA.
+* **Tesis Central:** Los 3 retos de la Hackathon no se abordan como silos aislados, sino como un **ciclo continuo e infinito de retroalimentación**:
+  1. **Fase 1 (Reto 2):** Propulsión Comercial y Atracción (NBO, CVM, Movistar Total, Zero Spam Telefónico).
+  2. **Fase 2 (Reto 3):** Eficiencia Operativa, Facturación y Red GPON (SON-IA, Modo Mantenimiento 15 Mbps, Auditoría $P \times Q$, Conciliación Bancaria BCP y Reconexión GPON en 4.2s).
+  3. **Fase 3 (Reto 1):** Post-Venta, Explicación y Contención (Mitigación de Bill Shock, Desglose 3 Barras CSR-RAG 0% Alucinación, Ahorro de 360s de TMO en Atento Call Center).
+  4. **Bucle de Cierre:** Conformidad en post-venta desbloquea la bandera de `Cross-Selling Restrictivo`, permitiendo nuevas ofertas comerciales en la Fase 1.
 
 ---
 
-### 🕒 Iteración 3: Copiloto Cluely AI en Tiempo Real
-* **Feedback del Usuario:** *"para el pitch de cluely quiero que el texto se escriba en tiempo real. Osea que no este precargado sino que haya una simulación de que se está escribiendo"*.
-* **Acción:**
-  * Implementación de un motor de **streaming / typewriter** a 42ms de latencia en `src/scripts/operador-workstation.js` con cursor titilante y feedback visual de audio.
+## 🗺️ 2. Mapa Completo de Vistas y Rutas Desarrolladas
+
+| Ruta en Vite / Producción | Fase / Reto | Rol / Persona | Descripción y Características |
+| :--- | :--- | :--- | :--- |
+| [`/index.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/index.html) | **Portal Master** | Todos | Centro de control Bento Grid organizado limpiamente por las 3 Fases con atajos de teclado globales `[1] - [8]`. |
+| [`/cliente.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/cliente.html) | **Fase 1 (CX)** | Valeria Mendoza | App Mi Movistar con gráfico didáctico de 4 meses en Arequipa y recepción de llamada sin spam telefónico. |
+| [`/operador.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/operador.html) | **Fase 1 (EX)** | Carlos Alvarado | Salesforce CRM con Marcador CATE, Ficha 360 estilo currículo, Cluely AI (Live Whisper 42ms) y odómetro de comisiones. |
+| [`/valeria.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/valeria.html) | **Fase 1 (Chat)** | Valeria & Aura | Simulación hiperrealista de WhatsApp con notas de voz interactivas y avance paso a paso tipo historia. |
+| [`/operaciones.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/operaciones.html) | **Fase 2 (EX/Red)** | Ana Morales & Juan Carlos | Estación de trabajo para Tablet con 5 pantallas individuales: Touch ID biométrico, Scoring CVM, API BCP, conciliación SGA HITL y reconexión GPON OLT en 4.2s. |
+| [`/atencion.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/atencion.html) | **Fase 3 (CX vs EX)** | Valeria vs. Jorge | Pantalla dividida sincronizada con detección de Bill Shock ($S/\ 154.90$), gráfico CSR-RAG 3 barras (0% alucinación), pago con Yape en 1 toque, ahorro de 360s de TMO en Atento y flag de Cross-Selling. |
+| [`/mi-movistar.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/mi-movistar.html) | **Fase 3 (Mascota)** | Valeria & Aura 3D | Chat conversacional estilo ChatGPT con la Mascota Robótica 3D de Aura en el centro y ondas de voz dinámicas. |
+| [`/mockup-sin-megas.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/mockup-sin-megas.html) | **B-Roll Mockup 1** | Miguel (Mobile) | Pantalla limpia minimalista corporativa (`DESIGN.md` con Plus Jakarta Sans): Notificación de saldo agotado y botón interactivo para activar 2 GB. |
+| [`/mockup-whatsapp-sin-megas.html`](file:///home/laptop/Documentos/mvp-hackaton-telecom/mockup-whatsapp-sin-megas.html) | **B-Roll Mockup 2** | Miguel (WhatsApp) | Living mockup hiperrealista de WhatsApp con el isotipo oficial 2025 de Movistar, animación *Tap-to-Receive* con simulación de `escribiendo...` y entrega en vivo. |
 
 ---
 
-### 🕒 Iteración 4: Ficha 360 en Formato Dossier / CV
-* **Feedback del Usuario:** *"la ficha de valeria quiero que este más como un currículo y no tanto por cartas, hazlo de otra forma nomas la ficha de valeria"*.
-* **Acción:**
-  * Sustitución del diseño de tarjetas genéricas por un **Dossier Ejecutivo / Hoja de Vida 360** con franja financiera consolidada, historial de consumo en viajes y desglose de servicios activos.
+## 💎 3. Principales Decisiones de Diseño e Ingeniería
+
+1. **Strict Light Mode & Light Glassmorphism (`DESIGN.md`):**
+   - Se eliminaron las cajas grises y temas oscuros pesados.
+   - Fondos en `#FFFFFF` / `#F8FBFE` con resplandores en Azul Movistar (`#019DF4`) y Cian Aura (`#00D4FF`).
+   - Tipografía corporativa oficial: **`Plus Jakarta Sans`** (Display y H1), **`Inter` / `Geist`** (Cuerpo) y **`JetBrains Mono`** (Telemetría, códigos y números).
+
+2. **Cero Alucinaciones Aritméticas (Motor CSR-RAG):**
+   - Separación estricta entre la capa lógica/simbólica y el lenguaje generativo.
+   - Fórmulas deterministas para el cálculo de prorrateos proporcionales $P = R \times \frac{N - d + 1}{N}$.
+
+3. **Arquitectura TMF Abierta (TM Forum):**
+   - TMF622 (Product Ordering Management) para la inyección de órdenes en tiempo real.
+   - TMF683 (Party Interaction Management) para el Live Whisper y trazas de voz.
+   - TMF637 (Product Inventory Management) para la gestión del inventario de servicios y reconexión GPON.
+
+4. **Experiencia Tablet Ergonómica en Fase 2:**
+   - Diseñada pantalla por pantalla para ser manipulada directamente desde una tablet física durante el video pitch de 3 minutos, con barra superior tipo stories y botones táctiles al alcance del pulgar.
+
+5. **Mockups Vivientes para B-Roll:**
+   - Diseñados específicamente para tomas de apoyo de video en smartphones, con disparadores táctiles (*Tap-to-Receive*) y botón de reinicio instantáneo (`R`).
 
 ---
 
-### 🕒 Iteración 5: Perspectiva del Cliente (Valeria)
-* **Feedback del Usuario:** *"Al abrir su App 'Mi Movistar', Valeria no ve publicidad genérica; ve un gráfico didáctico de sus consumos históricos de gigas y una advertencia amigable... Recibe la llamada de Carlos con un tono respetuoso. Valeria, que usualmente cuelga de inmediato a los vendedores de Claro, decide escuchar porque Carlos menciona detalles exactos sobre sus viajes..."*.
-* **Acción:**
-  * Creación de `cliente.html`, `src/styles/cliente-flow.css` y `src/scripts/cliente-flow.js`.
-  * Gráfico didáctico de 4 meses con barra roja resaltando el sobreconsumo en Arequipa y el costo disperso de $S/\ 179.80$.
-  * Interfaz de llamada entrante y llamada activa con pensamientos internos de Valeria y voz respetuosa de Carlos.
-
----
-
-### 🕒 Iteración 6: Creación de Repositorio GitHub y Despliegue en Vercel
-* **Feedback del Usuario:** *"sube los cambios a github, crea un nuevo repo que se llama mvp-hackaton-telecom. y luego quiero que lo despliegues en vercel. haz lo que tengas que hacer tienes mi acceso completo"*.
-* **Acción:**
-  * Repositorio GitHub creado y sincronizado: `https://github.com/20233999-collab/mvp-hackaton-telecom`.
-  * Despliegue en producción en Vercel: `https://mvp-hackaton-telecom.vercel.app/`.
-
----
-
-### 🕒 Iteración 7: Master Launchpad Hub (`index.html`)
-* **Feedback del Usuario:** *"EN la interfaz principal solamente quiero una página grande con los botones a los accesos directos y quiero que ese sea la página principal"*.
-* **Acción:**
-  * Rediseño total de `index.html` como un Bento Grid corporativo elegante con tarjetas gigantes y atajos de teclado numéricos `[1]`, `[2]`, `[3]`, `[4]`.
-
----
-
-### 🕒 Iteración 8: Eliminación de Mockups & 100% Pantalla Completa
-* **Feedback del Usuario:** *"ahora quiero que todas las vistas sean responsives en todas las páginas. No quiero que sean tipo mockups. quiero que se adapten a cualquier dispositivo en pantalla completa"*.
-* **Acción:**
-  * Eliminación de todos los contenedores plásticos `.phone-viewport-stage` y `.phone-container` con marcos simulados de iPhone.
-  * Todas las vistas pasaron a ser `100vw` y `100dvh` fluidas en móviles y adaptadas ergonómicamente en monitores de escritorio.
-
----
-
-### 🕒 Iteración 9: Optimización del WhatsApp de Valeria
-* **Feedback del Usuario:** *"falta que optimices el wasap de valeria"*.
-* **Acción:**
-  * Refactorización de `valeria.html` y `src/styles/valeria-whatsapp.css` eliminando el marco de teléfono, puliendo los colores oficiales de WhatsApp Web/Mobile, y perfeccionando el flujo de avance por toque (*Tap-to-Advance*).
-
----
-
-### 🕒 Iteración 10: Ocultamiento de Navbars Flotantes en Móvil
-* **Feedback del Usuario:** *"esa vista de las distintas fases, ese navbar que aparece quiero que solamente salga en el desktop, en fono no quiero que salga nada de eso"*.
-* **Acción:**
-  * Configuración de media queries `@media (max-width: 768px)` con `display: none !important;` en todas las barras de control flotantes (`.client-director-bar`, `.valeria-director-bar`, `.sfdc-workflow-bottom-bar`, `.mimovistar-director-bar`).
-  * En teléfonos reales las pantallas se muestran totalmente limpias e inmersivas.
-
----
-
-### 🕒 Iteración 11: Directorio Central de Agentes (`agents/`)
-* **Feedback del Usuario:** *"creame una carpeta agents y ahí pongas todo lo de los agentes, incluido la conversación de google antigravity para que otros agentes puedan entender el contexto completo del proyecto y lo que hice contigo. Solo haz commit cuando yo te lo diga"*.
-* **Acción:**
-  * Creación de `agents/` conteniendo `README.md`, `PROJECT_CONTEXT_AND_DECISIONS.md`, `ROLES_AND_PERSONAS.md`, `CONVERSATION_HISTORY.md` y `agents/logs/` con los archivos JSONL brutos de la sesión.
-  * **Regla respetada:** Cero commits automáticos hasta confirmación expresa del usuario.
+## 📦 4. Bitácora de Despliegue y Repositorios
+* **GitHub:** `https://github.com/20233999-collab/mvp-hackaton-telecom`
+* **Vercel Production:** `https://mvp-hackaton-telecom.vercel.app/`

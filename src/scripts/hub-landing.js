@@ -7,7 +7,7 @@ import { createIcons, icons } from 'lucide';
 document.addEventListener('DOMContentLoaded', () => {
   createIcons({ icons });
 
-  // Atajos de Teclado Globales desde el Portal Principal agrupados por Fases
+  // Atajos de Teclado Globales desde el Portal Principal
   document.addEventListener('keydown', (e) => {
     if (e.key === '1') {
       window.location.href = './cliente.html';
@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = './atencion.html';
     } else if (e.key === '6') {
       window.location.href = './mi-movistar.html';
+    } else if (e.key === '7') {
+      window.location.href = './mockup-sin-megas.html';
+    } else if (e.key === '8') {
+      window.location.href = './mockup-whatsapp-sin-megas.html';
     }
   });
 
-  console.log('🚀 Movistar Journey Tracker - Master Portal Launchpad Initialized with Phase Order.');
+  console.log('🚀 Movistar Journey Tracker - Master Portal Launchpad Initialized with All Shortcuts (1-8).');
 });

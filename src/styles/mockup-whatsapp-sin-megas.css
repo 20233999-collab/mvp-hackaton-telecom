@@ -1,0 +1,473 @@
+/* ==========================================================================
+   WHATSAPP LIVING MOCKUP • "MIGUEL SIN MEGAS"
+   Directivas: DESIGN.md • Authentic WhatsApp UI • Responsive Mobile-First
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #D1D7DB;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #111B21;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Master Shell Container */
+.wa-shell-container {
+  width: 100%;
+  min-height: 100dvh;
+  max-width: 440px;
+  margin: 0 auto;
+  background-color: #EFEAE2;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+  background-size: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* WhatsApp Top Header */
+.wa-chat-header {
+  background: #F0F2F5;
+  border-bottom: 1px solid #E9EDEF;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.wa-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-back-btn {
+  color: #54656F;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background var(--transition-fast);
+}
+
+.wa-back-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.wa-avatar-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.wa-avatar-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.wa-contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-contact-name-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wa-contact-name-row h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111B21;
+  letter-spacing: -0.01em;
+}
+
+.wa-verified-badge {
+  flex-shrink: 0;
+}
+
+.wa-contact-status {
+  font-size: 11px;
+  color: #667781;
+}
+
+.wa-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-action-icon-btn {
+  background: none;
+  border: none;
+  color: #54656F;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chat Messages Canvas */
+.wa-messages-canvas {
+  flex: 1;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+/* Date Pill */
+.wa-date-pill-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.wa-date-pill {
+  background: #FFFFFF;
+  color: #54656F;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(11, 20, 26, 0.08);
+  letter-spacing: 0.02em;
+}
+
+/* Encryption Notice */
+.wa-encryption-notice {
+  background: #FFEECD;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 10.5px;
+  color: #54656F;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(11, 20, 26, 0.06);
+}
+
+/* Tap Trigger Prompt */
+.wa-tap-trigger-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  cursor: pointer;
+}
+
+.tap-pill-anim {
+  background: #FFFFFF;
+  border: 1.5px solid #00A884;
+  color: #008069;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 168, 132, 0.2);
+  animation: pulsePrompt 1.8s infinite ease-in-out;
+}
+
+/* Official Message Bubble */
+.wa-msg-bubble {
+  max-width: 92%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-msg-bubble.pop-in {
+  animation: waBubblePopIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.wa-bubble-card-content {
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 3px rgba(11, 20, 26, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wa-msg-badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wa-alert-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(230, 0, 126, 0.1);
+  color: #C20063;
+  border: 1px solid rgba(230, 0, 126, 0.2);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+}
+
+.wa-msg-body {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #111B21;
+}
+
+.wa-mode-highlight-card {
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #E0F2FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mode-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-info strong {
+  font-size: 12px;
+  color: #0369A1;
+}
+
+.mode-info span {
+  font-size: 11px;
+  color: #0284C7;
+}
+
+.wa-msg-body-sub {
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.wa-meta-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wa-msg-time {
+  font-size: 10.5px;
+  color: #667781;
+}
+
+/* WhatsApp Interactive Action Buttons */
+.wa-quick-actions-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-btn-option-primary,
+.wa-btn-option-secondary {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #008738;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(11, 20, 26, 0.08);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.wa-btn-option-primary:hover {
+  background: #F0FDF4;
+}
+
+.wa-btn-option-primary:active {
+  transform: scale(0.98);
+}
+
+.wa-btn-option-secondary {
+  color: var(--movistar-blue);
+}
+
+.wa-btn-option-secondary:hover {
+  background: #F0F9FF;
+}
+
+/* Dynamic Outgoing & Confirmation Bubbles */
+.wa-msg-bubble.outgoing {
+  align-self: flex-end;
+  max-width: 85%;
+}
+
+.wa-bubble-card-outgoing {
+  background: #D9FDD3;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 3px rgba(11, 20, 26, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-bubble-card-outgoing p {
+  font-size: 13.5px;
+  color: #111B21;
+}
+
+.wa-meta-row-outgoing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.wa-check-blue {
+  color: #53BDEB;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* WhatsApp Bottom Bar */
+.wa-bottom-bar {
+  background: #F0F2F5;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #E9EDEF;
+}
+
+.wa-input-pill {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-input-tool-btn {
+  background: none;
+  border: none;
+  color: #8696A0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-text-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #111B21;
+  background: transparent;
+}
+
+.wa-voice-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #00A884;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.wa-voice-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes waBubbleSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes waBubblePopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulsePrompt {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(0, 168, 132, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 168, 132, 0.35);
+  }
+}

@@ -504,3 +504,95 @@ html, body {
 .btn-portal-white:hover {
   transform: translateY(-2px);
 }
+
+/* ==========================================================================
+   5. PANTALLAS DE APOYO PARA VIDEOS (MOCKUPS COMPACT STRIP)
+   ========================================================================== */
+.portal-mockups-compact-strip {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.mockups-strip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 10px;
+}
+
+.mockups-strip-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mockups-strip-title strong {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--deep-indigo);
+  display: block;
+}
+
+.mockups-strip-title span {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.mockups-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  background: #EFF6FF;
+  color: var(--movistar-blue);
+  border: 1px solid #BFDBFE;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.mockups-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-mockup-chip {
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--deep-indigo);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.btn-mockup-chip:hover {
+  background: #FFFFFF;
+  border-color: var(--movistar-blue);
+  color: var(--movistar-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 157, 244, 0.15);
+}
+
+.chip-shortcut {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: #E2E8F0;
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 4px;
+}

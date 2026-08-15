@@ -1,88 +1,79 @@
-# 📋 Contexto del Proyecto, Decisiones Técnicas y Arquitectura
-## Movistar Journey Tracker (MJT) & Orquestador M.O.V.I.
+# 🏗️ Contexto del Proyecto, Arquitectura y Decisiones Técnicas
+
+Este documento contiene la especificación técnica profunda, arquitectura del sistema y estado actual del ecosistema **Movistar Journey Tracker (M.O.V.I.)** desarrollado para la **Hackathon AI Telecom 2026**.
 
 ---
 
-## 🏛️ 1. Visión y Tesis de Negocio
-El proyecto **Movistar Journey Tracker (MJT)** surge como respuesta al desafío integral de la **Hackathon en Tecnologías Digitales AI Telecom 2026**.
+## 🏛️ 1. Arquitectura del Mega-Orquestador E2E
 
-A diferencia de aproximaciones tradicionales que abordan los 3 retos como silos independientes, nuestra tesis postula que **el ciclo de vida del cliente telecom es un bucle continuo e interconectado**:
-1. **Fase 1 (Atracción & NBO):** La IA detecta dolores reales y genera ofertas hiperpersonalizadas (*Problem-Solving First*).
-2. **Fase 2 (Eficiencia Operativa & Facturación):** La red y los sistemas de cobro auditan en tiempo real cada transacción sin fricción humana innecesaria.
-3. **Fase 3 (Post-Venta & Contención):** La IA explica didácticamente cada centavo facturado y previene el *bill shock*.
-4. **Bucle Continuo:** Solo tras resolver un dolor post-venta y obtener conformidad del cliente, se habilita el cross-selling restrictivo.
+El ecosistema conecta tres capas tecnológicas:
 
----
-
-## 📊 2. Benchmarks Globales Aplicados
-
-### A. Vodafone (CATE - Customer Action Trigger Engine)
-* **Principio:** Reducción del *Cost-to-Serve* mediante ofertas que solucionan fricciones operativas antes de vender.
-* **Aplicación en MJT:** En lugar de lanzar promociones ciegas, la IA detecta que Valeria viaja a Arequipa, agota sus 20 GB y compra paquetes extra recurrentes, proponiendo **Movistar Total** como solución económica ($S/\ 40.00$ de ahorro neto mensual).
-
-### B. Nubank (nuFormer - Inferencia en Tiempo Real)
-* **Principio:** Latencia ultrabaja (<50ms) en la recomendación de acciones para asesores durante llamadas en vivo.
-* **Aplicación en MJT:** El copiloto **Cluely AI** inyecta el pitch de 12 segundos y responde a objeciones en 42ms mediante streaming en tiempo real (*Live Whisper*).
-
-### C. Exacaster (Next Best Action & Predictive Dialer)
-* **Principio:** Orquestación omnicanal coordinada entre la App móvil, canales de mensajería (WhatsApp) y el marcador predictivo del contact center (Salesforce).
-* **Aplicación en MJT:** Ficha 360 unificada bajo estándares TM Forum (TMF622 Product Ordering, TMF683 CVM, TMF637 Product Inventory).
-
----
-
-## 🛠️ 3. Decisiones de Arquitectura e Implementación
-
-### 3.1. Frontends Desarrollados
-1. **Master Launchpad (`index.html`):**
-   * Vista de mando central tipo Bento Grid corporativo con atajos de teclado instantáneos (`[1]`, `[2]`, `[3]`, `[4]`).
-2. **Plataforma del Operador Carlos (`operador.html`):**
-   * Réplica inmersiva de Salesforce Sales Cloud CRM.
-   * Flujo dinámico de 6 estados:
-     1. Marcador Predictivo en espera (KPIs y turnos de Carlos).
-     2. Entrada de llamada entrante con asignación inteligente.
-     3. Ficha 360 de Valeria Mendoza en formato **Dossier Ejecutivo / CV** (Cero tarjetas genéricas).
-     4. Transcripción de audio en vivo (*Live Audio Waves*).
-     5. Copiloto Cluely AI con efecto typewriter en streaming (42ms) y matriz de manejo de objeciones.
-     6. Formulario DITO autocompletado en 1 clic (TMF622) y odómetro de comisiones en vivo ($S/\ 2,450 \rightarrow S/\ 2,570$, $+S/\ 120$).
-3. **Perspectiva del Cliente Valeria (`cliente.html`):**
-   * Pantalla 1: App Mi Movistar con **gráfico histórico didáctico de 4 meses** (resaltando el sobreconsumo en Arequipa y el gasto disperso de $S/\ 179.80$) y banner de advertencia amigable.
-   * Pantalla 2: Llamada entrante de Carlos identificada de forma respetuosa (eliminando el sesgo de "vendedor spam de Claro" gracias a la mención de detalles exactos de su viaje).
-4. **App Mi Movistar Mascota 3D (`mi-movistar.html`):**
-   * Mascota Aura 3D con animaciones CSS fluidas, selector de preguntas frecuentes y respuesta matemática con desglose CSR-RAG.
-5. **Simulador WhatsApp Omnicanal (`valeria.html`):**
-   * Chat hiperrealista con avance táctil (*Tap-to-Advance*), tarjeta de producto 1-Touch y desglose de prorrateo en 3 barras.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       CAPA 1: EXPERIENCIA DEL CLIENTE (CX)                  │
+│   • App Mi Movistar con Mascota Aura 3D (/mi-movistar.html)                 │
+│   • Gráfico Didáctico de Consumo en Arequipa (/cliente.html)                │
+│   • WhatsApp Oficial con Notificaciones Vivas (/mockup-whatsapp-sin-megas)  │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │ Webhooks & APIs REST
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│                    CAPA 2: MOTOR DE ORQUESTACIÓN IA (M.O.V.I.)               │
+│   • Motor Neuro-Simbólico CSR-RAG (0% Alucinación Aritmética)               │
+│   • Sentinel NLP: Detección de Emociones y Semáforo de Frustración (L2)     │
+│   • Live Whisper: Transcripción y Streaming en 42ms para Asesor             │
+│   • Bucle de Cierre: Bandera de Cross-Selling Restrictivo                   │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │ TMF Open APIs (TMF622, TMF683, TMF637)
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│                  CAPA 3: OPERACIONES, RECAUDACIÓN Y RED (EX & BSS)           │
+│   • Salesforce CRM / Cockpit Asesor Carlos (/operador.html)                 │
+│   • Cockpit Asesor 104 Jorge en Atento Perú (/atencion.html)                │
+│   • Centro de Mando SON-IA Tablet Flow Ana Morales (/operaciones.html)       │
+│   • Webhooks BCP en Tiempo Real + Conciliación SGA P×Q + GPON OLT en 4.2s   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🎨 4. Directivas de Diseño y UX (Anti-Slop & Light Tech)
+## 👥 2. Roles, Personas y Flujos Mapeados
 
-* **Eliminación de Marcos de Teléfono:** Se eliminaron todas las carcasas artificiales tipo mockup (`phone-container` con bordes de 50px y plástico simulado). Ahora las interfaces son **100% fullscreen responsive (`100vw`, `100dvh`)** tanto en móviles físicos como en desktop.
-* **Ocultamiento de Controles en Móvil:** Los toolbars de director y botones de fase flotantes se ocultan automáticamente en móviles (`max-width: 768px`) con `display: none !important;` para permitir grabaciones limpias.
-* **Paleta Oficial Movistar Light Tech:**
-  * Movistar Blue: `#019DF4` / `#0066CC`
-  * Aura Cyan: `#00D4FF`
-  * Deep Indigo: `#0B192C` / `#0F172A`
-  * Canvas Background: `#F8FAFC` / `#FFFFFF`
-  * WhatsApp Canvas: `#EFEAE2`
-* **Separación de Lógica y Lenguaje Natural (CSR-RAG):**
-  * Ningún cálculo matemático se delega a generación estocástica de texto. El prorrateo ($S/\ 5.00 + S/\ 15.00 + S/\ 139.90 = S/\ 159.90$) y el ahorro mensual ($S/\ 40.00$) están auditados y precalculados simbólicamente.
+1. **Valeria Mendoza (Cliente Residencial - CX):**
+   - Residente en Arequipa, cliente de fibra 100 Mbps con gasto extra recurrente de $S/\ 40.00$ en paquetes de datos por saturación de red.
+   - En Fase 1 recibe llamada consultiva de Carlos basada en sus datos reales (Zero Spam).
+   - En Fase 3 experimenta Bill Shock de $S/\ 154.90$ en su primer recibo y lo resuelve en 45 segundos con el gráfico didáctico de 3 barras de Aura, pagando con Yape.
+
+2. **Carlos Alvarado (Asesor Comercial 104 - EX):**
+   - Opera en Salesforce CRM con marcador predictivo CATE.
+   - Cuenta con el copiloto Cluely AI con *Live Whisper* (42ms) y odómetro de comisiones en vivo (+S/ 120 por Movistar Total).
+
+3. **Ana Morales (Analista de Back-Office & Red - EX):**
+   - Utiliza la estación táctil para Tablet de la consola **SON-IA**.
+   - Gestiona la clasificación de riesgo de Juan Carlos Quispe (Modo Mantenimiento 15 Mbps en vez de corte), intercepta el pago del BCP, audita la balanza contable SGA con 1 clic (HITL) y reconecta la OLT GPON en 4.2 segundos.
+
+4. **Jorge Ramos (Asesor de Soporte Nivel 2 en Atento Perú - EX):**
+   - Opera en la terminal 104 bajo presión de TMO (<180 segundos).
+   - El sistema le asigna en standby el caso de Valeria. La explicación automática de Aura CSR-RAG resuelve la duda de prorrateo, ahorrándole 360 segundos (6 minutos) de llamada de reclamo y evitando quejas ante OSIPTEL.
 
 ---
 
-## 📈 5. Estado Actual del Proyecto y Próximos Pasos
+## 📊 3. Rúbrica y KPIs de Impacto de Negocio
 
-### ✅ Completado:
-* [x] Master Launchpad Hub (`index.html`)
-* [x] Fase 1 CX - Perspectiva del Cliente Valeria (`cliente.html`)
-* [x] Fase 1 EX - Salesforce CRM Operador Carlos (`operador.html`)
-* [x] Fase 3 CX - App Mi Movistar con Mascota Aura (`mi-movistar.html`)
-* [x] Fase 1 Omnicanal - WhatsApp Valeria (`valeria.html`)
-* [x] 100% Fullscreen Responsive & Cero Mockups Plásticos
-* [x] Ocultamiento de Navbars en Móviles
-* [x] Despliegue en Producción Vercel: `https://mvp-hackaton-telecom.vercel.app/`
-* [x] Repositorio Git Sincronizado en GitHub (`20233999-collab/mvp-hackaton-telecom`)
+| KPI Estratégico | Valor / Meta Demostrada | Impacto Operativo |
+| :--- | :--- | :--- |
+| **Call Deflection Rate** | **40% de Desvío Digital** | Desvío masivo de consultas repetitivas de recibos hacia la autogestión de Aura. |
+| **Reducción de TMO** | **180s ➔ 45s ($\downarrow 75\%$)** | Los casos que escalan a humanos cuentan con traza estructurada y resumen contextual. |
+| **Tiempo de Reconexión de Red** | **4.2 segundos (vs 18 horas)** | Sincronización instantánea entre la API del banco, el facturador SGA y la central GPON. |
+| **Error en Prorrateo y Facturación** | **0% Alucinación ($\pm S/\ 0.00$)** | Separación estricta entre motor simbólico y lenguaje natural (CSR-RAG). |
+| **Reclamos Escalados a OSIPTEL** | **0% Quejas Formales** | Transparencia proactiva antes del vencimiento del recibo. |
+| **Incremento del ARPU** | **+28% en Hogares Migrados** | Conversión efectiva a Movistar Total ($S/\ 139.90$/mes). |
+| **Disminución de Morosidad (DSO)** | **$\downarrow 33\%$ de Reducción** | Fraccionamiento dinámico y Soft-Suspension anti-churn. |
 
-### ⏳ Pendiente / En Cola:
-* [ ] Fase 2 EX - Estación de Back-Office de Ana Morales (SON-IA, Conciliación HITL $P \times Q$).
-* [ ] Documento Descriptivo Oficial de 1 Página (PDF de la propuesta).
-* [ ] Grabación y sincronización del Video Pitch de 3 Minutos (180s).
+---
+
+## 🛠️ 4. Pila Tecnológica del Prototipo
+
+* **Bundler & Core:** Vite 6 + Vanilla HTML5/CSS3 + JavaScript ES Modules.
+* **Sistema de Diseño:** Movistar Light Tech (`DESIGN.md`) con *Plus Jakarta Sans* y *JetBrains Mono*.
+* **Motor de Animaciones:** GSAP 3 (GreenSock) + Canvas Confetti.
+* **Iconografía:** Lucide Icons & SVG Primitives.
+* **Hosting y CI/CD:** Vercel Production + GitHub Integration.

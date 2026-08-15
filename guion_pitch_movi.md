@@ -52,7 +52,7 @@ Durante estos primeros 30 segundos, el video debe mostrar la consola de control 
 
 > *"A la izquierda, tenemos a **Miguel Mendoza**, diseñador que viaja constantemente a Arequipa y gasta **S/ 179.80 al mes** comprando gigas extras. A la derecha, a **Carlos**, asesor de telemarketing en Atento. En el centro: **M.O.V.I.**
 >
-> Mediante analítica causal (*Uplift CATE*), **M.O.V.I.** identifica a Miguel como cliente persuadible y le envía una propuesta por WhatsApp a través de **Aura**: unificar su fibra y móvil en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos cada mes**.
+> Usando **analítica causal (Uplift CATE)**, **M.O.V.I.** no hace campañas a ciegas. Sabe que Miguel es un cliente altamente persuadible y le lanza la oferta perfecta por WhatsApp con **Aura**: unificar sus servicios en **Movistar Total** por **S/ 139.90**, ahorrándole **S/ 40.00 exactos al mes**.
 >
 > Cuando Miguel duda sobre cobros futuros, Aura activa un *Warm Hand-off* vía API **TMF683** hacia Carlos. **M.O.V.I.** le susurra al oído el speech de rebate exacto y proyecta un gráfico interactivo de prorrateo en el celular de Miguel. 
 >

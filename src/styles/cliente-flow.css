@@ -1,6 +1,6 @@
 /* ==========================================================================
-   PERSPECTIVA DEL CLIENTE (VALERIA MENDOZA) - APP MI MOVISTAR & LLAMADA CARLOS
-   Directivas: DESIGN.md • Strict Light Tech • Responsive Mobile Native & Desktop Mockup
+   PERSPECTIVA DEL CLIENTE (VALERIA MENDOZA) - 100% FULLSCREEN & RESPONSIVE
+   Directivas: DESIGN.md • Strict Light Tech • Zero Mockups • Fullscreen Native
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
@@ -15,82 +15,60 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  background-color: #0B192C;
+  min-height: 100dvh;
+  background-color: #F8FAFC;
   font-family: var(--font-body);
   color: var(--text-primary);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Container Wrapper */
+/* Container Wrapper: 100% Fullscreen on Mobile, Centered Clean Container on Desktop */
 .phone-viewport-stage {
   width: 100%;
-  height: 100%;
-  max-width: 420px;
-  max-height: 900px;
-  background: #F8FAFC;
+  min-height: 100dvh;
+  max-width: 840px;
+  margin: 0 auto;
+  background: #FFFFFF;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 0 10px #1E293B;
-  border-radius: 44px;
+  border-left: 1px solid #E2E8F0;
+  border-right: 1px solid #E2E8F0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 840px) {
   .phone-viewport-stage {
     max-width: 100vw;
-    max-height: 100dvh;
-    border-radius: 0;
+    border-left: none;
+    border-right: none;
     box-shadow: none;
   }
-}
-
-/* Top Dynamic Island / Speaker Bar */
-.phone-dynamic-island {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110px;
-  height: 26px;
-  background: #000000;
-  border-radius: 20px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
-
-.island-camera-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #111827;
-  border: 1px solid #1F2937;
 }
 
 /* Phone Native Status Bar */
 .phone-status-bar {
   height: 44px;
-  padding: 12px 20px 0 20px;
+  padding: 12px 24px 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
   font-weight: 700;
   color: var(--deep-indigo);
+  background: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
   z-index: 90;
 }
 
 .status-bar-icons {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 /* Screens Stack */
@@ -99,7 +77,7 @@ html, body {
   display: none;
   flex-direction: column;
   overflow-y: auto;
-  padding-bottom: 24px;
+  padding-bottom: 80px;
   animation: screenFadeIn 0.35s ease-out forwards;
 }
 
@@ -111,52 +89,52 @@ html, body {
    PANTALLA 1: APP MI MOVISTAR (DIDACTIC CONSUMPTION & SMART WARNING)
    ========================================================================== */
 .app-header-brand {
-  padding: 12px 20px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #FFFFFF;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1.5px solid #F1F5F9;
 }
 
 .app-brand-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .app-brand-logo-m {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
   color: #FFFFFF;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
 }
 
 .app-user-greeting h3 {
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--deep-indigo);
 }
 
 .app-user-greeting p {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
 /* Content Body */
 .app-scroll-content {
-  padding: 16px 18px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
 /* SMART ADVICE WARNING CARD (NO GENERIC ADS) */
@@ -164,11 +142,11 @@ html, body {
   background: linear-gradient(135deg, #0B192C 0%, #1A365D 100%);
   color: #FFFFFF;
   border-radius: 20px;
-  padding: 16px 18px;
-  box-shadow: 0 8px 24px rgba(11, 25, 44, 0.25);
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(11, 25, 44, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   border: 1px solid rgba(0, 212, 255, 0.3);
   position: relative;
   overflow: hidden;
@@ -179,8 +157,8 @@ html, body {
   position: absolute;
   top: -20px;
   right: -20px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--aura-cyan-glow) 0%, transparent 70%);
   pointer-events: none;
@@ -190,7 +168,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--aura-cyan);
   text-transform: uppercase;
@@ -198,7 +176,7 @@ html, body {
 
 .advice-title-text {
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.4;
   color: #FFFFFF;
@@ -208,13 +186,14 @@ html, body {
   background: rgba(0, 200, 83, 0.15);
   border: 1px solid rgba(0, 200, 83, 0.4);
   color: #4ADE80;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 12px;
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  width: fit-content;
 }
 
 /* HISTORICAL CONSUMPTION DIDACTIC CHART */
@@ -222,11 +201,11 @@ html, body {
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 20px;
-  padding: 18px;
+  padding: 22px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .chart-header-row {
@@ -237,29 +216,30 @@ html, body {
 
 .chart-title-lbl {
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--deep-indigo);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .chart-sub-tag {
-  font-size: 10px;
+  font-size: 11px;
   font-family: var(--font-mono);
   background: #F1F5F9;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
   color: var(--text-muted);
+  font-weight: 600;
 }
 
 /* Visual Bars Stage */
 .consumption-bars-wrapper {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  height: 130px;
+  justify-content: space-around;
+  height: 160px;
   padding: 10px 10px 0 10px;
   border-bottom: 1.5px solid #F1F5F9;
   position: relative;
@@ -267,7 +247,7 @@ html, body {
 
 .chart-threshold-line {
   position: absolute;
-  top: 45px;
+  top: 55px;
   left: 0;
   right: 0;
   border-top: 1.5px dashed #EF4444;
@@ -276,26 +256,26 @@ html, body {
 }
 
 .threshold-tag {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   color: #EF4444;
   background: #FEF2F2;
-  padding: 1px 5px;
+  padding: 2px 7px;
   border-radius: 4px;
-  transform: translateY(-9px);
+  transform: translateY(-10px);
 }
 
 .month-bar-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   z-index: 2;
 }
 
 .bar-pill {
-  width: 38px;
-  border-radius: 8px 8px 0 0;
+  width: 48px;
+  border-radius: 10px 10px 0 0;
   background: #CBD5E1;
   transition: all 0.3s ease;
   position: relative;
@@ -311,29 +291,29 @@ html, body {
 }
 
 .bar-val-lbl {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   color: #FFFFFF;
   position: absolute;
-  top: 4px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .month-name {
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--text-secondary);
 }
 
 .chart-diagnostic-footer {
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.5;
   background: #FFFBEB;
   border: 1px solid #FDE68A;
-  border-radius: 10px;
-  padding: 8px 12px;
+  border-radius: 12px;
+  padding: 12px 16px;
 }
 
 /* Call-to-action in App */
@@ -342,17 +322,17 @@ html, body {
   background: linear-gradient(135deg, var(--movistar-blue), #0066CC);
   color: #FFFFFF;
   border: none;
-  padding: 13px;
-  border-radius: 14px;
+  padding: 16px;
+  border-radius: 16px;
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 800;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 14px rgba(1, 157, 244, 0.3);
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(1, 157, 244, 0.3);
   transition: all var(--transition-fast);
 }
 
@@ -365,12 +345,13 @@ html, body {
    ========================================================================== */
 .incoming-call-fullscreen-stage {
   flex: 1;
+  min-height: calc(100dvh - 44px);
   background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 24px 34px 24px;
+  padding: 48px 28px 40px 28px;
   position: relative;
 }
 
@@ -379,12 +360,12 @@ html, body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .caller-avatar-circle {
-  width: 84px;
-  height: 84px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
   color: #FFFFFF;
@@ -392,41 +373,32 @@ html, body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
-  margin-bottom: 16px;
-  box-shadow: 0 0 35px var(--aura-cyan-glow);
+  margin-bottom: 20px;
+  box-shadow: 0 0 40px var(--aura-cyan-glow);
   position: relative;
-}
-
-.caller-avatar-circle::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px dashed rgba(0, 212, 255, 0.5);
-  animation: ringRotate 8s linear infinite;
 }
 
 .caller-name-main {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   color: #FFFFFF;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .caller-role-subtitle {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--aura-cyan);
   font-weight: 600;
 }
 
 .caller-status-timer {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   color: #94A3B8;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 /* Call Actions Buttons (Accept / Hangup) */
@@ -434,12 +406,12 @@ html, body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .call-circle-btn {
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   border: none;
   display: flex;
@@ -457,7 +429,7 @@ html, body {
 
 .call-circle-btn.accept {
   background: #00C853;
-  box-shadow: 0 0 30px rgba(0, 200, 83, 0.5);
+  box-shadow: 0 0 35px rgba(0, 200, 83, 0.6);
   animation: pulseCallBtn 1.5s infinite;
 }
 
@@ -470,29 +442,29 @@ html, body {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  padding: 14px 16px;
+  border-radius: 20px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 14px 0;
+  gap: 12px;
+  margin: 18px 0;
 }
 
 .carlos-voice-transcript {
-  font-size: 12.5px;
-  line-height: 1.5;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: #F1F5F9;
 }
 
 .valeria-thought-bubble {
   background: rgba(0, 212, 255, 0.12);
   border-left: 3px solid var(--aura-cyan);
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 11.5px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12.5px;
   color: var(--aura-cyan);
   font-style: italic;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Oscillating Speech Wave in Call */
@@ -541,15 +513,15 @@ html, body {
   background: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 14px;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: all var(--transition-fast);
 }
 
@@ -559,8 +531,8 @@ html, body {
 }
 
 @keyframes screenFadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulseCallBtn {

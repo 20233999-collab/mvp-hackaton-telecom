@@ -905,22 +905,87 @@ body {
   color: #FFFFFF;
 }
 
-@keyframes sfdcFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES PARA MÓVIL Y TABLET (100% PANTALLA COMPLETA)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sfdc-workspace-layout {
+    flex-direction: column;
+  }
+
+  .sfdc-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 10px 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sfdc-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 6px;
+  }
+
+  .sidebar-shift-card {
+    display: none;
+  }
+
+  .active-call-workspace-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .screen1-dialer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@keyframes ringRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+@media (max-width: 768px) {
+  .sfdc-global-header {
+    padding: 0 12px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-@keyframes pulseCallCard {
-  0%, 100% { box-shadow: 0 8px 24px rgba(1, 157, 244, 0.2); }
-  50% { box-shadow: 0 12px 35px rgba(1, 157, 244, 0.45); }
-}
+  .sfdc-global-search {
+    order: 3;
+    max-width: 100%;
+    margin: 4px 0 0 0;
+  }
 
-@keyframes audioStreamPulse {
-  0% { height: 10px; }
-  100% { height: 65px; }
+  .sfdc-main-canvas {
+    padding: 14px 12px 90px 12px;
+  }
+
+  .kpi-metric-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dossier-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .dossier-financial-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dito-form-2x2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sfdc-workflow-bottom-bar {
+    width: 95%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 10px;
+  }
 }

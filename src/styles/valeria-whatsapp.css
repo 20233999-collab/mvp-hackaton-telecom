@@ -1,5 +1,6 @@
 /* ==========================================================================
-   WHATSAPP SIMULATOR - VALERIA MENDOZA (100% IMMERSIVE & RESPONSIVE)
+   WHATSAPP SIMULATOR - VALERIA MENDOZA (100% FULLSCREEN & RESPONSIVE)
+   Directivas: DESIGN.md • Strict Light Tech • Zero Mockups • Fullscreen Native
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
@@ -15,19 +16,10 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: #0B192C;
-  background-image: radial-gradient(circle at 50% 50%, rgba(1, 157, 244, 0.15), transparent 70%);
   min-height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  overflow-x: hidden;
+  background-color: #EFEAE2;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #111B21;
 }
 
@@ -44,7 +36,7 @@ body {
 
 .story-bar-segment {
   flex: 1;
-  height: 3px;
+  height: 3.5px;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   overflow: hidden;
@@ -60,537 +52,312 @@ body {
   background: #00C853;
 }
 
-/* Contenedor del Teléfono (Desktop: iPhone Frame | Mobile: 100% Pantalla Real) */
+/* Contenedor Principal: 100% Pantalla Completa en Móvil, Centrado Responsivo en Desktop */
 .phone-container {
-  width: 410px;
-  height: 840px;
-  background: #1E293B;
-  border-radius: 54px;
-  padding: 12px;
-  box-shadow: 
-    0 0 0 3px #334155,
-    0 0 0 6px #0F172A,
-    0 30px 80px rgba(0, 0, 0, 0.6),
-    0 0 50px rgba(1, 157, 244, 0.2);
+  width: 100%;
+  min-height: 100dvh;
+  max-width: 820px;
+  margin: 0 auto;
+  background: #EFEAE2;
+  background-image: radial-gradient(rgba(1, 157, 244, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  user-select: none;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 820px) {
+  .phone-container {
+    max-width: 100vw;
+    box-shadow: none;
+  }
 }
 
 .phone-inner-screen {
   width: 100%;
-  height: 100%;
-  background: #EFEAE2;
-  background-image: radial-gradient(rgba(1, 157, 244, 0.05) 1px, transparent 0);
-  background-size: 20px 20px;
-  border-radius: 44px;
-  position: relative;
-  overflow: hidden;
+  flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-/* --- iOS Status Bar Superior (Visible en Desktop, Oculta en Mobile Real) --- */
-.ios-status-bar {
-  height: 44px;
-  padding: 12px 24px 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #F0F2F5;
-  z-index: 50;
-  font-size: 13px;
-  font-weight: 600;
-  color: #111B21;
-}
-
-.status-time {
-  font-family: -apple-system, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-.status-icons {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-}
-
-/* Dynamic Island */
-.dynamic-island-notch {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 116px;
-  height: 28px;
-  background: #000000;
-  border-radius: 20px;
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.dynamic-island-sensor {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #1E293B;
-}
-
-.dynamic-island-lens {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #050B14;
+  position: relative;
 }
 
 /* --- WhatsApp Header --- */
-.wa-nav-header {
+.whatsapp-chat-header {
   background: #F0F2F5;
-  padding: 8px 12px 10px 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 40;
+  border-bottom: 1px solid #D1D7DB;
+  position: sticky;
+  top: 0;
+  z-index: 60;
 }
 
-.wa-nav-left {
+.chat-partner-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.partner-avatar-wrapper {
+  position: relative;
+}
+
+.partner-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--movistar-blue), var(--aura-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 0 12px var(--aura-cyan-glow);
+}
+
+.partner-online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #00C853;
+  border: 2px solid #FFFFFF;
+}
+
+.partner-text-block h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #111B21;
   display: flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
 }
 
-.wa-back-btn {
-  display: flex;
-  align-items: center;
-  color: #007AFF;
-  font-size: 15px;
+.partner-status-sub {
+  font-size: 12px;
+  color: #008738;
   font-weight: 500;
 }
 
-.wa-unread-badge {
-  background: #007AFF;
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 1px 6px;
-  border-radius: 10px;
-  margin-left: 2px;
-}
-
-.wa-contact-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 4px;
-}
-
-.wa-avatar-box {
-  position: relative;
-  width: 40px;
-  height: 40px;
-}
-
-.wa-contact-details h2 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #111B21;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.wa-verified-icon {
-  color: #008069;
-  width: 15px;
-  height: 15px;
-}
-
-.wa-contact-status {
-  font-size: 11px;
-  color: #667781;
-  display: block;
-}
-
-.wa-contact-status.typing {
-  color: #008069;
-  font-weight: 600;
-}
-
-.wa-nav-actions {
+.chat-header-actions {
   display: flex;
   align-items: center;
   gap: 16px;
-  color: #007AFF;
+  color: #54656F;
 }
 
-.wa-nav-icon-btn {
-  background: none;
-  border: none;
-  color: #007AFF;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* --- Chat Message Scroll View (Zona Táctil Principal) --- */
-.wa-chat-body {
+/* --- Chat Messages Scroll Area --- */
+.whatsapp-chat-body {
   flex: 1;
-  padding: 14px 14px;
-  overflow-y: auto;
+  padding: 20px 18px 90px 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  position: relative;
-  cursor: pointer;
+  gap: 14px;
+  overflow-y: auto;
 }
 
-/* Tap Hint Sutil */
-.tap-hint-pill {
-  align-self: center;
-  background: rgba(1, 157, 244, 0.12);
-  border: 1px solid rgba(1, 157, 244, 0.3);
-  color: #019DF4;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-top: 4px;
+/* Chat Bubbles */
+.chat-msg-row {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  animation: pulseHint 2s infinite;
+  width: 100%;
+  animation: msgPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes pulseHint {
-  0%, 100% { opacity: 0.7; transform: scale(0.98); }
-  50% { opacity: 1; transform: scale(1.02); }
+.chat-msg-row.incoming {
+  justify-content: flex-start;
 }
 
-/* Encryption Disclaimer */
-.wa-encryption-pill {
-  background: rgba(254, 243, 199, 0.95);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  color: #78350F;
-  font-size: 10.5px;
-  line-height: 1.35;
-  text-align: center;
-  padding: 6px 12px;
-  border-radius: 8px;
-  margin: 4px auto 8px auto;
-  max-width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+.chat-msg-row.outgoing {
+  justify-content: flex-end;
 }
 
-.wa-date-divider {
-  align-self: center;
-  background: rgba(255, 255, 255, 0.9);
-  color: #54656F;
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-  margin-bottom: 4px;
-}
-
-/* Globos de Mensaje */
-.wa-bubble {
-  max-width: 86%;
-  padding: 8px 12px 6px 12px;
+.chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
   border-radius: 12px;
-  font-size: 13.5px;
-  line-height: 1.45;
   position: relative;
+  font-size: 14px;
+  line-height: 1.45;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
-  word-wrap: break-word;
-  animation: bubblePop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.wa-bubble.incoming {
+.chat-bubble.incoming {
   background: #FFFFFF;
   color: #111B21;
-  align-self: flex-start;
   border-top-left-radius: 2px;
 }
 
-.wa-bubble.outgoing {
-  background: #E7FFDB;
+.chat-bubble.outgoing {
+  background: #D9FDD3;
   color: #111B21;
-  align-self: flex-end;
   border-top-right-radius: 2px;
 }
 
-.wa-bubble-time {
-  font-size: 10px;
+.msg-timestamp {
+  font-size: 10.5px;
   color: #667781;
   float: right;
-  margin-left: 10px;
   margin-top: 4px;
+  margin-left: 8px;
   display: flex;
   align-items: center;
   gap: 3px;
 }
 
-.wa-ticks-blue {
-  color: #53BDEB;
-  width: 14px;
-  height: 14px;
+/* Interactive WhatsApp Action Buttons Inside Bubbles */
+.chat-cta-btn-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 8px;
 }
 
-/* Card de Oferta Movistar Total */
-.wa-offer-card {
+.chat-cta-btn {
   background: #FFFFFF;
-  border-radius: 14px;
-  padding: 12px;
-  border: 1.5px solid #019DF4;
-  box-shadow: 0 4px 14px rgba(1, 157, 244, 0.12);
-  margin-top: 8px;
-}
-
-.wa-offer-head {
+  border: 1px solid rgba(1, 157, 244, 0.4);
+  color: var(--movistar-blue);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px dashed rgba(1, 157, 244, 0.25);
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-}
-
-.wa-offer-badge-save {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  background: rgba(0, 200, 83, 0.12);
-  color: #008738;
-  padding: 3px 8px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 200, 83, 0.3);
-}
-
-.wa-offer-price-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  background: #F8FAFC;
-  padding: 8px 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  justify-content: center;
   gap: 6px;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.wa-price-old {
-  font-size: 13px;
-  color: #EF4444;
-  text-decoration: line-through;
-  font-weight: 700;
+.chat-cta-btn:hover {
+  background: var(--aura-cyan-subtle);
+  border-color: var(--movistar-blue);
 }
 
-.wa-price-new {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  color: #019DF4;
-  font-weight: 800;
+/* Audio Player Bubble */
+.audio-player-bubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  min-width: 240px;
 }
 
-.wa-offer-features {
-  font-size: 11.5px;
-  color: #334155;
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.wa-btn-1touch {
-  width: 100%;
-  background: linear-gradient(135deg, #019DF4, #0077E6);
+.audio-play-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--movistar-blue);
   color: #FFFFFF;
-  border: none;
-  padding: 11px 12px;
-  border-radius: 10px;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  box-shadow: 0 4px 12px rgba(1, 157, 244, 0.3);
-  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
 }
 
-.wa-btn-1touch:active {
-  transform: scale(0.98);
+.audio-track-wave {
+  flex: 1;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  position: relative;
 }
 
-/* --- WhatsApp Bottom Input Bar --- */
-.wa-input-bar {
+.audio-track-progress {
+  width: 65%;
+  height: 100%;
+  background: var(--movistar-blue);
+  border-radius: 2px;
+}
+
+/* --- WhatsApp Footer Input Bar --- */
+.whatsapp-chat-footer {
   background: #F0F2F5;
-  padding: 8px 10px 18px 10px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  z-index: 40;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 60;
+  border-top: 1px solid #D1D7DB;
 }
 
-.wa-action-icon-btn {
-  background: none;
-  border: none;
-  color: #007AFF;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-}
-
-.wa-text-input-box {
+.chat-input-fake {
   flex: 1;
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 20px;
-  padding: 8px 14px;
+  border-radius: 24px;
+  padding: 10px 18px;
   font-size: 14px;
   color: #111B21;
+  border: none;
   outline: none;
 }
 
-.wa-mic-btn {
-  width: 36px;
-  height: 36px;
+.chat-mic-btn {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #007AFF;
+  background: #00A884;
   color: #FFFFFF;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.3);
-  transition: transform var(--transition-fast);
 }
 
-.wa-mic-btn:active {
-  transform: scale(0.94);
-}
-
-/* --- Floating Pitch Director Bar --- */
+/* Floating Director Controller */
 .valeria-director-bar {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(11, 25, 44, 0.94);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 212, 255, 0.35);
   border-radius: 30px;
-  padding: 8px 16px;
+  padding: 6px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  z-index: 999;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
-.valeria-director-bar button, .valeria-director-bar a {
+.valeria-director-bar a,
+.valeria-director-bar button {
   background: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 11px;
-  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 11.5px;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: all var(--transition-fast);
 }
 
 .valeria-director-bar button.active {
   background: var(--movistar-blue);
   border-color: var(--movistar-blue);
-  color: #FFFFFF;
-  font-weight: 700;
 }
 
-/* ==========================================================================
-   ADAPTACIÓN 100% RESPONSIVE EN DISPOSITIVOS MÓVILES REALES (FULL IMMERSION)
-   ========================================================================== */
-@media (max-width: 768px), (pointer: coarse) {
-  body {
-    padding: 0;
-    background: #EFEAE2;
-    align-items: stretch;
-    justify-content: stretch;
-  }
-
-  .phone-container {
-    width: 100vw;
-    height: 100dvh;
-    max-width: none;
-    border-radius: 0;
-    padding: 0;
-    box-shadow: none;
-    background: #EFEAE2;
-  }
-
-  .phone-inner-screen {
-    border-radius: 0;
-    height: 100dvh;
-  }
-
-  /* Ocultar barra de estado simulada para que el celular real use la suya */
-  .ios-status-bar {
-    display: none;
-  }
-
-  .dynamic-island-notch {
-    display: none;
-  }
-
-  .wa-nav-header {
-    padding-top: max(12px, env(safe-area-inset-top));
-  }
-
-  .wa-input-bar {
-    padding-bottom: max(14px, env(safe-area-inset-bottom));
-  }
-
-  /* Minimizar barra de control flotante en mobile real */
-  .valeria-director-bar {
-    top: auto;
-    bottom: 75px;
-    right: 12px;
-    padding: 4px 8px;
-    gap: 6px;
-    transform: scale(0.85);
-    transform-origin: bottom right;
-    opacity: 0.35;
-  }
-
-  .valeria-director-bar:hover, .valeria-director-bar:active {
-    opacity: 1;
-  }
-}
-
-@keyframes bubblePop {
-  0% { transform: scale(0.92); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes msgPop {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }

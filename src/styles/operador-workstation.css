@@ -698,6 +698,11 @@ body {
 .audio-stream-bar:nth-child(5) { animation-delay: 0.2s; height: 42px; }
 .audio-stream-bar:nth-child(6) { animation-delay: 0.35s; height: 20px; }
 
+@keyframes audioStreamPulse {
+  0% { transform: scaleY(0.4); opacity: 0.6; }
+  100% { transform: scaleY(1.4); opacity: 1; }
+}
+
 /* Real-time Transcription Stream in Meeting Box */
 .meeting-live-transcript-box {
   background: rgba(255, 255, 255, 0.08);

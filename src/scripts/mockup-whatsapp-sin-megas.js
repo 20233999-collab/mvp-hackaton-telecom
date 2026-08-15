@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (inputText) {
-          inputText.value = '⚡ Activar 2 GB de Emergencia';
+          inputText.value = '⛔ Comprar 2 GB Extra';
         }
 
         setTimeout(() => {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userMsg.className = 'wa-msg-bubble outgoing pop-in';
     userMsg.innerHTML = `
       <div class="wa-bubble-card-outgoing">
-        <p>⚡ Activar 2 GB de Emergencia (S/ 5.00)</p>
+        <p>⛔ Comprar 2 GB Extra (S/ 15.00)</p>
         <div class="wa-meta-row-outgoing">
           <span class="wa-msg-time">${timeNow}</span>
           <span class="wa-check-blue">✓✓</span>
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       contactStatus.style.fontWeight = '600';
     }
 
-    // Respuesta oficial de Movistar en 650ms
+    // Respuesta de dolor
     setTimeout(() => {
       if (contactStatus) {
         contactStatus.innerText = 'en línea';
@@ -118,44 +118,25 @@ document.addEventListener('DOMContentLoaded', () => {
         contactStatus.style.fontWeight = '400';
       }
 
-      const movistarReply = document.createElement('div');
-      movistarReply.className = 'wa-msg-bubble incoming pop-in';
-      movistarReply.innerHTML = `
-        <div class="wa-bubble-card-content" style="border-left: 3.5px solid #008738;">
-          <p class="wa-msg-body">
-            ¡Listo <strong>Miguel</strong>! 🎉 Hemos activado <strong>2 GB de Emergencia</strong> en tu línea por S/ 5.00.
-          </p>
-          <div class="wa-mode-highlight-card" style="background: #F0FDF4; border-color: #BBF7D0;">
-            <div class="mode-icon-box" style="background: #DCFCE7;">
-              <i data-lucide="check-circle" style="width: 16px; color: #008738;"></i>
-            </div>
-            <div class="mode-info">
-              <strong style="color: #166534;">Velocidad Restaurada</strong>
-              <span style="color: #15803D;">Navegación 300 Mbps Alta Velocidad.</span>
-            </div>
-          </div>
-          <p class="wa-msg-body-sub">
-            El cargo se incluirá en tu próximo recibo. ¡Gracias por confiar en Movistar!
-          </p>
-          <div class="wa-meta-row">
-            <span class="wa-msg-time">${timeNow}</span>
-          </div>
+      // Pain overlay
+      const painOverlay = document.createElement('div');
+      painOverlay.className = 'pain-overlay';
+      painOverlay.innerHTML = `
+        <div class="pain-content">
+          <i data-lucide="x-circle" style="width: 100px; height: 100px; color: #ffffff;"></i>
+          <h2>¡Gasto Excesivo!</h2>
+          <p>Has acumulado este mes:</p>
+          <strong>S/ 179.80 al mes</strong>
         </div>
       `;
-      dynamicContainer.appendChild(movistarReply);
+      const shell = document.getElementById('waShell');
+      if (shell) {
+        shell.appendChild(painOverlay);
+      } else {
+        document.body.appendChild(painOverlay);
+      }
       createIcons({ icons });
-      
-      setTimeout(() => {
-        chatCanvas.scrollTo({ top: chatCanvas.scrollHeight, behavior: 'smooth' });
-      }, 50);
 
-      // Confetti burst
-      confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#019DF4', '#00D4FF', '#008738', '#25D366']
-      });
     }, 650);
   }
 
@@ -176,6 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
       contactStatus.style.color = '#667781';
       contactStatus.style.fontWeight = '400';
     }
+    // Remove pain overlay if exists
+    const overlay = document.querySelector('.pain-overlay');
+    if (overlay) overlay.remove();
   }
 
   // Event Listeners (Removed tap-to-receive listeners as it's now auto)

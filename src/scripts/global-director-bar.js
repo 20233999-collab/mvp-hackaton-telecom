@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     floatingBall.onmouseout = () => floatingBall.style.boxShadow = '0 4px 15px rgba(1, 157, 244, 0.5)';
 
     toggleBtn.addEventListener('click', () => {
-      // Collapse the bar: push it completely down and hide it
-      bar.style.transform = 'translateY(120%)';
+      // Collapse the bar: scale it down slightly and hide it
       bar.style.opacity = '0';
       bar.style.visibility = 'hidden';
+      // To prevent transform conflicts, we just use opacity and visibility
       
       // Show the floating ball
       floatingBall.style.opacity = '1';
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Expand the bar
       bar.style.visibility = 'visible';
-      bar.style.transform = 'translateY(0)';
+      bar.style.transform = ''; // Remove inline transform to restore CSS default (like translateX(-50%))
       bar.style.opacity = '1';
     });
   });

@@ -59,15 +59,44 @@ class WhatsAppMiguelSimulator {
     });
   }
 
+  
   nextStep() {
+    if (this.isTransitioning) return;
     if (this.currentStep < 4) {
-      this.goToStep(this.currentStep + 1);
+      this.simulateTypingAndGo(this.currentStep + 1);
     } else {
-      this.goToStep(1);
+      this.goToStep(1); // Reset instant
     }
   }
 
+  simulateTypingAndGo(targetStep) {
+    this.isTransitioning = true;
+    let typingText = 'escribiendo...';
+    let typingDelay = 1200;
+
+    if (targetStep === 2) {
+      typingText = 'Aura está escribiendo...';
+    } else if (targetStep === 3) {
+      typingText = 'Miguel está escribiendo...';
+    } else if (targetStep === 4) {
+      typingText = 'Aura está escribiendo...';
+      typingDelay = 1500;
+    }
+
+    this.setTyping(true, typingText);
+    
+    // Smooth scroll down slightly to show "typing" if we were at the bottom
+    this.scrollToBottom();
+
+    setTimeout(() => {
+      this.setTyping(false);
+      this.goToStep(targetStep);
+      this.isTransitioning = false;
+    }, typingDelay);
+  }
+
   prevStep() {
+
     if (this.currentStep > 1) {
       this.goToStep(this.currentStep - 1);
     }
@@ -89,18 +118,26 @@ class WhatsAppMiguelSimulator {
     }
   }
 
+  
   scrollToBottom() {
     if (this.chatBody) {
       setTimeout(() => {
+        
         this.chatBody.scrollTo({
           top: this.chatBody.scrollHeight,
           behavior: 'smooth'
         });
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+
       }, 50);
     }
   }
 
   goToStep(stepNum) {
+
     this.currentStep = stepNum;
     this.updateActiveBtn(stepNum);
     this.updateStorySegments(stepNum);

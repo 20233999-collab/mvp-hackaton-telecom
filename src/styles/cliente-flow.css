@@ -532,7 +532,7 @@ html, body {
 
 @media (max-width: 768px) {
   .client-director-bar {
-    /* display: none !important; Removed so user can manually collapse it */
+    /* Visible on tablets, hidden on mobile below */
   }
 
   .phone-viewport-stage {

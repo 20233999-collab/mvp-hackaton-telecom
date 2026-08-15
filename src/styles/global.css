@@ -1,0 +1,11 @@
+
+@media (max-width: 576px) {
+  .client-director-bar,
+  .operator-director-bar,
+  .pv-director-bar,
+  .miguel-director-bar,
+  .mimovistar-director-bar,
+  .sfdc-workflow-bottom-bar {
+    display: none !important;
+  }
+}

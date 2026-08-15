@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bars.forEach(bar => {
     // Create the toggle button inside the bar
     const toggleBtn = document.createElement('button');
+    toggleBtn.classList.add('director-collapse-btn');
     toggleBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
     toggleBtn.title = "Contraer Barra";
     toggleBtn.style.cssText = `
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create the floating ball
     const floatingBall = document.createElement('div');
+    floatingBall.classList.add('director-floating-ball');
     floatingBall.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
     floatingBall.title = "Expandir Barra";
     floatingBall.style.cssText = `
@@ -84,3 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Add global mobile-only hide style
+const mobileStyle = document.createElement('style');
+mobileStyle.textContent = `
+  @media (max-width: 576px) {
+    [class*="-director-bar"],
+    .sfdc-workflow-bottom-bar,
+    .director-collapse-btn,
+    .director-floating-ball {
+      display: none !important;
+    }
+  }
+`;
+document.head.appendChild(mobileStyle);
